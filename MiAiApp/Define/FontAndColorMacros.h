@@ -9,6 +9,6 @@
 #ifndef FontAndColorMacros_h
 #define FontAndColorMacros_h
 
-#define CNavBgColor  [UIColor colorWithHexString:@"00B358"]
+#define CNavBgColor  [UIColor colorWithHexString:@"00AE68"]
 
 #endif /* FontAndColorMacros_h */
