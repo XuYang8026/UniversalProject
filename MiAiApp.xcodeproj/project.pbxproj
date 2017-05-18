@@ -13,6 +13,7 @@
 		296F9ECB1ECC64CE0063A255 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F9EC91ECC64CE0063A255 /* LaunchScreen.storyboard */; };
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
+		8E4CE34B0C01EF794A2C7378 /* libPods-MiAiApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52865CE8C50E268AF7832120 /* libPods-MiAiApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,9 @@
 		296F9EDC1ECC64CE0063A255 /* MiAiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppUITests.m; sourceTree = "<group>"; };
 		296F9EE21ECC64CE0063A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		415162175F837CEF25F31662 /* Pods-MiAiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiAiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp.release.xcconfig"; sourceTree = "<group>"; };
+		49840D2CD21987EBE225F82C /* Pods-MiAiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiAiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		52865CE8C50E268AF7832120 /* libPods-MiAiApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiAiApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4CE34B0C01EF794A2C7378 /* libPods-MiAiApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24EA73B06C16F121CA87DD41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49840D2CD21987EBE225F82C /* Pods-MiAiApp.debug.xcconfig */,
+				415162175F837CEF25F31662 /* Pods-MiAiApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		296F9EAF1ECC64CE0063A255 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +94,8 @@
 				296F9ED41ECC64CE0063A255 /* MiAiAppTests */,
 				296F9EDF1ECC64CE0063A255 /* MiAiAppUITests */,
 				296F9EB91ECC64CE0063A255 /* Products */,
+				24EA73B06C16F121CA87DD41 /* Pods */,
+				6C3D66AC810B3ABDE56945D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +148,14 @@
 			path = MiAiAppUITests;
 			sourceTree = "<group>";
 		};
+		6C3D66AC810B3ABDE56945D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52865CE8C50E268AF7832120 /* libPods-MiAiApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 296F9EE51ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "MiAiApp" */;
 			buildPhases = (
+				C14C4D77EDEC58243841D1EC /* [CP] Check Pods Manifest.lock */,
 				296F9EB41ECC64CE0063A255 /* Sources */,
 				296F9EB51ECC64CE0063A255 /* Frameworks */,
 				296F9EB61ECC64CE0063A255 /* Resources */,
+				FCE002867A10AABD9CA626C2 /* [CP] Embed Pods Frameworks */,
+				BAD1716792B72D02CEED4423 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +285,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAD1716792B72D02CEED4423 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C14C4D77EDEC58243841D1EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FCE002867A10AABD9CA626C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		296F9EB41ECC64CE0063A255 /* Sources */ = {
@@ -406,6 +481,7 @@
 		};
 		296F9EE61ECC64CE0063A255 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49840D2CD21987EBE225F82C /* Pods-MiAiApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
@@ -420,6 +496,7 @@
 		};
 		296F9EE71ECC64CE0063A255 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 415162175F837CEF25F31662 /* Pods-MiAiApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
