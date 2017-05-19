@@ -13,9 +13,10 @@
 
 //获取系统对象
 #define kApplication        [UIApplication sharedApplication]
-#define kKeyWindow          [UIApplication sharedApplication].keyWindow
-#define kAppDelegate        [UIApplication sharedApplication].delegate
-#define kUserDefaults      [NSUserDefaults standardUserDefaults]
+#define kAppWindow          [UIApplication sharedApplication].delegate.window
+#define kAppDelegate        [AppDelegate shareAppDelegate]
+#define kRootViewController [UIApplication sharedApplication].delegate.window.rootViewController
+#define kUserDefaults       [NSUserDefaults standardUserDefaults]
 #define kNotificationCenter [NSNotificationCenter defaultCenter]
 
 //获取屏幕宽高
@@ -69,6 +70,9 @@
 #else
 #define DLog(...)
 #endif
+
+//拼接字符串
+#define STRING_BUILDER(str1,str2) [NSString stringWithFormat:str1,str2]
 
 //颜色
 #define KClearColor [UIColor clearColor]

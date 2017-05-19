@@ -16,22 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.isShowLiftBack = NO;
+    
+    UILabel * lbl = [UILabel new];
+    lbl.font = SYSTEMFONT(30);
+    lbl.text = @"社交页控制器";
+    lbl.textAlignment = NSTextAlignmentCenter;
+    lbl.textColor = KBlackColor;
+    lbl.frame = self.view.bounds;
+    [self.view addSubview:lbl];
+    
+    [self addNavigationItemWithTitles:@[@"登录"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
+}
+-(void)naviBtnClick:(UIButton *)btn{
+    [MBProgressHUD showTopTipMessage:STRING_BUILDER(@"点击了%@按钮", btn.titleLabel.text)];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -22,11 +22,18 @@
     //是否显示返回按钮
     self.isShowLiftBack = YES;
 }
-
+#pragma mark ————— 跳转登录界面 —————
 - (void)goLogin
 {
-//    SZLoginViewController *login = [[SZLoginViewController alloc]init];
-//    [[HHAppDelegate rootNavigationController] pushViewController:login animated:YES];
+    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+    [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
+}
+- (void)goLoginWithPush
+{
+    [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+}
+
+- (void)showShouldLoginPoint{
     
 }
 
@@ -55,6 +62,7 @@
 -(void)removeNoDataImage{
     if (_noDataView) {
         [_noDataView removeFromSuperview];
+        _noDataView = nil;
     }
 }
 
@@ -65,6 +73,7 @@
 {
     if (isShowLiftBack) {
         self.navigationItem.hidesBackButton = NO;
+        [self addNavigationItemWithTitles:@[@"返回"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];
         
 //        [self addNavigationItemWithImageNames:@[@"quanju_return"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];
         
@@ -76,10 +85,66 @@
 }
 - (void)backBtnClicked
 {
-    if (self.navigationController.viewControllers.count>1) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }else{
+    if (self.presentingViewController) {
         [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+
+- (void)addNavigationItemWithImageNames:(NSArray *)imageNames isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags
+{
+    NSMutableArray * items = [[NSMutableArray alloc] init];
+    NSInteger i = 0;
+    for (NSString * imageName in imageNames) {
+        //        UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        //        backView.backgroundColor=RedColor;
+        //        backView.userInteractionEnabled=YES;
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        //        [backView addSubview:btn];
+        [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        btn.frame = CGRectMake(0, 0, 30, 30);
+        if(isLeft){
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 10)];
+        }else{
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, -10)];
+            
+        }
+        [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+        
+        btn.tag = [tags[i++] integerValue];
+        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        [items addObject:item];
+        
+    }
+    if (isLeft) {
+        self.navigationItem.leftBarButtonItems = items;
+    } else {
+        self.navigationItem.rightBarButtonItems = items;
+    }
+}
+
+- (void)addNavigationItemWithTitles:(NSArray *)titles isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags
+{
+    NSMutableArray * items = [[NSMutableArray alloc] init];
+    NSInteger i = 0;
+    for (NSString * title in titles) {
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.frame = CGRectMake(0, 0, 30, 20);
+        [btn setTitle:title forState:UIControlStateNormal];
+        [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+        btn.titleLabel.font = SYSTEMFONT(16);
+        [btn setTitleColor:KWhiteColor forState:UIControlStateNormal];
+        btn.tag = [tags[i++] integerValue];
+        [btn sizeToFit];
+        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        [items addObject:item];
+    }
+    if (isLeft) {
+        self.navigationItem.leftBarButtonItems = items;
+    } else {
+        self.navigationItem.rightBarButtonItems = items;
     }
 }
 

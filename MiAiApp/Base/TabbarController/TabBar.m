@@ -34,23 +34,28 @@
     
 }
 
-/**
- * button监听事件
- *
- */
+#pragma mark ————— 根据index 选中button —————
+-(void)selectBtnWithIndex:(NSInteger)index{
+    TabBarButton *targetBtn = (TabBarButton*)[self viewWithTag:100+index];
+    [self buttonClick:targetBtn];
+}
+
+#pragma mark ————— button选中事件 —————
 -(void)buttonClick:(TabBarButton*)button{
     
     if ([self.delegate respondsToSelector:@selector(tabBar:didselectedButtonFrom:to:)]
         )
     {
-        [self.delegate tabBar:self didselectedButtonFrom:(int)self.selectedButton.tag to:(int)button.tag];
+        [self.delegate tabBar:self didselectedButtonFrom:(int)self.selectedButton.tag-100 to:(int)button.tag-100];
     }
     self.selectedButton.selected = NO;
     button.selected = YES;
     self.selectedButton = button;
+    self.selectedIndex = button.tag-100;
     
 }
 
+#pragma mark ————— 布局 —————
 -(void)layoutSubviews{
     [super layoutSubviews];
     
@@ -69,7 +74,7 @@
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH) ;
         
         //绑定tag;
-        button.tag = index;
+        button.tag = 100+index;
     }
 }
 

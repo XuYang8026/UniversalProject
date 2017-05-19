@@ -23,11 +23,13 @@
     //导航栏背景图
 //    [navBar setBackgroundImage:[UIImage imageNamed:@"tabBarBj"] forBarMetrics:UIBarMetricsDefault];
     [navBar setBarTintColor:CNavBgColor];
-    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont systemFontOfSize:16]}];
+    [navBar setTintColor:KWhiteColor];
+    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName :KWhiteColor, NSFontAttributeName : [UIFont systemFontOfSize:18]}];
     
     //导航栏左右文字主题
     UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
-    [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
+    
+//    [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
     
 //    //tabBar主题 title文字属性
 //    UITabBarItem *tabBarItem = [UITabBarItem appearance];

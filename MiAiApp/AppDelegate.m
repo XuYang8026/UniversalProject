@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "MainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -15,13 +14,16 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = KWhiteColor;
-    self.window.rootViewController = [MainTabBarController new];
+    self.mainTabBar = [MainTabBarController new];
+    self.window.rootViewController = self.mainTabBar;
     [self.window makeKeyAndVisible];
+
+    [[UIButton appearance] setExclusiveTouch:YES];
+    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
     
     return YES;
 }

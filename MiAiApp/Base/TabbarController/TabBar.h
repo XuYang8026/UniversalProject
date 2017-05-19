@@ -20,12 +20,16 @@
 @end
 
 @interface TabBar : UIView
-@property (weak ,nonatomic)TabBarButton *selectedButton;
-/**
- *  给自定义的tabbar添加按钮
- */
--(void)addTabBarButtonWithItem:(UITabBarItem *)itme;
 @property(nonatomic , weak) id <tabbarDelegate> delegate;
+
+@property (weak ,nonatomic)TabBarButton *selectedButton;
+@property (nonatomic, assign) NSInteger selectedIndex;
+//根据序号选中tabbar button 0开始
+-(void)selectBtnWithIndex:(NSInteger)index;
+
+//给自定义的tabbar添加按钮
+-(void)addTabBarButtonWithItem:(UITabBarItem *)itme;
+
 
 
 @end

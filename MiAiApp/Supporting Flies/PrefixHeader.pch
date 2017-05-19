@@ -41,11 +41,20 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+#import "AppDelegate.h"
+#import "AppDelegate+AppService.h"
 #import "UtilsMacros.h"
 #import "URLMacros.h"
 #import "FontAndColorMacros.h"
 #import "ThirdMacros.h"
-#import <YYKit.h>
 #import "RootViewController.h"
+#import "RootNavigationController.h"
+#import "MBProgressHUD+XY.h"
+
+//第三方
+#import <YYKit.h>
+#import <MBProgressHUD.h>
+
 
 #endif /* PrefixHeader_pch */
