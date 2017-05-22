@@ -29,7 +29,7 @@
     [self addNavigationItemWithTitles:@[@"登录"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
 }
 -(void)naviBtnClick:(UIButton *)btn{
-    [MBProgressHUD showTopTipMessage:STRING_BUILDER(@"点击了%@按钮", btn.titleLabel.text)];
+    [MBProgressHUD showTopTipMessage:NSStringFormat(@"点击了%@按钮", btn.titleLabel.text)];
     
 }
 

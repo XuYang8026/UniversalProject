@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290DE91E1ED198E500A45FF6 /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE91B1ED198E500A45FF6 /* PPNetworkCache.m */; };
+		290DE91F1ED198E500A45FF6 /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE91D1ED198E500A45FF6 /* PPNetworkHelper.m */; };
+		290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9221ED19B6B00A45FF6 /* AESCipher.m */; };
+		290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9251ED19B7F00A45FF6 /* AppManager.m */; };
+		290DE9291ED2A4B800A45FF6 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9281ED2A4B800A45FF6 /* UserManager.m */; };
+		290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */; };
+		290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */; };
+		290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */; };
+		290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */; };
+		290DE93F1ED306D000A45FF6 /* AdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE93E1ED306D000A45FF6 /* AdPageView.m */; };
 		293D45A11ECD6422007C64A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293D459B1ECD6422007C64A9 /* Assets.xcassets */; };
 		293D45A21ECD6422007C64A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293D459D1ECD6422007C64A9 /* LaunchScreen.storyboard */; };
 		293D45A31ECD6422007C64A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 293D459F1ECD6422007C64A9 /* Info.plist */; };
@@ -79,6 +89,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290DE91A1ED198E500A45FF6 /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
+		290DE91B1ED198E500A45FF6 /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
+		290DE91C1ED198E500A45FF6 /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
+		290DE91D1ED198E500A45FF6 /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
+		290DE9211ED19B6B00A45FF6 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		290DE9221ED19B6B00A45FF6 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
+		290DE9241ED19B7F00A45FF6 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		290DE9251ED19B7F00A45FF6 /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
+		290DE9271ED2A4B800A45FF6 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		290DE9281ED2A4B800A45FF6 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		290DE92D1ED2EDF100A45FF6 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		290DE92F1ED2EDF100A45FF6 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		290DE9311ED2EDF100A45FF6 /* RxWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewController.h; sourceTree = "<group>"; };
+		290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
+		290DE9331ED2EDF100A45FF6 /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
+		290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
+		290DE93D1ED306D000A45FF6 /* AdPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdPageView.h; sourceTree = "<group>"; };
+		290DE93E1ED306D000A45FF6 /* AdPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdPageView.m; sourceTree = "<group>"; };
 		293D459B1ECD6422007C64A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293D459E1ECD6422007C64A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		293D459F1ECD6422007C64A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,6 +224,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		290DE9201ED19B6B00A45FF6 /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				290DE9211ED19B6B00A45FF6 /* AESCipher.h */,
+				290DE9221ED19B6B00A45FF6 /* AESCipher.m */,
+			);
+			path = AES;
+			sourceTree = "<group>";
+		};
+		290DE92C1ED2EDF100A45FF6 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				290DE92D1ED2EDF100A45FF6 /* NJKWebViewProgress.h */,
+				290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */,
+				290DE92F1ED2EDF100A45FF6 /* NJKWebViewProgressView.h */,
+				290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		290DE93C1ED306C200A45FF6 /* AdPage */ = {
+			isa = PBXGroup;
+			children = (
+				290DE93D1ED306D000A45FF6 /* AdPageView.h */,
+				290DE93E1ED306D000A45FF6 /* AdPageView.m */,
+			);
+			path = AdPage;
+			sourceTree = "<group>";
+		};
 		293D459C1ECD6422007C64A9 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,8 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				293D45E21ECD938D007C64A9 /* UtilsMacros.h */,
-				293D45E41ECDA0EA007C64A9 /* FontAndColorMacros.h */,
 				293D45E31ECDA0D4007C64A9 /* URLMacros.h */,
+				293D45E41ECDA0EA007C64A9 /* FontAndColorMacros.h */,
 				293D45E51ECDA108007C64A9 /* ThirdMacros.h */,
 			);
 			path = Define;
@@ -223,6 +282,10 @@
 		293D45A81ECD6926007C64A9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				290DE9241ED19B7F00A45FF6 /* AppManager.h */,
+				290DE9251ED19B7F00A45FF6 /* AppManager.m */,
+				290DE9271ED2A4B800A45FF6 /* UserManager.h */,
+				290DE9281ED2A4B800A45FF6 /* UserManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -242,6 +305,10 @@
 		293D45AA1ECD6926007C64A9 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				290DE91C1ED198E500A45FF6 /* PPNetworkHelper.h */,
+				290DE91D1ED198E500A45FF6 /* PPNetworkHelper.m */,
+				290DE91A1ED198E500A45FF6 /* PPNetworkCache.h */,
+				290DE91B1ED198E500A45FF6 /* PPNetworkCache.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -265,6 +332,7 @@
 		293D45AD1ECD6926007C64A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				290DE9201ED19B6B00A45FF6 /* AES */,
 				29FEE7651ECEC25C00C81B60 /* MBProgressHUD */,
 			);
 			path = Utils;
@@ -473,6 +541,7 @@
 		293D45E11ECD8B72007C64A9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				290DE93C1ED306C200A45FF6 /* AdPage */,
 				293D45F21ECDA435007C64A9 /* RootViewController */,
 				293D45FE1ECDA56A007C64A9 /* TabbarController */,
 				293D46021ECDA9E4007C64A9 /* NavigationController */,
@@ -545,6 +614,11 @@
 			children = (
 				293D45F81ECDA4D8007C64A9 /* RootWebViewController.h */,
 				293D45F91ECDA4D8007C64A9 /* RootWebViewController.m */,
+				290DE92C1ED2EDF100A45FF6 /* NJKWebViewProgress */,
+				290DE9311ED2EDF100A45FF6 /* RxWebViewController.h */,
+				290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */,
+				290DE9331ED2EDF100A45FF6 /* RxWebViewNavigationViewController.h */,
+				290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */,
 			);
 			path = WebViewController;
 			sourceTree = "<group>";
@@ -931,15 +1005,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */,
 				293D45A41ECD6422007C64A9 /* main.m in Sources */,
+				290DE9291ED2A4B800A45FF6 /* UserManager.m in Sources */,
+				290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */,
 				293D46051ECDAA02007C64A9 /* RootNavigationController.m in Sources */,
+				290DE91F1ED198E500A45FF6 /* PPNetworkHelper.m in Sources */,
 				293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */,
 				293D46011ECDA56A007C64A9 /* MainTabBarController.m in Sources */,
+				290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */,
+				290DE93F1ED306D000A45FF6 /* AdPageView.m in Sources */,
 				293D46181ECDB305007C64A9 /* TabBar.m in Sources */,
 				296F9EC01ECC64CE0063A255 /* AppDelegate.m in Sources */,
 				29FEE7641ECE965F00C81B60 /* AppDelegate+AppService.m in Sources */,
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
 				293D46081ECDAEAD007C64A9 /* HomeViewController.m in Sources */,
+				290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */,
+				290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */,
+				290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */,
+				290DE91E1ED198E500A45FF6 /* PPNetworkCache.m in Sources */,
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
 				293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */,
 				29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */,

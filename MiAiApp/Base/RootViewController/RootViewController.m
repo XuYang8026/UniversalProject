@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "LoginViewController.h"
+#import "RootWebViewController.h"
 
 @interface RootViewController ()
 
@@ -25,12 +26,16 @@
 #pragma mark ————— 跳转登录界面 —————
 - (void)goLogin
 {
-    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.hao123.com"]]];
+    
+//    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
     [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
 }
 - (void)goLoginWithPush
 {
-    [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+//    [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+    RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://baidu.com"]];
+    [self.navigationController pushViewController:webView animated:YES];
 }
 
 - (void)showShouldLoginPoint{

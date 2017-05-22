@@ -7,10 +7,10 @@
 //
 
 #import "RootViewController.h"
-
+#import "RxWebViewController.h"
 /**
  WebView 基类
  */
-@interface RootWebViewController : RootViewController
+@interface RootWebViewController : RxWebViewController
 
 @end

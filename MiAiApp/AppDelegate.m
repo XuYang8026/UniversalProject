@@ -15,17 +15,34 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //初始化window
+    [self initWindow];
+
+    //广告页
+    [self initAdpage];
+    
+    //网络监听
+    [AppManager monitorNetworkStatus];
+    
+    return YES;
+}
+#pragma mark - ——————— 广告页 ————————
+-(void)initAdpage{
+    [AppManager appStart:^(BOOL success, id responseObject, NSError *error) {
+        
+    }];
+}
+
+#pragma mark - ——————— 初始化window ————————
+-(void)initWindow{
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = KWhiteColor;
     self.mainTabBar = [MainTabBarController new];
     self.window.rootViewController = self.mainTabBar;
     [self.window makeKeyAndVisible];
-
+    
     [[UIButton appearance] setExclusiveTouch:YES];
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
-    
-    return YES;
 }
 
 

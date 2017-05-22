@@ -44,11 +44,21 @@
         }
             break;
         case 1002:
-            [MBProgressHUD showActivityMessageInView:nil];
+        {
+            
+        }
             break;
         case 1003:
-            [MBProgressHUD hideHUD];
-//            [MBProgressHUD showActivityMessageInWindow:@"网络请求失败网络请求失败网络请求失败" timer:3];
+            [MBProgressHUD showActivityMessageInView:nil];
+            [AppManager appStart:^(BOOL success, id responseObject, NSError *error) {
+                [MBProgressHUD hideHUD];
+                
+                if (success) {
+                    DLog(@"请求结果 %@",[responseObject jsonStringEncoded]);
+                }else{
+                    DLog(@"error = %@",error);
+                }
+            }];
             break;
         default:
             break;

@@ -72,7 +72,7 @@
 #endif
 
 //拼接字符串
-#define STRING_BUILDER(str1,str2) [NSString stringWithFormat:str1,str2]
+#define NSStringFormat(format,...) [NSString stringWithFormat:format,##__VA_ARGS__]
 
 //颜色
 #define KClearColor [UIColor clearColor]
