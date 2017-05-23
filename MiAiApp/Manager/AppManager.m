@@ -14,7 +14,7 @@
 @implementation AppManager
 
 
-+(void)appStart:(HttpRequestCallBack)callBack{
++(void)appStart{
     //加载广告
     AdPageView *adView = [[AdPageView alloc] initWithFrame:kScreen_Bounds withTapBlock:^{
         RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.hao123.com"]]];

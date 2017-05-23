@@ -55,6 +55,7 @@
 #import "MBProgressHUD+XY.h"
 #import "PPNetworkHelper.h"
 #import "AppManager.h"
+#import "UserManager.h"
 
 //第三方
 #import <YYKit.h>

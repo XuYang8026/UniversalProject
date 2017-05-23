@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "RootWebViewController.h"
 
 @interface HomeViewController ()
 
@@ -28,8 +29,8 @@
     [self.view addSubview:lbl];
     
     [self addNavigationItemWithTitles
-     :@[@"present",@"push"] isLeft:YES target:self action:@selector(naviBtnClick:) tags:@[@1000,@1001]];
-    [self addNavigationItemWithTitles:@[@"小Loading",@"大Loading"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1003,@1002]];
+     :@[@"pre登录",@"push登录"] isLeft:YES target:self action:@selector(naviBtnClick:) tags:@[@1000,@1001]];
+    [self addNavigationItemWithTitles:@[@"pre网页",@"push网页"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1002,@1003]];
     
 }
 
@@ -45,20 +46,16 @@
             break;
         case 1002:
         {
+            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.hao123.com"]]];
             
+            //    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+            [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
         }
             break;
-        case 1003:
-            [MBProgressHUD showActivityMessageInView:nil];
-            [AppManager appStart:^(BOOL success, id responseObject, NSError *error) {
-                [MBProgressHUD hideHUD];
-                
-                if (success) {
-                    DLog(@"请求结果 %@",[responseObject jsonStringEncoded]);
-                }else{
-                    DLog(@"error = %@",error);
-                }
-            }];
+        case 1003:{
+            RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://baidu.com"]];
+            [self.navigationController pushViewController:webView animated:YES];
+        }
             break;
         default:
             break;

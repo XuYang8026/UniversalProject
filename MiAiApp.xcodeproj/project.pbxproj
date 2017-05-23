@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		290DE91E1ED198E500A45FF6 /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE91B1ED198E500A45FF6 /* PPNetworkCache.m */; };
-		290DE91F1ED198E500A45FF6 /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE91D1ED198E500A45FF6 /* PPNetworkHelper.m */; };
 		290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9221ED19B6B00A45FF6 /* AESCipher.m */; };
 		290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9251ED19B7F00A45FF6 /* AppManager.m */; };
-		290DE9291ED2A4B800A45FF6 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9281ED2A4B800A45FF6 /* UserManager.m */; };
 		290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */; };
 		290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */; };
 		290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */; };
 		290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */; };
-		290DE93F1ED306D000A45FF6 /* AdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE93E1ED306D000A45FF6 /* AdPageView.m */; };
 		293D45A11ECD6422007C64A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293D459B1ECD6422007C64A9 /* Assets.xcassets */; };
 		293D45A21ECD6422007C64A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293D459D1ECD6422007C64A9 /* LaunchScreen.storyboard */; };
 		293D45A31ECD6422007C64A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 293D459F1ECD6422007C64A9 /* Info.plist */; };
@@ -55,10 +51,17 @@
 		293D46551ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D463E1ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png */; };
 		293D46561ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D463F1ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png */; };
 		293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46591ECDC004007C64A9 /* LoginViewController.m */; };
-		296F9EC01ECC64CE0063A255 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EBF1ECC64CE0063A255 /* AppDelegate.m */; };
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
-		29FEE7641ECE965F00C81B60 /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7631ECE965F00C81B60 /* AppDelegate+AppService.m */; };
+		29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C4C1ED3D51200B0879C /* OpenUDID.m */; };
+		29AD6C5A1ED3E28800B0879C /* HeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C551ED3E28800B0879C /* HeaderModel.m */; };
+		29AD6C5B1ED3E28800B0879C /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C571ED3E28800B0879C /* PPNetworkCache.m */; };
+		29AD6C5C1ED3E28800B0879C /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C591ED3E28800B0879C /* PPNetworkHelper.m */; };
+		29AD6C621ED3E4D600B0879C /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C5F1ED3E4D600B0879C /* AppDelegate+AppService.m */; };
+		29AD6C631ED3E4D600B0879C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C611ED3E4D600B0879C /* AppDelegate.m */; };
+		29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C661ED41BA100B0879C /* AdPageView.m */; };
+		29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C6A1ED41E2100B0879C /* UserManager.m */; };
+		29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C701ED41ED200B0879C /* UserInfo.m */; };
 		29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */; };
 		29FEE7751ECED1E200C81B60 /* MBHUD_Error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE76D1ECED1E200C81B60 /* MBHUD_Error@2x.png */; };
 		29FEE7761ECED1E200C81B60 /* MBHUD_Error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE76E1ECED1E200C81B60 /* MBHUD_Error@3x.png */; };
@@ -89,16 +92,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		290DE91A1ED198E500A45FF6 /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
-		290DE91B1ED198E500A45FF6 /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
-		290DE91C1ED198E500A45FF6 /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
-		290DE91D1ED198E500A45FF6 /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
 		290DE9211ED19B6B00A45FF6 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
 		290DE9221ED19B6B00A45FF6 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		290DE9241ED19B7F00A45FF6 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		290DE9251ED19B7F00A45FF6 /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
-		290DE9271ED2A4B800A45FF6 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
-		290DE9281ED2A4B800A45FF6 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		290DE92D1ED2EDF100A45FF6 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
 		290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		290DE92F1ED2EDF100A45FF6 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
@@ -107,8 +104,6 @@
 		290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
 		290DE9331ED2EDF100A45FF6 /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
 		290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
-		290DE93D1ED306D000A45FF6 /* AdPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdPageView.h; sourceTree = "<group>"; };
-		290DE93E1ED306D000A45FF6 /* AdPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdPageView.m; sourceTree = "<group>"; };
 		293D459B1ECD6422007C64A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293D459E1ECD6422007C64A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		293D459F1ECD6422007C64A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,16 +159,30 @@
 		293D46581ECDC004007C64A9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		293D46591ECDC004007C64A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		296F9EB81ECC64CE0063A255 /* MiAiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiAiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		296F9EBE1ECC64CE0063A255 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		296F9EBF1ECC64CE0063A255 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		296F9ED11ECC64CE0063A255 /* MiAiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppTests.m; sourceTree = "<group>"; };
 		296F9ED71ECC64CE0063A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		296F9EDC1ECC64CE0063A255 /* MiAiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppUITests.m; sourceTree = "<group>"; };
 		296F9EE21ECC64CE0063A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29FEE7621ECE965F00C81B60 /* AppDelegate+AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppService.h"; sourceTree = "<group>"; };
-		29FEE7631ECE965F00C81B60 /* AppDelegate+AppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppService.m"; sourceTree = "<group>"; };
+		29AD6C4B1ED3D51200B0879C /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		29AD6C4C1ED3D51200B0879C /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		29AD6C541ED3E28800B0879C /* HeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderModel.h; sourceTree = "<group>"; };
+		29AD6C551ED3E28800B0879C /* HeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderModel.m; sourceTree = "<group>"; };
+		29AD6C561ED3E28800B0879C /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
+		29AD6C571ED3E28800B0879C /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
+		29AD6C581ED3E28800B0879C /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
+		29AD6C591ED3E28800B0879C /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
+		29AD6C5E1ED3E4D600B0879C /* AppDelegate+AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppService.h"; sourceTree = "<group>"; };
+		29AD6C5F1ED3E4D600B0879C /* AppDelegate+AppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppService.m"; sourceTree = "<group>"; };
+		29AD6C601ED3E4D600B0879C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		29AD6C611ED3E4D600B0879C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		29AD6C651ED41BA100B0879C /* AdPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdPageView.h; sourceTree = "<group>"; };
+		29AD6C661ED41BA100B0879C /* AdPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdPageView.m; sourceTree = "<group>"; };
+		29AD6C691ED41E2100B0879C /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		29AD6C6A1ED41E2100B0879C /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		29AD6C6F1ED41ED200B0879C /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		29AD6C701ED41ED200B0879C /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		29FEE7661ECEC27900C81B60 /* MBProgressHUD+XY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XY.h"; sourceTree = "<group>"; };
 		29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XY.m"; sourceTree = "<group>"; };
 		29FEE76D1ECED1E200C81B60 /* MBHUD_Error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Error@2x.png"; sourceTree = "<group>"; };
@@ -244,28 +253,12 @@
 			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
-		290DE93C1ED306C200A45FF6 /* AdPage */ = {
-			isa = PBXGroup;
-			children = (
-				290DE93D1ED306D000A45FF6 /* AdPageView.h */,
-				290DE93E1ED306D000A45FF6 /* AdPageView.m */,
-			);
-			path = AdPage;
-			sourceTree = "<group>";
-		};
 		293D459C1ECD6422007C64A9 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
 				293D459D1ECD6422007C64A9 /* LaunchScreen.storyboard */,
 			);
 			path = Base.lproj;
-			sourceTree = "<group>";
-		};
-		293D45A61ECD6926007C64A9 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		293D45A71ECD6926007C64A9 /* Define */ = {
@@ -284,8 +277,7 @@
 			children = (
 				290DE9241ED19B7F00A45FF6 /* AppManager.h */,
 				290DE9251ED19B7F00A45FF6 /* AppManager.m */,
-				290DE9271ED2A4B800A45FF6 /* UserManager.h */,
-				290DE9281ED2A4B800A45FF6 /* UserManager.m */,
+				29AD6C681ED41E2100B0879C /* UserManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -296,21 +288,10 @@
 				293D45CC1ECD79FA007C64A9 /* Home(首页) */,
 				293D45D31ECD7A4A007C64A9 /* MakeFriends(交友和许愿树) */,
 				293D45DA1ECD7B46007C64A9 /* Message(消息页) */,
-				293D45B41ECD69D8007C64A9 /* Mine(个人页) */,
+				293D45B41ECD69D8007C64A9 /* Mine(我的页) */,
 				293D45EC1ECDA36E007C64A9 /* Login(登录相关) */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		293D45AA1ECD6926007C64A9 /* NetWork */ = {
-			isa = PBXGroup;
-			children = (
-				290DE91C1ED198E500A45FF6 /* PPNetworkHelper.h */,
-				290DE91D1ED198E500A45FF6 /* PPNetworkHelper.m */,
-				290DE91A1ED198E500A45FF6 /* PPNetworkCache.h */,
-				290DE91B1ED198E500A45FF6 /* PPNetworkCache.m */,
-			);
-			path = NetWork;
 			sourceTree = "<group>";
 		};
 		293D45AB1ECD6926007C64A9 /* Resource */ = {
@@ -332,13 +313,17 @@
 		293D45AD1ECD6926007C64A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				29AD6C641ED41BA100B0879C /* AdPage */,
+				29AD6C531ED3E28800B0879C /* NetWork */,
+				29AD6C521ED3E28800B0879C /* Category */,
+				29AD6C4A1ED3D51200B0879C /* OpenUDID */,
 				290DE9201ED19B6B00A45FF6 /* AES */,
 				29FEE7651ECEC25C00C81B60 /* MBProgressHUD */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		293D45B41ECD69D8007C64A9 /* Mine(个人页) */ = {
+		293D45B41ECD69D8007C64A9 /* Mine(我的页) */ = {
 			isa = PBXGroup;
 			children = (
 				293D45B51ECD69D8007C64A9 /* Model */,
@@ -347,7 +332,7 @@
 				293D45B71ECD69D8007C64A9 /* Service */,
 				293D45B61ECD69D8007C64A9 /* Resource */,
 			);
-			name = "Mine(个人页)";
+			name = "Mine(我的页)";
 			path = Mine;
 			sourceTree = "<group>";
 		};
@@ -541,9 +526,8 @@
 		293D45E11ECD8B72007C64A9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				290DE93C1ED306C200A45FF6 /* AdPage */,
-				293D45F21ECDA435007C64A9 /* RootViewController */,
 				293D45FE1ECDA56A007C64A9 /* TabbarController */,
+				293D45F21ECDA435007C64A9 /* RootViewController */,
 				293D46021ECDA9E4007C64A9 /* NavigationController */,
 				293D45F71ECDA49F007C64A9 /* WebViewController */,
 			);
@@ -708,16 +692,11 @@
 		296F9EBA1ECC64CE0063A255 /* MiAiApp */ = {
 			isa = PBXGroup;
 			children = (
-				296F9EBE1ECC64CE0063A255 /* AppDelegate.h */,
-				296F9EBF1ECC64CE0063A255 /* AppDelegate.m */,
-				29FEE7621ECE965F00C81B60 /* AppDelegate+AppService.h */,
-				29FEE7631ECE965F00C81B60 /* AppDelegate+AppService.m */,
+				29AD6C5D1ED3E4D600B0879C /* AppDelegate */,
 				293D45A91ECD6926007C64A9 /* Modules */,
 				293D45A81ECD6926007C64A9 /* Manager */,
-				293D45AA1ECD6926007C64A9 /* NetWork */,
 				293D45AD1ECD6926007C64A9 /* Utils */,
 				293D45E11ECD8B72007C64A9 /* Base */,
-				293D45A61ECD6926007C64A9 /* Category */,
 				293D45AC1ECD6926007C64A9 /* ThridParty */,
 				293D45A71ECD6926007C64A9 /* Define */,
 				293D45AB1ECD6926007C64A9 /* Resource */,
@@ -755,6 +734,66 @@
 				296F9EE21ECC64CE0063A255 /* Info.plist */,
 			);
 			path = MiAiAppUITests;
+			sourceTree = "<group>";
+		};
+		29AD6C4A1ED3D51200B0879C /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				29AD6C4B1ED3D51200B0879C /* OpenUDID.h */,
+				29AD6C4C1ED3D51200B0879C /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		29AD6C521ED3E28800B0879C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		29AD6C531ED3E28800B0879C /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				29AD6C541ED3E28800B0879C /* HeaderModel.h */,
+				29AD6C551ED3E28800B0879C /* HeaderModel.m */,
+				29AD6C561ED3E28800B0879C /* PPNetworkCache.h */,
+				29AD6C571ED3E28800B0879C /* PPNetworkCache.m */,
+				29AD6C581ED3E28800B0879C /* PPNetworkHelper.h */,
+				29AD6C591ED3E28800B0879C /* PPNetworkHelper.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		29AD6C5D1ED3E4D600B0879C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				29AD6C601ED3E4D600B0879C /* AppDelegate.h */,
+				29AD6C611ED3E4D600B0879C /* AppDelegate.m */,
+				29AD6C5E1ED3E4D600B0879C /* AppDelegate+AppService.h */,
+				29AD6C5F1ED3E4D600B0879C /* AppDelegate+AppService.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		29AD6C641ED41BA100B0879C /* AdPage */ = {
+			isa = PBXGroup;
+			children = (
+				29AD6C651ED41BA100B0879C /* AdPageView.h */,
+				29AD6C661ED41BA100B0879C /* AdPageView.m */,
+			);
+			path = AdPage;
+			sourceTree = "<group>";
+		};
+		29AD6C681ED41E2100B0879C /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				29AD6C691ED41E2100B0879C /* UserManager.h */,
+				29AD6C6A1ED41E2100B0879C /* UserManager.m */,
+				29AD6C6F1ED41ED200B0879C /* UserInfo.h */,
+				29AD6C701ED41ED200B0879C /* UserInfo.m */,
+			);
+			path = UserManager;
 			sourceTree = "<group>";
 		};
 		29FEE7651ECEC25C00C81B60 /* MBProgressHUD */ = {
@@ -854,6 +893,7 @@
 		296F9EB01ECC64CE0063A255 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XY;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "徐阳";
 				TargetAttributes = {
@@ -1007,27 +1047,30 @@
 			files = (
 				290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */,
 				293D45A41ECD6422007C64A9 /* main.m in Sources */,
-				290DE9291ED2A4B800A45FF6 /* UserManager.m in Sources */,
+				29AD6C631ED3E4D600B0879C /* AppDelegate.m in Sources */,
 				290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */,
+				29AD6C621ED3E4D600B0879C /* AppDelegate+AppService.m in Sources */,
 				293D46051ECDAA02007C64A9 /* RootNavigationController.m in Sources */,
-				290DE91F1ED198E500A45FF6 /* PPNetworkHelper.m in Sources */,
+				29AD6C5B1ED3E28800B0879C /* PPNetworkCache.m in Sources */,
 				293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */,
 				293D46011ECDA56A007C64A9 /* MainTabBarController.m in Sources */,
 				290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */,
-				290DE93F1ED306D000A45FF6 /* AdPageView.m in Sources */,
+				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
+				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
 				293D46181ECDB305007C64A9 /* TabBar.m in Sources */,
-				296F9EC01ECC64CE0063A255 /* AppDelegate.m in Sources */,
-				29FEE7641ECE965F00C81B60 /* AppDelegate+AppService.m in Sources */,
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
 				293D46081ECDAEAD007C64A9 /* HomeViewController.m in Sources */,
 				290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */,
 				290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */,
 				290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */,
-				290DE91E1ED198E500A45FF6 /* PPNetworkCache.m in Sources */,
+				29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */,
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
+				29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */,
 				293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */,
 				29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */,
+				29AD6C5C1ED3E28800B0879C /* PPNetworkHelper.m in Sources */,
 				293D460B1ECDAEC6007C64A9 /* MakeFriendsViewController.m in Sources */,
+				29AD6C5A1ED3E28800B0879C /* HeaderModel.m in Sources */,
 				293D461B1ECDB32D007C64A9 /* TabBarButton.m in Sources */,
 				293D45FA1ECDA4D8007C64A9 /* RootWebViewController.m in Sources */,
 			);

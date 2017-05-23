@@ -74,8 +74,6 @@
     self.title = @"";
     self.view.backgroundColor = [UIColor whiteColor];
     
- 
-    self.navigationItem.leftItemsSupplementBackButton = YES;
     
     self.webView.delegate = self.progressProxy;
     [self.view addSubview:self.webView];
@@ -228,23 +226,12 @@
         spaceButtonItem.width = -6.5;
         
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-//        [self.navigationItem setLeftBarButtonItems:@[self.closeButtonItem] animated:NO];
-        if (!self.navigationItem.hidesBackButton) {
-            [self addNavigationItemWithTitles:@[@"关闭"] isLeft:YES target:self action:@selector(leftBtnClick:) tags:@[@2001]];
-        }else{
-            [self addNavigationItemWithTitles:@[@"返回",@"关闭"] isLeft:YES target:self action:@selector(leftBtnClick:) tags:@[@2000,@2001]];
-        }
+
+        [self addNavigationItemWithTitles:@[@"返回",@"关闭"] isLeft:YES target:self action:@selector(leftBtnClick:) tags:@[@2000,@2001]];
         
-        
-        //弃用customBackBarItem，使用原生backButtonItem
-//        [self.navigationItem setLeftBarButtonItems:@[spaceButtonItem,self.customBackBarItem,self.closeButtonItem] animated:NO];
     }else{
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        if (!self.navigationItem.hidesBackButton) {
-            [self.navigationItem setLeftBarButtonItems:nil];
-        }else{
-            [self setIsShowLiftBack:YES];
-        }
+        [self addNavigationItemWithTitles:@[@"返回"] isLeft:YES target:self action:@selector(leftBtnClick:) tags:@[@2001]];
     }
     
     
@@ -325,9 +312,9 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self updateNavigationItems];
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    if (theTitle.length > 10) {
-        theTitle = [[theTitle substringToIndex:9] stringByAppendingString:@"…"];
-    }
+//    if (theTitle.length > 10) {
+//        theTitle = [[theTitle substringToIndex:9] stringByAppendingString:@"…"];
+//    }
     self.title = theTitle;
 //    [self.progressView setProgress:1 animated:NO];
 }
