@@ -19,27 +19,7 @@
 @property (nonatomic, strong) TabBar *TabBar;
 
 /**
- *  TabBar item title color
- */
-@property (nonatomic, strong) UIColor *itemTitleColor;
-
-/**
- *  TabBar selected item title color
- */
-@property (nonatomic, strong) UIColor *selectedItemTitleColor;
-
-/**
- *  TabBar item title font
- */
-@property (nonatomic, strong) UIFont *itemTitleFont;
-
-/**
- *  TabBar item's badge title font
- */
-@property (nonatomic, strong) UIFont *badgeTitleFont;
-
-/**
- *  TabBar item image ratio
+ * tabbar 图片占比，默认 0.7f， 如果是1 就没有文字
  */
 @property (nonatomic, assign) CGFloat itemImageRatio;
 

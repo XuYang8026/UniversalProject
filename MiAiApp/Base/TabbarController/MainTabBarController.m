@@ -23,14 +23,6 @@ PropertyNSMutableArray(VCS);//tabbar root VC
 
 @implementation MainTabBarController
 
-- (void)loadView {
-    
-    [super loadView];
-    
-    self.itemImageRatio = 0.70f;
-}
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +33,6 @@ PropertyNSMutableArray(VCS);//tabbar root VC
     [self setUpAllChildViewController];
 
 }
-//取出系统自带的tabbar并把里面的按钮删除掉
 
 - (void)viewWillAppear:(BOOL)animated {
     
@@ -50,17 +41,7 @@ PropertyNSMutableArray(VCS);//tabbar root VC
     [self removeOriginControls];
 }
 
-- (void)removeOriginControls {
-    
-    [self.tabBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * obj, NSUInteger idx, BOOL * stop) {
-        
-        if ([obj isKindOfClass:[UIControl class]]) {
-            
-            [obj removeFromSuperview];
-        }
-    }];
-}
-
+#pragma mark ————— 初始化TabBar —————
 -(void)setUpTabBar{
     [self.tabBar addSubview:({
         
@@ -72,6 +53,7 @@ PropertyNSMutableArray(VCS);//tabbar root VC
     })];
     
 }
+#pragma mark - ——————— 初始化VC ————————
 -(void)setUpAllChildViewController{
     _VCS = @[].mutableCopy;
     HomeViewController *homeVC = [[HomeViewController alloc]init];
@@ -103,13 +85,14 @@ PropertyNSMutableArray(VCS);//tabbar root VC
     
 }
 
+#pragma mark ————— 统一设置tabBarItem属性并添加到TabBar —————
 - (void)setViewControllers:(NSArray *)viewControllers {
     
-    self.TabBar.badgeTitleFont         = self.badgeTitleFont;
-    self.TabBar.itemTitleFont          = self.itemTitleFont;
-    self.TabBar.itemImageRatio         = self.itemImageRatio;
-    self.TabBar.itemTitleColor         = self.itemTitleColor;
-    self.TabBar.selectedItemTitleColor = self.selectedItemTitleColor;
+    self.TabBar.badgeTitleFont         = SYSTEMFONT(11.0f);
+    self.TabBar.itemTitleFont          = SYSTEMFONT(10.0f);
+    self.TabBar.itemImageRatio         = self.itemImageRatio == 0 ? 0.7 : self.itemImageRatio;
+    self.TabBar.itemTitleColor         = KBlackColor;
+    self.TabBar.selectedItemTitleColor = CNavBgColor;
     
     self.TabBar.tabBarItemCount = viewControllers.count;
     
@@ -126,6 +109,7 @@ PropertyNSMutableArray(VCS);//tabbar root VC
     }];
 }
 
+#pragma mark ————— 选中某个tab —————
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
     
     [super setSelectedIndex:selectedIndex];
@@ -135,47 +119,24 @@ PropertyNSMutableArray(VCS);//tabbar root VC
     self.TabBar.selectedItem.selected = YES;
 }
 
-#pragma mark - XXTabBarDelegate Method
+#pragma mark ————— 取出系统自带的tabbar并把里面的按钮删除掉 —————
+- (void)removeOriginControls {
+    
+    [self.tabBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * obj, NSUInteger idx, BOOL * stop) {
+        
+        if ([obj isKindOfClass:[UIControl class]]) {
+            
+            [obj removeFromSuperview];
+        }
+    }];
+}
+
+
+#pragma mark - TabBarDelegate Method
 
 - (void)tabBar:(TabBar *)tabBarView didSelectedItemFrom:(NSInteger)from to:(NSInteger)to {
     
     self.selectedIndex = to;
-}
-
-- (UIColor *)itemTitleColor {
-    
-    if (!_itemTitleColor) {
-        
-        _itemTitleColor = KBlackColor;
-    }
-    return _itemTitleColor;
-}
-
-- (UIColor *)selectedItemTitleColor {
-    
-    if (!_selectedItemTitleColor) {
-        
-        _selectedItemTitleColor = CNavBgColor;
-    }
-    return _selectedItemTitleColor;
-}
-
-- (UIFont *)itemTitleFont {
-    
-    if (!_itemTitleFont) {
-        
-        _itemTitleFont = [UIFont systemFontOfSize:10.0f];
-    }
-    return _itemTitleFont;
-}
-
-- (UIFont *)badgeTitleFont {
-    
-    if (!_badgeTitleFont) {
-        
-        _badgeTitleFont = [UIFont systemFontOfSize:11.0f];
-    }
-    return _badgeTitleFont;
 }
 
 - (void)didReceiveMemoryWarning {
