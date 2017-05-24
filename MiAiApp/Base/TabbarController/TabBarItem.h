@@ -1,22 +1,24 @@
 //
-//  MainTabBarController.h
+//  TabBarItem.h
 //  MiAiApp
 //
-//  Created by 徐阳 on 2017/5/18.
+//  Created by 徐阳 on 2017/5/24.
 //  Copyright © 2017年 徐阳. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "TabBar.h"
-/**
- 底部 TabBar 控制器
- */
-@interface MainTabBarController : UITabBarController
+
+@interface TabBarItem : UIButton
 
 /**
- *  TabBar
+ *  TabBar item
  */
-@property (nonatomic, strong) TabBar *TabBar;
+@property (nonatomic, strong) UITabBarItem *tabBarItem;
+
+/**
+ *  TabBar's item count
+ */
+@property (nonatomic, assign) NSInteger tabBarItemCount;
 
 /**
  *  TabBar item title color
@@ -44,9 +46,8 @@
 @property (nonatomic, assign) CGFloat itemImageRatio;
 
 /**
- *  System will display the original controls so you should call this line when you change any tabBar item, like: `- popToRootViewController`, `someViewController.tabBarItem.title = xx`, etc.
- *  Remove origin controls
+ *  TabBar item init func
  */
-- (void)removeOriginControls;
+- (instancetype)initWithItemImageRatio:(CGFloat)itemImageRatio;
 
 @end

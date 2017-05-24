@@ -46,6 +46,7 @@
             break;
         case 1002:
         {
+            [kAppDelegate.mainTabBar.selectedViewController.tabBarItem setBadgeValue:@"10"];
             RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.hao123.com"]]];
             
             //    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];

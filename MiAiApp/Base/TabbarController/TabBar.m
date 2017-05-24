@@ -7,74 +7,74 @@
 //
 
 #import "TabBar.h"
+#import "TabBarItem.h"
 
 @implementation TabBar
 
--(void)addTabBarButtonWithItem:(UITabBarItem *)item{
-    //1.创建按钮
-    TabBarButton *button = [[TabBarButton alloc]init];
-    [self addSubview:button];
-    /*
-     [button setTitle:itme.title forState:UIControlStateNormal];
-     [button setImage:itme.image forState:UIControlStateNormal];
-     [button setImage:itme.selectedImage forState:UIControlStateSelected];
-     [button setBackgroundImage:[UIImage imageWithName:@"tabbar_slider"] forState:UIControlStateSelected];
-     */
-    //设置数据把buttonitem模型传给button
-    button.item = item;
+- (NSMutableArray *)tabBarItems {
     
-    //监听点击button
-    [button addTarget:self  action:@selector(buttonClick:) forControlEvents:UIControlEventTouchDown];
+    if (_tabBarItems == nil) {
+        
+        _tabBarItems = [[NSMutableArray alloc] init];
+    }
+    return _tabBarItems;
+}
+
+- (void)addTabBarItem:(UITabBarItem *)item {
     
-    //默认选中
-    if (self.subviews.count == 1) {
-        [self buttonClick:button];
+    TabBarItem *tabBarItem = [[TabBarItem alloc] initWithItemImageRatio:self.itemImageRatio];
+    
+    tabBarItem.badgeTitleFont         = self.badgeTitleFont;
+    tabBarItem.itemTitleFont          = self.itemTitleFont;
+    tabBarItem.itemTitleColor         = self.itemTitleColor;
+    tabBarItem.selectedItemTitleColor = self.selectedItemTitleColor;
+    
+    tabBarItem.tabBarItemCount = self.tabBarItemCount;
+    
+    tabBarItem.tabBarItem = item;
+    
+    [tabBarItem addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchDown];
+    
+    [self addSubview:tabBarItem];
+    
+    [self.tabBarItems addObject:tabBarItem];
+    
+    if (self.tabBarItems.count == 1) {
+        
+        [self buttonClick:tabBarItem];
+    }
+}
+
+- (void)buttonClick:(TabBarItem *)tabBarItem {
+    
+    if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedItemFrom:to:)]) {
+        
+        [self.delegate tabBar:self didSelectedItemFrom:self.selectedItem.tabBarItem.tag to:tabBarItem.tag];
     }
     
-    
+    self.selectedItem.selected = NO;
+    self.selectedItem = tabBarItem;
+    self.selectedItem.selected = YES;
 }
 
-#pragma mark ————— 根据index 选中button —————
--(void)selectBtnWithIndex:(NSInteger)index{
-    TabBarButton *targetBtn = (TabBarButton*)[self viewWithTag:100+index];
-    [self buttonClick:targetBtn];
-}
-
-#pragma mark ————— button选中事件 —————
--(void)buttonClick:(TabBarButton*)button{
+- (void)layoutSubviews {
     
-    if ([self.delegate respondsToSelector:@selector(tabBar:didselectedButtonFrom:to:)]
-        )
-    {
-        [self.delegate tabBar:self didselectedButtonFrom:(int)self.selectedButton.tag-100 to:(int)button.tag-100];
-    }
-    self.selectedButton.selected = NO;
-    button.selected = YES;
-    self.selectedButton = button;
-    self.selectedIndex = button.tag-100;
-    
-}
-
-#pragma mark ————— 布局 —————
--(void)layoutSubviews{
     [super layoutSubviews];
     
-    CGFloat buttonW = self.frame.size.width/ self.subviews.count ;
-    CGFloat buttonH = self.frame.size.height;
-    CGFloat buttonY = 0 ;
+    CGFloat w = self.frame.size.width;
+    CGFloat h = self.frame.size.height;
     
-    for ( int index = 0; index < self.subviews.count; index++) {
-        //1.取出按钮
-        TabBarButton *button = self.subviews[index];
+    int count = (int)self.tabBarItems.count;
+    CGFloat itemY = 0;
+    CGFloat itemW = w / self.subviews.count;
+    CGFloat itemH = h;
+    
+    for (int index = 0; index < count; index++) {
         
-        //2. 设置按钮的frame
-        
-        CGFloat buttonX = index * buttonW;
-        
-        button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH) ;
-        
-        //绑定tag;
-        button.tag = 100+index;
+        TabBarItem *tabBarItem = self.tabBarItems[index];
+        tabBarItem.tag = index;
+        CGFloat itemX = index * itemW;
+        tabBarItem.frame = CGRectMake(itemX, itemY, itemW, itemH);
     }
 }
 

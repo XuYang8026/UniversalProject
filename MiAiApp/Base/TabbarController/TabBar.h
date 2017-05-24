@@ -7,29 +7,67 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TabBarButton.h"
 
-@class TabBar;
+@class TabBar, TabBarItem;
 
 //给每个按钮定义协议 与 方法
-@protocol tabbarDelegate <NSObject>
+@protocol TabBarDelegate <NSObject>
 
 @optional
--(void)tabBar:(TabBar * )tabBar didselectedButtonFrom:(int)from to:(int)to;
+- (void)tabBar:(TabBar *)tabBarView didSelectedItemFrom:(NSInteger)from to:(NSInteger)to;
 
 @end
 
 @interface TabBar : UIView
-@property(nonatomic , weak) id <tabbarDelegate> delegate;
 
-@property (weak ,nonatomic)TabBarButton *selectedButton;
-@property (nonatomic, assign) NSInteger selectedIndex;
-//根据序号选中tabbar button 0开始
--(void)selectBtnWithIndex:(NSInteger)index;
+/**
+ *  TabBar item title color
+ */
+@property (nonatomic, strong) UIColor *itemTitleColor;
 
-//给自定义的tabbar添加按钮
--(void)addTabBarButtonWithItem:(UITabBarItem *)itme;
+/**
+ *  TabBar selected item title color
+ */
+@property (nonatomic, strong) UIColor *selectedItemTitleColor;
 
+/**
+ *  TabBar item title font
+ */
+@property (nonatomic, strong) UIFont *itemTitleFont;
 
+/**
+ *  TabBar item's badge title font
+ */
+@property (nonatomic, strong) UIFont *badgeTitleFont;
+
+/**
+ *  TabBar item image ratio
+ */
+@property (nonatomic, assign) CGFloat itemImageRatio;
+
+/**
+ *  TabBar's item count
+ */
+@property (nonatomic, assign) NSInteger tabBarItemCount;
+
+/**
+ *  TabBar's selected item
+ */
+@property (nonatomic, strong) TabBarItem *selectedItem;
+
+/**
+ *  TabBar items array
+ */
+@property (nonatomic, strong) NSMutableArray *tabBarItems;
+
+/**
+ *  TabBar delegate
+ */
+@property (nonatomic, weak) id<TabBarDelegate> delegate;
+
+/**
+ *  Add tabBar item
+ */
+- (void)addTabBarItem:(UITabBarItem *)item;
 
 @end

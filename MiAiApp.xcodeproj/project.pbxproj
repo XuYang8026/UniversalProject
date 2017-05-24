@@ -26,7 +26,6 @@
 		293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D460D1ECDAEDC007C64A9 /* MsgViewController.m */; };
 		293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46101ECDAEED007C64A9 /* MineViewController.m */; };
 		293D46181ECDB305007C64A9 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46171ECDB305007C64A9 /* TabBar.m */; };
-		293D461B1ECDB32D007C64A9 /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D461A1ECDB32D007C64A9 /* TabBarButton.m */; };
 		293D46401ECDBB63007C64A9 /* icon_tabbar_discovery.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D46291ECDBB63007C64A9 /* icon_tabbar_discovery.png */; };
 		293D46411ECDBB63007C64A9 /* icon_tabbar_discovery_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D462A1ECDBB63007C64A9 /* icon_tabbar_discovery_selected.png */; };
 		293D46421ECDBB63007C64A9 /* icon_tabbar_homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D462B1ECDBB63007C64A9 /* icon_tabbar_homepage.png */; };
@@ -51,6 +50,9 @@
 		293D46551ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D463E1ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png */; };
 		293D46561ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D463F1ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png */; };
 		293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46591ECDC004007C64A9 /* LoginViewController.m */; };
+		294A68081ED58A3700AC382A /* TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A68071ED58A3700AC382A /* TabBarBadge.m */; };
+		294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A680A1ED58A7300AC382A /* TabBarItem.m */; };
+		294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */; };
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
 		29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C4C1ED3D51200B0879C /* OpenUDID.m */; };
@@ -131,8 +133,6 @@
 		293D46101ECDAEED007C64A9 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		293D46161ECDB305007C64A9 /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
 		293D46171ECDB305007C64A9 /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
-		293D46191ECDB32D007C64A9 /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
-		293D461A1ECDB32D007C64A9 /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
 		293D46291ECDBB63007C64A9 /* icon_tabbar_discovery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tabbar_discovery.png; sourceTree = "<group>"; };
 		293D462A1ECDBB63007C64A9 /* icon_tabbar_discovery_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tabbar_discovery_selected.png; sourceTree = "<group>"; };
 		293D462B1ECDBB63007C64A9 /* icon_tabbar_homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tabbar_homepage.png; sourceTree = "<group>"; };
@@ -158,6 +158,11 @@
 		293D463F1ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_onsite_selected@2x.png"; sourceTree = "<group>"; };
 		293D46581ECDC004007C64A9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		293D46591ECDC004007C64A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		294A68061ED58A3700AC382A /* TabBarBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarBadge.h; sourceTree = "<group>"; };
+		294A68071ED58A3700AC382A /* TabBarBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarBadge.m; sourceTree = "<group>"; };
+		294A68091ED58A7300AC382A /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
+		294A680A1ED58A7300AC382A /* TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
+		294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LCTabBarBadge@2x.png"; sourceTree = "<group>"; };
 		296F9EB81ECC64CE0063A255 /* MiAiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiAiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9ED11ECC64CE0063A255 /* MiAiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppTests.m; sourceTree = "<group>"; };
@@ -631,8 +636,10 @@
 			children = (
 				293D46161ECDB305007C64A9 /* TabBar.h */,
 				293D46171ECDB305007C64A9 /* TabBar.m */,
-				293D46191ECDB32D007C64A9 /* TabBarButton.h */,
-				293D461A1ECDB32D007C64A9 /* TabBarButton.m */,
+				294A68091ED58A7300AC382A /* TabBarItem.h */,
+				294A680A1ED58A7300AC382A /* TabBarItem.m */,
+				294A68061ED58A3700AC382A /* TabBarBadge.h */,
+				294A68071ED58A3700AC382A /* TabBarBadge.m */,
 			);
 			name = TabBarView;
 			sourceTree = "<group>";
@@ -640,6 +647,7 @@
 		293D46281ECDBB63007C64A9 /* tabBar */ = {
 			isa = PBXGroup;
 			children = (
+				294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */,
 				293D46291ECDBB63007C64A9 /* icon_tabbar_discovery.png */,
 				293D462A1ECDBB63007C64A9 /* icon_tabbar_discovery_selected.png */,
 				293D462B1ECDBB63007C64A9 /* icon_tabbar_homepage.png */,
@@ -755,12 +763,12 @@
 		29AD6C531ED3E28800B0879C /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				29AD6C541ED3E28800B0879C /* HeaderModel.h */,
-				29AD6C551ED3E28800B0879C /* HeaderModel.m */,
-				29AD6C561ED3E28800B0879C /* PPNetworkCache.h */,
-				29AD6C571ED3E28800B0879C /* PPNetworkCache.m */,
 				29AD6C581ED3E28800B0879C /* PPNetworkHelper.h */,
 				29AD6C591ED3E28800B0879C /* PPNetworkHelper.m */,
+				29AD6C561ED3E28800B0879C /* PPNetworkCache.h */,
+				29AD6C571ED3E28800B0879C /* PPNetworkCache.m */,
+				29AD6C541ED3E28800B0879C /* HeaderModel.h */,
+				29AD6C551ED3E28800B0879C /* HeaderModel.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -949,6 +957,7 @@
 				293D464E1ECDBB63007C64A9 /* icon_tabbar_misc.png in Resources */,
 				293D45A11ECD6422007C64A9 /* Assets.xcassets in Resources */,
 				293D464A1ECDBB63007C64A9 /* icon_tabbar_mine.png in Resources */,
+				294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */,
 				293D46551ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png in Resources */,
 				293D464C1ECDBB63007C64A9 /* icon_tabbar_mine_selected.png in Resources */,
 				293D46471ECDBB63007C64A9 /* icon_tabbar_merchant_normal@2x.png in Resources */,
@@ -1055,10 +1064,12 @@
 				293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */,
 				293D46011ECDA56A007C64A9 /* MainTabBarController.m in Sources */,
 				290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */,
+				294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */,
 				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
 				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
 				293D46181ECDB305007C64A9 /* TabBar.m in Sources */,
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
+				294A68081ED58A3700AC382A /* TabBarBadge.m in Sources */,
 				293D46081ECDAEAD007C64A9 /* HomeViewController.m in Sources */,
 				290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */,
 				290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */,
@@ -1071,7 +1082,6 @@
 				29AD6C5C1ED3E28800B0879C /* PPNetworkHelper.m in Sources */,
 				293D460B1ECDAEC6007C64A9 /* MakeFriendsViewController.m in Sources */,
 				29AD6C5A1ED3E28800B0879C /* HeaderModel.m in Sources */,
-				293D461B1ECDB32D007C64A9 /* TabBarButton.m in Sources */,
 				293D45FA1ECDA4D8007C64A9 /* RootWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
