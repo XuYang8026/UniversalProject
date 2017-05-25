@@ -49,14 +49,14 @@
         case 1002:
         {
             [kAppDelegate.mainTabBar.selectedViewController.tabBarItem setBadgeValue:@"10"];
-            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.hao123.com"]]];
+            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:@"http://www.hao123.com"]];
             
             //    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
             [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
         }
             break;
         case 1003:{
-            RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://baidu.com"]];
+            RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:@"http://baidu.com"];
             [self.navigationController pushViewController:webView animated:YES];
         }
             break;
