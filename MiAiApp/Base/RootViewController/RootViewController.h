@@ -50,6 +50,10 @@
  */
 @property (nonatomic, assign) BOOL isShowLiftBack;
 
+/**
+ 是否隐藏导航栏
+ */
+@property (nonatomic, assign) BOOL isHidenNaviBar;
 
 /**
  导航栏添加文本按钮

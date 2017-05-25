@@ -67,6 +67,18 @@
     [super pushViewController:viewController animated:animated];
 }
 
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if ([viewController isKindOfClass:[RootViewController class]]) {
+        RootViewController * vc = (RootViewController *)viewController;
+        if (vc.isHidenNaviBar) {
+            [vc.navigationController setNavigationBarHidden:YES animated:animated];
+        }else{
+            [vc.navigationController setNavigationBarHidden:NO animated:animated];
+        }
+    }
+}
+
 //设置样式
 - (UIStatusBarStyle)preferredStatusBarStyle
 {

@@ -136,6 +136,7 @@
 - (void)addNavigationItemWithTitles:(NSArray *)titles isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags
 {
     NSMutableArray * items = [[NSMutableArray alloc] init];
+    
     NSInteger i = 0;
     for (NSString * title in titles) {
         UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
