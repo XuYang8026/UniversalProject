@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.isShowLiftBack = NO;
+    self.isHidenNaviBar = YES;
     
     UILabel * lbl = [UILabel new];
     lbl.font = SYSTEMFONT(30);
@@ -25,7 +26,12 @@
     lbl.textColor = KBlackColor;
     lbl.frame = self.view.bounds;
     [self.view addSubview:lbl];
-    
+    kWeakSelf(self)
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithActionBlock:^(id  _Nonnull sender) {
+        [weakself goLoginWithPush];
+    }];
+    [self.view addGestureRecognizer:tap];
+
     [self addNavigationItemWithTitles:@[@"登录"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
 }
 -(void)naviBtnClick:(UIButton *)btn{
