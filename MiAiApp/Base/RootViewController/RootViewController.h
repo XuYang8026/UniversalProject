@@ -25,6 +25,10 @@
 - (void)goLoginWithPush;
 
 /**
+ 分享
+ */
+-(void)share;
+/**
  *  显示没有数据页面
  */
 -(void)showNoDataImage;

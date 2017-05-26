@@ -34,7 +34,8 @@
 -(void)naviBtnClick:(UIButton *)btn{
     switch (btn.tag) {
         case 1000:
-            [self goLogin];
+            [self share];
+//            [self goLogin];
             break;
         case 1001:
         {
@@ -60,60 +61,6 @@
             break;
     }
     
-}
--(void)addSnowBtn{
-    NSMutableAttributedString *text = [NSMutableAttributedString new];
-    {
-        NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:@"全屏雪花"];
-        one.font = [UIFont boldSystemFontOfSize:30];
-        one.color = [UIColor whiteColor];
-        
-        YYTextShadow *shadow = [YYTextShadow new];
-        shadow.color = [UIColor colorWithWhite:0.000 alpha:0.490];
-        shadow.offset = CGSizeMake(0, 1);
-        shadow.radius = 5;
-        one.textShadow = shadow;
-        
-        YYTextShadow *shadow0 = [YYTextShadow new];
-        shadow0.color = [UIColor colorWithWhite:0.000 alpha:0.20];
-        shadow0.offset = CGSizeMake(0, -1);
-        shadow0.radius = 1.5;
-        YYTextShadow *shadow1 = [YYTextShadow new];
-        shadow1.color = [UIColor colorWithWhite:1 alpha:0.99];
-        shadow1.offset = CGSizeMake(0, 1);
-        shadow1.radius = 1.5;
-        shadow0.subShadow = shadow1;
-        
-        YYTextShadow *innerShadow0 = [YYTextShadow new];
-        innerShadow0.color = [UIColor colorWithRed:0.851 green:0.311 blue:0.000 alpha:0.780];
-        innerShadow0.offset = CGSizeMake(0, 1);
-        innerShadow0.radius = 1;
-        
-        YYTextHighlight *highlight = [YYTextHighlight new];
-        [highlight setColor:[UIColor colorWithRed:1.000 green:0.795 blue:0.014 alpha:1.000]];
-        [highlight setShadow:shadow0];
-        [highlight setInnerShadow:innerShadow0];
-        [one setTextHighlight:highlight range:one.rangeOfAll];
-        
-        [text appendAttributedString:one];
-    }
-    
-    YYLabel *snowBtn = [[YYLabel alloc] initWithFrame:CGRectMake(0, 200, 200, 30)];
-    snowBtn.attributedText = text;
-    snowBtn.textAlignment = NSTextAlignmentCenter;
-    snowBtn.textVerticalAlignment = YYTextVerticalAlignmentCenter;
-    snowBtn.centerX = KScreenWidth/2;
-    
-    
-    kWeakSelf(self);
-    snowBtn.textTapAction = ^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
-        [MBProgressHUD showTopTipMessage:@"雪花"];
-        EmitterViewController *emitterVC = [[EmitterViewController alloc] init];
-        emitterVC.animation_type = 1;
-        [weakself.navigationController pushViewController:emitterVC animated:YES];
-    };
-    
-    [self.view addSubview:snowBtn];
 }
 #pragma mark ————— 下雨 —————
 -(void)addrainBtn:(NSInteger) type top:(float)top{
