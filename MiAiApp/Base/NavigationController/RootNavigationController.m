@@ -79,10 +79,14 @@
     }
 }
 
-//设置样式
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
+////设置样式
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleLightContent;
+//}
+
+-(UIViewController *)childViewControllerForStatusBarStyle{
+    return self.topViewController;
 }
 
 - (void)didReceiveMemoryWarning {

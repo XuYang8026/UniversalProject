@@ -1,0 +1,14 @@
+//
+//  EmitterViewController.h
+//  MiAiApp
+//
+//  Created by 徐阳 on 2017/5/25.
+//  Copyright © 2017年 徐阳. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface EmitterViewController : RootViewController
+
+PropertyLongLong(animation_type);//1 雪花，2雨，3火焰
+@end

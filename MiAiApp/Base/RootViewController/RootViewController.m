@@ -13,16 +13,39 @@
 @interface RootViewController ()
 
 @property (nonatomic,strong) UIImageView* noDataView;
+
 @end
 
 @implementation RootViewController
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+//动态更新状态栏颜色
+-(void)setStatusBarStyle:(UIStatusBarStyle)StatusBarStyle{
+    _StatusBarStyle=StatusBarStyle;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =KWhiteColor;
     //是否显示返回按钮
     self.isShowLiftBack = YES;
+    self.StatusBarStyle = UIStatusBarStyleLightContent;
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+}
+
 #pragma mark ————— 跳转登录界面 —————
 - (void)goLogin
 {

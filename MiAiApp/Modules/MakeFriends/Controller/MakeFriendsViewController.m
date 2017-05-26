@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.isShowLiftBack = NO;
     self.isHidenNaviBar = YES;
+    self.StatusBarStyle = UIStatusBarStyleDefault;
     
     UILabel * lbl = [UILabel new];
     lbl.font = SYSTEMFONT(30);
@@ -29,6 +30,7 @@
     kWeakSelf(self)
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithActionBlock:^(id  _Nonnull sender) {
         [weakself goLoginWithPush];
+//        weakself.StatusBarStyle = weakself.StatusBarStyle == 1 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
     }];
     [self.view addGestureRecognizer:tap];
 
@@ -39,6 +41,9 @@
     
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleDefault;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

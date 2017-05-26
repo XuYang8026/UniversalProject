@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate+AppService.h"
+#import <UMSocialCore/UMSocialCore.h>
 
 @implementation AppDelegate (AppService)
 
@@ -24,6 +25,20 @@
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
 }
 
+#pragma mark ————— 友盟 初始化 —————
+-(void)initUMeng{
+    /* 打开调试日志 */
+    [[UMSocialManager defaultManager] openLog:YES];
+    
+    /* 设置友盟appkey */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:UMengKey];
+    
+    [self configUSharePlatforms];
+}
+#pragma mark ————— 配置第三方 —————
+-(void)configUSharePlatforms{
+    
+}
 
 
 + (AppDelegate *)shareAppDelegate{

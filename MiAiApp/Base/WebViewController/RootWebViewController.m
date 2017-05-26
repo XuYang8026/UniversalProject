@@ -31,9 +31,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initWKWebView];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self initProgressView];
+}
 #pragma mark 初始化webview
 -(void)initWKWebView
 {
@@ -54,13 +58,14 @@
     _wkwebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) configuration:configuration];
     [self.view addSubview:_wkwebView];
     _wkwebView.backgroundColor = [UIColor clearColor];
+    
+    _wkwebView.allowsBackForwardNavigationGestures =YES;//打开网页间的 滑动返回
+    if (kiOS9Later) {
+        _wkwebView.allowsLinkPreview = YES;//允许预览链接
+    }
     _wkwebView.UIDelegate = self;
     _wkwebView.navigationDelegate = self;
-    _wkwebView.allowsBackForwardNavigationGestures =YES;//打开网页间的 滑动返回
-    _wkwebView.allowsLinkPreview = YES;//允许预览链接
     [_wkwebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];//注册observer 拿到加载进度
-    
-    [self initProgressView];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:_url]];
     [_wkwebView loadRequest:request];
@@ -75,11 +80,13 @@
     CGRect navigaitonBarBounds = self.navigationController.navigationBar.bounds;
     //        CGRect barFrame = CGRectMake(0, navigaitonBarBounds.size.height - progressBarHeight-0.5, navigaitonBarBounds.size.width, progressBarHeight);
     CGRect barFrame = CGRectMake(0, navigaitonBarBounds.size.height, navigaitonBarBounds.size.width, progressBarHeight);
-    
-    _progressView =[[UIProgressView alloc]initWithFrame:barFrame];
-    _progressView.tintColor = [UIColor colorWithHexString:@"0485d1"];
-    _progressView.trackTintColor = [UIColor clearColor];
-    [self.navigationController.navigationBar addSubview:self.progressView];
+    if (!_progressView || !_progressView.superview) {
+        _progressView =[[UIProgressView alloc]initWithFrame:barFrame];
+        _progressView.tintColor = [UIColor colorWithHexString:@"0485d1"];
+        _progressView.trackTintColor = [UIColor clearColor];
+        
+        [self.navigationController.navigationBar addSubview:self.progressView];
+    }
 }
 //检测进度条，显示完成之后，进度条就隐藏了
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
@@ -150,15 +157,21 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [self.progressView removeFromSuperview];
-    [self.wkwebView removeObserver:self forKeyPath:@"estimatedProgress"];
-    self.wkwebView.UIDelegate = nil;
-    self.wkwebView.navigationDelegate = nil;
+    
 }
 
 -(void)reloadWebView{
     [self.wkwebView reload];
 }
 -(void)dealloc{
+    [self clean];
+}
+#pragma mark ————— 清理 —————
+-(void)clean{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    [self.wkwebView removeObserver:self forKeyPath:@"estimatedProgress"];
+    self.wkwebView.UIDelegate = nil;
+    self.wkwebView.navigationDelegate = nil;
     
 }
 - (void)didReceiveMemoryWarning {

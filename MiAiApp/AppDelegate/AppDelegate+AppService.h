@@ -15,6 +15,8 @@
 
 //初始化window
 -(void)initWindow;
+//UMeng初始化
+-(void)initUMeng;
 
 + (AppDelegate *)shareAppDelegate;
 

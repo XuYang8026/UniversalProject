@@ -18,6 +18,9 @@
     //初始化window
     [self initWindow];
 
+    //UMeng初始化
+    [self initUMeng];
+    
     //广告页
     [AppManager appStart];
     

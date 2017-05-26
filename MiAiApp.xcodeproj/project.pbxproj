@@ -14,6 +14,7 @@
 		290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */; };
 		290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */; };
 		2924783E1ED6857300BB097A /* AppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924783D1ED6857300BB097A /* AppDelegate+PushService.m */; };
+		292478411ED6FFC900BB097A /* EmitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292478401ED6FFC900BB097A /* EmitterViewController.m */; };
 		293D45A11ECD6422007C64A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293D459B1ECD6422007C64A9 /* Assets.xcassets */; };
 		293D45A21ECD6422007C64A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293D459D1ECD6422007C64A9 /* LaunchScreen.storyboard */; };
 		293D45A31ECD6422007C64A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 293D459F1ECD6422007C64A9 /* Info.plist */; };
@@ -56,6 +57,19 @@
 		294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */; };
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
+		2996100C1ED7E81900BCED2A /* DazFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 299610091ED7E81900BCED2A /* DazFire.png */; };
+		2996100D1ED7E81900BCED2A /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100A1ED7E81900BCED2A /* rain.png */; };
+		2996100E1ED7E81900BCED2A /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100B1ED7E81900BCED2A /* snow.png */; };
+		299610111ED84A7100BCED2A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 299610101ED84A7100BCED2A /* libsqlite3.tbd */; };
+		299610131ED84A8D00BCED2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299610121ED84A8D00BCED2A /* CoreGraphics.framework */; };
+		299610251ED84B5100BCED2A /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 299610171ED84B5100BCED2A /* libSocialQQ.a */; };
+		299610261ED84B5100BCED2A /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2996101A1ED84B5100BCED2A /* libSocialWeChat.a */; };
+		299610271ED84B5100BCED2A /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2996101D1ED84B5100BCED2A /* UMSocialCore.framework */; };
+		299610281ED84B5100BCED2A /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2996101E1ED84B5100BCED2A /* UMSocialNetwork.framework */; };
+		299610291ED84B5100BCED2A /* UMSocialSDKPromptResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2996101F1ED84B5100BCED2A /* UMSocialSDKPromptResources.bundle */; };
+		2996102A1ED84B5100BCED2A /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 299610211ED84B5100BCED2A /* libUMSocialLog.a */; };
+		2996102B1ED84B5100BCED2A /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 299610231ED84B5100BCED2A /* UMSocialSDKResources.bundle */; };
+		2996102C1ED84B5100BCED2A /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299610241ED84B5100BCED2A /* UShareUI.framework */; };
 		29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C4C1ED3D51200B0879C /* OpenUDID.m */; };
 		29AD6C5A1ED3E28800B0879C /* HeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C551ED3E28800B0879C /* HeaderModel.m */; };
 		29AD6C5B1ED3E28800B0879C /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C571ED3E28800B0879C /* PPNetworkCache.m */; };
@@ -109,6 +123,8 @@
 		290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
 		2924783C1ED6857300BB097A /* AppDelegate+PushService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PushService.h"; sourceTree = "<group>"; };
 		2924783D1ED6857300BB097A /* AppDelegate+PushService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PushService.m"; sourceTree = "<group>"; };
+		2924783F1ED6FFC900BB097A /* EmitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterViewController.h; sourceTree = "<group>"; };
+		292478401ED6FFC900BB097A /* EmitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterViewController.m; sourceTree = "<group>"; };
 		293D459B1ECD6422007C64A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293D459E1ECD6422007C64A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		293D459F1ECD6422007C64A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,6 +189,21 @@
 		296F9EDC1ECC64CE0063A255 /* MiAiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppUITests.m; sourceTree = "<group>"; };
 		296F9EE21ECC64CE0063A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		299610091ED7E81900BCED2A /* DazFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazFire.png; sourceTree = "<group>"; };
+		2996100A1ED7E81900BCED2A /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
+		2996100B1ED7E81900BCED2A /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
+		299610101ED84A7100BCED2A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		299610121ED84A8D00BCED2A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		299610171ED84B5100BCED2A /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
+		299610181ED84B5100BCED2A /* UMSocialQQHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
+		2996101A1ED84B5100BCED2A /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
+		2996101B1ED84B5100BCED2A /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
+		2996101D1ED84B5100BCED2A /* UMSocialCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialCore.framework; sourceTree = "<group>"; };
+		2996101E1ED84B5100BCED2A /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
+		2996101F1ED84B5100BCED2A /* UMSocialSDKPromptResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKPromptResources.bundle; sourceTree = "<group>"; };
+		299610211ED84B5100BCED2A /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
+		299610231ED84B5100BCED2A /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		299610241ED84B5100BCED2A /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
 		29AD6C4B1ED3D51200B0879C /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		29AD6C4C1ED3D51200B0879C /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		29AD6C541ED3E28800B0879C /* HeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderModel.h; sourceTree = "<group>"; };
@@ -211,7 +242,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299610251ED84B5100BCED2A /* libSocialQQ.a in Frameworks */,
+				299610261ED84B5100BCED2A /* libSocialWeChat.a in Frameworks */,
+				299610131ED84A8D00BCED2A /* CoreGraphics.framework in Frameworks */,
+				299610111ED84A7100BCED2A /* libsqlite3.tbd in Frameworks */,
+				299610271ED84B5100BCED2A /* UMSocialCore.framework in Frameworks */,
+				2996102A1ED84B5100BCED2A /* libUMSocialLog.a in Frameworks */,
+				299610281ED84B5100BCED2A /* UMSocialNetwork.framework in Frameworks */,
 				8E4CE34B0C01EF794A2C7378 /* libPods-MiAiApp.a in Frameworks */,
+				2996102C1ED84B5100BCED2A /* UShareUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +344,9 @@
 		293D45AB1ECD6926007C64A9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				299610091ED7E81900BCED2A /* DazFire.png */,
+				2996100A1ED7E81900BCED2A /* rain.png */,
+				2996100B1ED7E81900BCED2A /* snow.png */,
 				29FEE76C1ECED1E200C81B60 /* MBProgressHUD */,
 				293D46281ECDBB63007C64A9 /* tabBar */,
 			);
@@ -314,6 +356,7 @@
 		293D45AC1ECD6926007C64A9 /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				299610141ED84B5100BCED2A /* UMSocial */,
 			);
 			path = ThridParty;
 			sourceTree = "<group>";
@@ -321,6 +364,7 @@
 		293D45AD1ECD6926007C64A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2996100F1ED8159900BCED2A /* AppIntroduction */,
 				29AD6C641ED41BA100B0879C /* AdPage */,
 				29AD6C531ED3E28800B0879C /* NetWork */,
 				29AD6C521ED3E28800B0879C /* Category */,
@@ -418,6 +462,8 @@
 			children = (
 				293D46061ECDAEAD007C64A9 /* HomeViewController.h */,
 				293D46071ECDAEAD007C64A9 /* HomeViewController.m */,
+				2924783F1ED6FFC900BB097A /* EmitterViewController.h */,
+				292478401ED6FFC900BB097A /* EmitterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -747,6 +793,78 @@
 			path = MiAiAppUITests;
 			sourceTree = "<group>";
 		};
+		2996100F1ED8159900BCED2A /* AppIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppIntroduction;
+			sourceTree = "<group>";
+		};
+		299610141ED84B5100BCED2A /* UMSocial */ = {
+			isa = PBXGroup;
+			children = (
+				299610151ED84B5100BCED2A /* SocialLibraries */,
+				2996101C1ED84B5100BCED2A /* UMSocialSDK */,
+				299610201ED84B5100BCED2A /* UMSocialSDKPlugin */,
+				299610221ED84B5100BCED2A /* UMSocialUI */,
+			);
+			path = UMSocial;
+			sourceTree = "<group>";
+		};
+		299610151ED84B5100BCED2A /* SocialLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				299610161ED84B5100BCED2A /* QQ */,
+				299610191ED84B5100BCED2A /* WeChat */,
+			);
+			path = SocialLibraries;
+			sourceTree = "<group>";
+		};
+		299610161ED84B5100BCED2A /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				299610171ED84B5100BCED2A /* libSocialQQ.a */,
+				299610181ED84B5100BCED2A /* UMSocialQQHandler.h */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		299610191ED84B5100BCED2A /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				2996101A1ED84B5100BCED2A /* libSocialWeChat.a */,
+				2996101B1ED84B5100BCED2A /* UMSocialWechatHandler.h */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		2996101C1ED84B5100BCED2A /* UMSocialSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2996101D1ED84B5100BCED2A /* UMSocialCore.framework */,
+				2996101E1ED84B5100BCED2A /* UMSocialNetwork.framework */,
+				2996101F1ED84B5100BCED2A /* UMSocialSDKPromptResources.bundle */,
+			);
+			path = UMSocialSDK;
+			sourceTree = "<group>";
+		};
+		299610201ED84B5100BCED2A /* UMSocialSDKPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				299610211ED84B5100BCED2A /* libUMSocialLog.a */,
+			);
+			path = UMSocialSDKPlugin;
+			sourceTree = "<group>";
+		};
+		299610221ED84B5100BCED2A /* UMSocialUI */ = {
+			isa = PBXGroup;
+			children = (
+				299610231ED84B5100BCED2A /* UMSocialSDKResources.bundle */,
+				299610241ED84B5100BCED2A /* UShareUI.framework */,
+			);
+			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
 		29AD6C4A1ED3D51200B0879C /* OpenUDID */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +954,8 @@
 		6C3D66AC810B3ABDE56945D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				299610121ED84A8D00BCED2A /* CoreGraphics.framework */,
+				299610101ED84A7100BCED2A /* libsqlite3.tbd */,
 				52865CE8C50E268AF7832120 /* libPods-MiAiApp.a */,
 			);
 			name = Frameworks;
@@ -955,6 +1075,7 @@
 				29FEE77C1ECED1E200C81B60 /* MBHUD_Warn@3x.png in Resources */,
 				293D46421ECDBB63007C64A9 /* icon_tabbar_homepage.png in Resources */,
 				29FEE7761ECED1E200C81B60 /* MBHUD_Error@3x.png in Resources */,
+				2996100C1ED7E81900BCED2A /* DazFire.png in Resources */,
 				293D46521ECDBB63007C64A9 /* icon_tabbar_nearby.png in Resources */,
 				29FEE77B1ECED1E200C81B60 /* MBHUD_Warn@2x.png in Resources */,
 				29FEE7791ECED1E200C81B60 /* MBHUD_Success@2x.png in Resources */,
@@ -963,6 +1084,7 @@
 				293D45A11ECD6422007C64A9 /* Assets.xcassets in Resources */,
 				293D464A1ECDBB63007C64A9 /* icon_tabbar_mine.png in Resources */,
 				294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */,
+				2996100E1ED7E81900BCED2A /* snow.png in Resources */,
 				293D46551ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png in Resources */,
 				293D464C1ECDBB63007C64A9 /* icon_tabbar_mine_selected.png in Resources */,
 				293D46471ECDBB63007C64A9 /* icon_tabbar_merchant_normal@2x.png in Resources */,
@@ -979,11 +1101,14 @@
 				293D45A31ECD6422007C64A9 /* Info.plist in Resources */,
 				293D464F1ECDBB63007C64A9 /* icon_tabbar_misc@2x.png in Resources */,
 				293D464B1ECDBB63007C64A9 /* icon_tabbar_mine@2x.png in Resources */,
+				2996102B1ED84B5100BCED2A /* UMSocialSDKResources.bundle in Resources */,
 				293D46401ECDBB63007C64A9 /* icon_tabbar_discovery.png in Resources */,
 				293D46431ECDBB63007C64A9 /* icon_tabbar_homepage@2x.png in Resources */,
 				29FEE77A1ECED1E200C81B60 /* MBHUD_Success@3x.png in Resources */,
 				293D46441ECDBB63007C64A9 /* icon_tabbar_homepage_selected.png in Resources */,
 				293D46491ECDBB63007C64A9 /* icon_tabbar_merchant_selected@2x.png in Resources */,
+				299610291ED84B5100BCED2A /* UMSocialSDKPromptResources.bundle in Resources */,
+				2996100D1ED7E81900BCED2A /* rain.png in Resources */,
 				29FEE7751ECED1E200C81B60 /* MBHUD_Error@2x.png in Resources */,
 				29FEE7781ECED1E200C81B60 /* MBHUD_Info@3x.png in Resources */,
 				293D46481ECDBB63007C64A9 /* icon_tabbar_merchant_selected.png in Resources */,
@@ -1066,6 +1191,7 @@
 				29AD6C621ED3E4D600B0879C /* AppDelegate+AppService.m in Sources */,
 				293D46051ECDAA02007C64A9 /* RootNavigationController.m in Sources */,
 				29AD6C5B1ED3E28800B0879C /* PPNetworkCache.m in Sources */,
+				292478411ED6FFC900BB097A /* EmitterViewController.m in Sources */,
 				293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */,
 				293D46011ECDA56A007C64A9 /* MainTabBarController.m in Sources */,
 				290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */,
@@ -1234,10 +1360,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LLNHUK4DDQ;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialUI",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MiAiApp/Supporting Flies/PrefixHeader.pch";
-				INFOPLIST_FILE = MiAiApp/Info.plist;
+				INFOPLIST_FILE = "MiAiApp/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDKPlugin",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1251,10 +1388,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LLNHUK4DDQ;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialUI",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MiAiApp/Supporting Flies/PrefixHeader.pch";
-				INFOPLIST_FILE = MiAiApp/Info.plist;
+				INFOPLIST_FILE = "MiAiApp/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDKPlugin",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

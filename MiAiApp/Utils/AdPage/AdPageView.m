@@ -25,7 +25,7 @@
 @end
 
 // 广告显示的时间
-static int const showtime = 5;
+static int const showtime = 0;
 
 @implementation AdPageView
 
@@ -106,7 +106,7 @@ static int const showtime = 5;
 {
     _count --;
     [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d",_count] forState:UIControlStateNormal];
-    if (_count == 0) {
+    if (_count <= 0) {
         
         [self dismiss];
     }

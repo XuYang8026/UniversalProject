@@ -9,5 +9,6 @@
 #ifndef ThirdMacros_h
 #define ThirdMacros_h
 
+#define UMengKey @"59281b4a5312dd3f5f0005ed"
 
 #endif /* ThirdMacros_h */
