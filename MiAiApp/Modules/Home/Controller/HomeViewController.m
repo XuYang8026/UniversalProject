@@ -52,7 +52,7 @@
         }
             break;
         case 1003:{
-            RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:@"http://baidu.com"];
+            RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:@"http://hao123.com"];
             [webView addNavigationItemWithTitles:@[@"测试"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1003]];
             [self.navigationController pushViewController:webView animated:YES];
         }

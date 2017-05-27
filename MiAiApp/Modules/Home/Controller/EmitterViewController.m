@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor =[UIColor blackColor];
     self.isHidenNaviBar = YES;
+    self.StatusBarStyle = UIStatusBarStyleDefault;
     [self showAnimation];
 }
 
@@ -228,7 +229,6 @@
     [self.view.layer addSublayer:fireworkdEmitter];
 
 }
-
 
 
 - (void)didReceiveMemoryWarning {

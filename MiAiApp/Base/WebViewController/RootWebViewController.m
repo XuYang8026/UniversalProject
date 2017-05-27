@@ -58,8 +58,8 @@
     _wkwebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) configuration:configuration];
     [self.view addSubview:_wkwebView];
     _wkwebView.backgroundColor = [UIColor clearColor];
-    
     _wkwebView.allowsBackForwardNavigationGestures =YES;//打开网页间的 滑动返回
+    _wkwebView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
     if (kiOS9Later) {
         _wkwebView.allowsLinkPreview = YES;//允许预览链接
     }
@@ -111,13 +111,13 @@
 }
 // 当内容开始返回时调用
 -(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
-    [self updateNavigationItems];
+    
 }
 // 页面加载完成之后调用
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     self.title = webView.title;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    
+    [self updateNavigationItems];
 }
 // 页面加载失败时调用
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
@@ -137,7 +137,14 @@
         
     }else{
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        [self addNavigationItemWithTitles:@[@"返回"] isLeft:YES target:self action:@selector(leftBtnClick:) tags:@[@2001]];
+        
+        //iOS8系统下发现的问题：在导航栏侧滑过程中，执行添加导航栏按钮操作，会出现按钮重复，导致导航栏一系列错乱问题
+        //解决方案待尝试：每个vc显示时，遍历 self.navigationController.navigationBar.subviews 根据tag去重
+        //现在先把iOS 9以下的不使用动态添加按钮 其实微信也是这样做的，即便返回到webview的第一页也保留了关闭按钮
+        
+        if (kiOS9Later) {
+            [self addNavigationItemWithTitles:@[@"返回"] isLeft:YES target:self action:@selector(leftBtnClick:) tags:@[@2001]];
+        }
     }
 }
 
@@ -154,10 +161,9 @@
     }
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [self.progressView removeFromSuperview];
-    
 }
 
 -(void)reloadWebView{

@@ -20,7 +20,7 @@
 @implementation RootViewController
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
+    return _StatusBarStyle;
 }
 //动态更新状态栏颜色
 -(void)setStatusBarStyle:(UIStatusBarStyle)StatusBarStyle{
@@ -37,7 +37,6 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -104,7 +103,7 @@
     if (isShowLiftBack) {
 //        [self.navigationItem setHidesBackButton:YES];
 //        [self.navigationItem.backBarButtonItem setTitle:@""];
-
+        
         [self addNavigationItemWithTitles:@[@"返回"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];
         
 //        [self addNavigationItemWithImageNames:@[@"quanju_return"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];
@@ -159,7 +158,14 @@
 
 - (void)addNavigationItemWithTitles:(NSArray *)titles isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags
 {
+    
     NSMutableArray * items = [[NSMutableArray alloc] init];
+    
+    //调整按钮位置
+    UIBarButtonItem* spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    //将宽度设为负值
+    spaceItem.width= -14;
+    [items addObject:spaceItem];
     
     NSInteger i = 0;
     for (NSString * title in titles) {
