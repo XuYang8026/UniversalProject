@@ -100,10 +100,8 @@
 - (void) setIsShowLiftBack:(BOOL)isShowLiftBack
 {
     _isShowLiftBack = isShowLiftBack;
-    if (isShowLiftBack) {
-//        [self.navigationItem setHidesBackButton:YES];
-//        [self.navigationItem.backBarButtonItem setTitle:@""];
-        
+    NSInteger VCCount = self.navigationController.viewControllers.count;
+    if (isShowLiftBack && VCCount > 1) {
         [self addNavigationItemWithTitles:@[@"返回"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];
         
 //        [self addNavigationItemWithImageNames:@[@"quanju_return"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];

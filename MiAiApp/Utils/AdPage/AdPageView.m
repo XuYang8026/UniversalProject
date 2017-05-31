@@ -118,6 +118,9 @@ static int const showtime = 0;
     //    [self startCoundown];
     
     // 倒计时方法2：定时器
+    if (showtime<=0) {
+        return;
+    }
     [self startTimer];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];

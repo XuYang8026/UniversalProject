@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isShowLiftBack = NO;
     self.isHidenNaviBar = YES;
     self.StatusBarStyle = UIStatusBarStyleDefault;
     

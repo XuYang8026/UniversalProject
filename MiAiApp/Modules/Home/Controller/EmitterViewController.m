@@ -102,17 +102,24 @@
     
     rainEmitter.emitterShape    = kCAEmitterLayerLine;
     rainEmitter.emitterMode     = kCAEmitterLayerOutline;
-    rainEmitter.emitterSize     = self.view.bounds.size;
+//    rainEmitter.emitterSize     = self.view.bounds.size;
+    rainEmitter.emitterSize     = CGSizeMake(KScreenWidth*2, KScreenHeight);
     rainEmitter.renderMode      = kCAEmitterLayerAdditive;
-    rainEmitter.emitterPosition = CGPointMake(KScreenWidth/2, -20);
+    rainEmitter.emitterPosition = CGPointMake(0, -20);
     //水滴
     CAEmitterCell *rainflake    = [CAEmitterCell emitterCell];
     rainflake.birthRate         = 50;   //每秒发出的数量
     
     //rainflake.speed             = 10;   //速度
-    rainflake.velocity          = 300;   //加速度
+    rainflake.velocity          = 200;   //加速度
     //rainflake.velocityRange     = 75;   //加速度范围
-    rainflake.yAcceleration     = 500;  //重力
+    rainflake.yAcceleration     = 300;  //重力
+    
+//    rainflake.emission = 0.3 * M_PI;
+//    rainflake.spin = 0.1 * M_PI;
+    
+//    rainflake.emissionLatitude = 0.1 *M_PI;
+    rainflake.emissionLongitude =  M_PI_2; // 方向，M_PI_2 右斜
     
     rainflake.contents          = (id)[UIImage imageNamed:@"rain"].CGImage;
     rainflake.color             = [UIColor whiteColor].CGColor;
