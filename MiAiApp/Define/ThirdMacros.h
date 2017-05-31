@@ -6,6 +6,8 @@
 //  Copyright © 2017年 徐阳. All rights reserved.
 //
 
+//第三方配置
+
 #ifndef ThirdMacros_h
 #define ThirdMacros_h
 

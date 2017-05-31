@@ -26,6 +26,7 @@ const NSInteger hideTime = 2;
     hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     hud.bezelView.color = [UIColor colorWithWhite:0 alpha:0.9];
     hud.removeFromSuperViewOnHide = YES;
+    [hud setContentColor:KWhiteColor];
 //    hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
 //    hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.1f];
     return hud;

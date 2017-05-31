@@ -21,6 +21,9 @@
     //UMeng初始化
     [self initUMeng];
     
+    //初始化用户系统
+    [self initUserManager];
+    
     //广告页
     [AppManager appStart];
     

@@ -11,6 +11,9 @@
 #ifndef URLMacros_h
 #define URLMacros_h
 
+
+//内部版本号 每次发版递增
+#define KVersionCode 1
 /*
  
  将项目中所有的接口写在这里,方便统一管理,降低耦合
@@ -44,11 +47,24 @@
 
 
 
-#pragma mark - 详细接口地址
+#pragma mark - ——————— 详细接口地址 ————————
 
 //测试接口
 //NSString *const URL_Test = @"api/recharge/price/list";
 #define URL_Test @"/api/cast/home/start"
+
+
+#pragma mark - ——————— 用户相关 ————————
+//自动登录
+#define URL_user_auto_login @"/api/autoLogin"
+//登录
+#define URL_user_login @"/api/login"
+//用户详情
+#define URL_user_info_detail @"/api/user/info/detail"
+//修改头像
+#define URL_user_info_change_photo @"/api/user/info/changephoto"
+//注释
+#define URL_user_info_change @"/api/user/info/change"
 
 
 #endif /* URLMacros_h */

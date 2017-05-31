@@ -8,6 +8,7 @@
 
 #import "AppDelegate+AppService.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import "LoginViewController.h"
 
 @implementation AppDelegate (AppService)
 
@@ -23,6 +24,27 @@
     
     [[UIButton appearance] setExclusiveTouch:YES];
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
+}
+#pragma mark - ——————— 初始化用户系统 ————————
+-(void)initUserManager{
+    if([userManager loadUserInfo]){
+        //登录过 执行自动登录
+        [userManager autoLoginToServer:^(BOOL success, NSString *des) {
+            if (success) {
+                NSLog(@"自动登录成功");
+            }else{
+                NSLog(@"自动登录失败：%@",des);
+                //自动登录失败，展示登录页面
+                [MBProgressHUD showErrorMessage:@"用户信息失效，请重新登录"];
+                RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+                ReplaceRootViewController(loginNavi);
+            }
+        }];
+    }else{
+        //没有登录过，展示登录页面
+        RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+        ReplaceRootViewController(loginNavi);
+    }
 }
 
 #pragma mark ————— 友盟 初始化 —————
@@ -71,6 +93,10 @@
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
+-(void)replaceRootViewController:(UIViewController *)rootViewController{
+    [self.window removeAllSubviews];
+    self.window.rootViewController = rootViewController;
+}
 
 -(UIViewController *)getCurrentVC{
     

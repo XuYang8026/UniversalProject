@@ -6,7 +6,7 @@
 //  Copyright © 2017年 徐阳. All rights reserved.
 //
 
-// 通用宏定义
+// 全局工具类宏定义
 
 #ifndef define_h
 #define define_h

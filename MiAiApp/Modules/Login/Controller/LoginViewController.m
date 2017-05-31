@@ -58,51 +58,30 @@
 }
 
 -(void)WXLogin{
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:nil completion:^(id result, NSError *error) {
-        if (error) {
-            
-        } else {
-            UMSocialUserInfoResponse *resp = result;
-            
-            // 授权信息
-            NSLog(@"Wechat uid: %@", resp.uid);
-            NSLog(@"Wechat openid: %@", resp.openid);
-            NSLog(@"Wechat accessToken: %@", resp.accessToken);
-            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
-            NSLog(@"Wechat expiration: %@", resp.expiration);
-            
-            // 用户信息
-            NSLog(@"Wechat name: %@", resp.name);
-            NSLog(@"Wechat iconurl: %@", resp.iconurl);
-            NSLog(@"Wechat gender: %@", resp.unionGender);
-            
-            // 第三方平台SDK源数据
-            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
+    [userManager login:kUserLoginTypeWeChat completion:^(BOOL success, NSString *des) {
+        if (success) {
+            DLog(@"登录成功");
+            [self loginSuccess];
+        }else{
+            DLog(@"登录失败：%@", des);
         }
     }];
 }
 -(void)QQLogin{
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_QQ currentViewController:nil completion:^(id result, NSError *error) {
-        if (error) {
-            
-        } else {
-            UMSocialUserInfoResponse *resp = result;
-            
-            // 授权信息
-            NSLog(@"QQ uid: %@", resp.uid);
-            NSLog(@"QQ openid: %@", resp.openid);
-            NSLog(@"QQ accessToken: %@", resp.accessToken);
-            NSLog(@"QQ expiration: %@", resp.expiration);
-            
-            // 用户信息
-            NSLog(@"QQ name: %@", resp.name);
-            NSLog(@"QQ iconurl: %@", resp.iconurl);
-            NSLog(@"QQ gender: %@", resp.unionGender);
-            
-            // 第三方平台SDK源数据
-            NSLog(@"QQ originalResponse: %@", resp.originalResponse);
+    [userManager login:kUserLoginTypeQQ completion:^(BOOL success, NSString *des) {
+        if (success) {
+            DLog(@"登录成功");
+            [self loginSuccess];
+        }else{
+            DLog(@"登录失败：%@", des);
         }
     }];
+}
+
+-(void)loginSuccess{
+    kAppDelegate.mainTabBar = [MainTabBarController new];
+    ReplaceRootViewController(kAppDelegate.mainTabBar);
+    [MBProgressHUD showSuccessMessage:@"登陆成功"];
 }
 
 - (void)didReceiveMemoryWarning {

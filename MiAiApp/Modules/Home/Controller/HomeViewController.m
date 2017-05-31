@@ -40,6 +40,7 @@
         case 1001:
         {
             [self goLoginWithPush];
+//            [MBProgressHUD showSuccessMessage:@"成功"];
         }
             break;
         case 1002:

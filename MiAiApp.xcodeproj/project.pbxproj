@@ -57,6 +57,7 @@
 		294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */; };
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
+		2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2973A8191EDEE6BE002751F0 /* GameInfo.m */; };
 		2996100C1ED7E81900BCED2A /* DazFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 299610091ED7E81900BCED2A /* DazFire.png */; };
 		2996100D1ED7E81900BCED2A /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100A1ED7E81900BCED2A /* rain.png */; };
 		2996100E1ED7E81900BCED2A /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100B1ED7E81900BCED2A /* snow.png */; };
@@ -189,6 +190,9 @@
 		296F9EDC1ECC64CE0063A255 /* MiAiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppUITests.m; sourceTree = "<group>"; };
 		296F9EE21ECC64CE0063A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2973A8111EDEB895002751F0 /* CommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacros.h; sourceTree = "<group>"; };
+		2973A8181EDEE6BE002751F0 /* GameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfo.h; sourceTree = "<group>"; };
+		2973A8191EDEE6BE002751F0 /* GameInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfo.m; sourceTree = "<group>"; };
 		299610091ED7E81900BCED2A /* DazFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazFire.png; sourceTree = "<group>"; };
 		2996100A1ED7E81900BCED2A /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
 		2996100B1ED7E81900BCED2A /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 			children = (
 				293D45E21ECD938D007C64A9 /* UtilsMacros.h */,
 				293D45E31ECDA0D4007C64A9 /* URLMacros.h */,
+				2973A8111EDEB895002751F0 /* CommonMacros.h */,
 				293D45E41ECDA0EA007C64A9 /* FontAndColorMacros.h */,
 				293D45E51ECDA108007C64A9 /* ThirdMacros.h */,
 			);
@@ -923,6 +928,8 @@
 				29AD6C6A1ED41E2100B0879C /* UserManager.m */,
 				29AD6C6F1ED41ED200B0879C /* UserInfo.h */,
 				29AD6C701ED41ED200B0879C /* UserInfo.m */,
+				2973A8181EDEE6BE002751F0 /* GameInfo.h */,
+				2973A8191EDEE6BE002751F0 /* GameInfo.m */,
 			);
 			path = UserManager;
 			sourceTree = "<group>";
@@ -1195,6 +1202,7 @@
 				293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */,
 				293D46011ECDA56A007C64A9 /* MainTabBarController.m in Sources */,
 				290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */,
+				2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */,
 				294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */,
 				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
 				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
@@ -1378,6 +1386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/MiAiApp/Define";
 			};
 			name = Debug;
 		};
@@ -1406,6 +1415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/MiAiApp/Define";
 			};
 			name = Release;
 		};
