@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MJRefresh.h>
+#import "UIViewController+AlertViewAndActionSheet.h"
 /**
  VC 基类
  */
@@ -24,10 +25,6 @@
 - (void)goLogin;
 - (void)goLoginWithPush;
 
-/**
- 分享
- */
--(void)share;
 /**
  *  显示没有数据页面
  */

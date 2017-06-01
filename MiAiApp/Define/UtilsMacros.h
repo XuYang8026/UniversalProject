@@ -118,6 +118,8 @@
 //GCD - 一次性执行
 #define kDISPATCH_ONCE_BLOCK(onceBlock) static dispatch_once_t onceToken; dispatch_once(&onceToken, onceBlock);
 
+//发送通知
+#define KPostNotification(name,obj) [[NSNotificationCenter defaultCenter] postNotificationName:name object:obj];
 
 //单例化一个类
 #define SINGLETON_FOR_HEADER(className) \

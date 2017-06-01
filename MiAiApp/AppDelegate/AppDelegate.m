@@ -17,18 +17,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //初始化window
     [self initWindow];
-
+    
     //UMeng初始化
     [self initUMeng];
+    
+    //初始化app服务
+    [self initService];
     
     //初始化用户系统
     [self initUserManager];
     
+    //网络监听
+    [self monitorNetworkStatus];
+    
     //广告页
     [AppManager appStart];
     
-    //网络监听
-    [AppManager monitorNetworkStatus];
+    
     
     return YES;
 }

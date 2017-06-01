@@ -10,6 +10,7 @@
 #import "AdPageView.h"
 #import "RootWebViewController.h"
 #import "LoginViewController.h"
+#import "YYFPSLabel.h"
 
 @implementation AppManager
 
@@ -23,31 +24,14 @@
     }];
     adView = adView;
 }
-#pragma mark - 实时监测网络状态
-+ (void)monitorNetworkStatus
-{
-    // 网络状态改变一次, networkStatusWithBlock就会响应一次
-    [PPNetworkHelper networkStatusWithBlock:^(PPNetworkStatusType networkStatus) {
-        
-        switch (networkStatus) {
-                // 未知网络
-            case PPNetworkStatusUnknown:
-                DLog(@"网络环境：未知网络");
-                // 无网络
-            case PPNetworkStatusNotReachable:
-                DLog(@"网络环境：无网络");
-                break;
-                // 手机网络
-            case PPNetworkStatusReachableViaWWAN:
-                DLog(@"网络环境：手机自带网络");
-                // 无线网络
-            case PPNetworkStatusReachableViaWiFi:
-                DLog(@"网络环境：WiFi");
-                break;
-        }
-        
-    }];
-    
+#pragma mark ————— FPS 监测 —————
++(void)showFPS{
+    YYFPSLabel *_fpsLabel = [YYFPSLabel new];
+    [_fpsLabel sizeToFit];
+    _fpsLabel.bottom = KScreenHeight - 55;
+    _fpsLabel.right = KScreenWidth - 10;
+    //    _fpsLabel.alpha = 0;
+    [kAppWindow addSubview:_fpsLabel];
 }
 
 @end

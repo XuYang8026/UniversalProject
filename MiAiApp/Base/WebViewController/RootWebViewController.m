@@ -38,6 +38,11 @@
     [super viewWillAppear:animated];
     [self initProgressView];
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.progressView removeFromSuperview];
+}
 #pragma mark 初始化webview
 -(void)initWKWebView
 {
@@ -159,11 +164,6 @@
         default:
             break;
     }
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.progressView removeFromSuperview];
 }
 
 -(void)reloadWebView{

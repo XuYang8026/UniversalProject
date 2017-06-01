@@ -14,10 +14,10 @@
  */
 @interface AppManager : NSObject
 
-#pragma mark - ——————— APP启动接口 ————————
+#pragma mark ————— APP启动接口 —————
 +(void)appStart;
 
-#pragma mark - 实时监测网络状态
-+ (void)monitorNetworkStatus;
+#pragma mark ————— FPS 监测 —————
++(void)showFPS;
 
 @end

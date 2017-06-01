@@ -49,16 +49,12 @@
 #pragma mark ————— 跳转登录界面 —————
 - (void)goLogin
 {
-//    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.hao123.com"]]];
-    
     RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
     [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
 }
 - (void)goLoginWithPush
 {
     [self.navigationController pushViewController:[LoginViewController new] animated:YES];
-//    RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://baidu.com"]];
-//    [self.navigationController pushViewController:webView animated:YES];
 }
 
 - (void)showShouldLoginPoint{
@@ -101,7 +97,8 @@
 {
     _isShowLiftBack = isShowLiftBack;
     NSInteger VCCount = self.navigationController.viewControllers.count;
-    if (isShowLiftBack && VCCount > 1) {
+    //下面判断的意义是 当VC所在的导航控制器中的VC个数大于1 或者 是present出来的VC时，才展示返回按钮，其他情况不展示
+    if (isShowLiftBack && ( VCCount > 1 || self.navigationController.presentingViewController != nil)) {
         [self addNavigationItemWithTitles:@[@"返回"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];
         
 //        [self addNavigationItemWithImageNames:@[@"quanju_return"] isLeft:YES target:self action:@selector(backBtnClicked) tags:nil];
@@ -162,7 +159,7 @@
     //调整按钮位置
     UIBarButtonItem* spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     //将宽度设为负值
-    spaceItem.width= -14;
+    spaceItem.width= -10;
     [items addObject:spaceItem];
     
     NSInteger i = 0;
@@ -184,78 +181,6 @@
         self.navigationItem.rightBarButtonItems = items;
     }
 }
-
-#pragma mark - ——————— 分享 ————————
--(void)share{
-    //显示分享面板
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        // 根据获取的platformType确定所选平台进行下一步操作
-        [self shareWebPageToPlatformType:platformType];
-    }];
-}
-
-- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
-{
-    //创建分享消息对象
-    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-    
-    //创建网页内容对象
-    NSString* thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"欢迎使用【友盟+】社会化组件U-Share" descr:@"欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！" thumImage:thumbURL];
-    //设置网页地址
-    shareObject.webpageUrl = @"http://mobile.umeng.com/social";
-    
-    //分享消息对象设置分享内容对象
-    messageObject.shareObject = shareObject;
-    
-    //调用分享接口
-    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-        if (error) {
-            UMSocialLogInfo(@"************Share fail with error %@*********",error);
-        }else{
-            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
-                UMSocialShareResponse *resp = data;
-                //分享结果消息
-                UMSocialLogInfo(@"response message is %@",resp.message);
-                //第三方原始返回的数据
-                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
-                
-            }else{
-                UMSocialLogInfo(@"response data is %@",data);
-            }
-        }
-        [self alertWithError:error];
-    }];
-}
-
-- (void)alertWithError:(NSError *)error
-{
-    NSString *result = nil;
-    if (!error) {
-        result = [NSString stringWithFormat:@"Share succeed"];
-    }
-    else{
-        NSMutableString *str = [NSMutableString string];
-        if (error.userInfo) {
-            for (NSString *key in error.userInfo) {
-                [str appendFormat:@"%@ = %@\n", key, error.userInfo[key]];
-            }
-        }
-        if (error) {
-            result = [NSString stringWithFormat:@"Share fail with error code: %d\n%@",(int)error.code, str];
-        }
-        else{
-            result = [NSString stringWithFormat:@"Share fail"];
-        }
-    }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
-                                                    message:result
-                                                   delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"sure", @"确定")
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
 
 //取消请求
 - (void)cancelRequest

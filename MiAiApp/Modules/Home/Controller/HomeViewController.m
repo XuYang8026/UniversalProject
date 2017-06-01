@@ -34,13 +34,12 @@
 -(void)naviBtnClick:(UIButton *)btn{
     switch (btn.tag) {
         case 1000:
-            [self share];
+            [[ShareManager sharedShareManager] showShareView];
 //            [self goLogin];
             break;
         case 1001:
         {
             [self goLoginWithPush];
-//            [MBProgressHUD showSuccessMessage:@"成功"];
         }
             break;
         case 1002:

@@ -61,7 +61,6 @@
     [userManager login:kUserLoginTypeWeChat completion:^(BOOL success, NSString *des) {
         if (success) {
             DLog(@"登录成功");
-            [self loginSuccess];
         }else{
             DLog(@"登录失败：%@", des);
         }
@@ -71,18 +70,12 @@
     [userManager login:kUserLoginTypeQQ completion:^(BOOL success, NSString *des) {
         if (success) {
             DLog(@"登录成功");
-            [self loginSuccess];
         }else{
             DLog(@"登录失败：%@", des);
         }
     }];
 }
 
--(void)loginSuccess{
-    kAppDelegate.mainTabBar = [MainTabBarController new];
-    ReplaceRootViewController(kAppDelegate.mainTabBar);
-    [MBProgressHUD showSuccessMessage:@"登陆成功"];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

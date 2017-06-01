@@ -13,39 +13,106 @@
 @implementation AppDelegate (AppService)
 
 
+#pragma mark ————— 初始化服务 —————
+-(void)initService{
+    //注册登录状态监听
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loginStateChange:)
+                                                 name:KNotificationLoginStateChange
+                                               object:nil];
+    
+    //网络状态监听
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(netWorkStateChange:)
+                                                 name:KNotificationNetWorkStateChange
+                                               object:nil];
+}
 
-#pragma mark - ——————— 初始化window ————————
+#pragma mark ————— 初始化window —————
 -(void)initWindow{
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = KWhiteColor;
-    self.mainTabBar = [MainTabBarController new];
-    self.window.rootViewController = self.mainTabBar;
     [self.window makeKeyAndVisible];
-    
     [[UIButton appearance] setExclusiveTouch:YES];
+//    [[UIButton appearance] setShowsTouchWhenHighlighted:YES];
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
 }
-#pragma mark - ——————— 初始化用户系统 ————————
+
+
+#pragma mark ————— 初始化用户系统 —————
 -(void)initUserManager{
     if([userManager loadUserInfo]){
-        //登录过 执行自动登录
+        
+        //如果有本地数据，先展示TabBar 随后异步自动登录
+        self.mainTabBar = [MainTabBarController new];
+        self.window.rootViewController = self.mainTabBar;
+        
+        //自动登录
         [userManager autoLoginToServer:^(BOOL success, NSString *des) {
             if (success) {
-                NSLog(@"自动登录成功");
+                DLog(@"自动登录成功");
+                //                    [MBProgressHUD showSuccessMessage:@"自动登录成功"];
+                KPostNotification(KNotificationAutoLoginSuccess, nil);
             }else{
-                NSLog(@"自动登录失败：%@",des);
-                //自动登录失败，展示登录页面
-                [MBProgressHUD showErrorMessage:@"用户信息失效，请重新登录"];
-                RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
-                ReplaceRootViewController(loginNavi);
+                [MBProgressHUD showErrorMessage:NSStringFormat(@"自动登录失败：%@",des)];
             }
         }];
+        
     }else{
         //没有登录过，展示登录页面
-        RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
-        ReplaceRootViewController(loginNavi);
+        KPostNotification(KNotificationLoginStateChange, @NO)
+        [MBProgressHUD showErrorMessage:@"需要登录"];
     }
 }
+
+#pragma mark ————— 登录状态处理 —————
+- (void)loginStateChange:(NSNotification *)notification
+{
+    BOOL loginSuccess = [notification.object boolValue];
+    
+    if (loginSuccess) {//登陆成功加载主窗口控制器
+        
+        //为避免自动登录成功刷新tabbar
+        if (!self.mainTabBar || ![self.window.rootViewController isKindOfClass:[MainTabBarController class]]) {
+            self.mainTabBar = [MainTabBarController new];
+            self.window.rootViewController = self.mainTabBar;
+        }
+        
+    }else {//登陆失败加载登陆页面控制器
+        
+        self.mainTabBar = nil;
+        RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+        self.window.rootViewController = loginNavi;
+        
+    }
+    //展示FPS
+    [AppManager showFPS];
+}
+
+
+#pragma mark ————— 网络状态变化 —————
+- (void)netWorkStateChange:(NSNotification *)notification
+{
+    BOOL isNetWork = [notification.object boolValue];
+    
+    if (isNetWork) {//有网络
+        if ([userManager loadUserInfo] && !isLogin) {//有用户数据 并且 未登录成功 重新来一次自动登录
+            [userManager autoLoginToServer:^(BOOL success, NSString *des) {
+                if (success) {
+                    DLog(@"网络改变后，自动登录成功");
+//                    [MBProgressHUD showSuccessMessage:@"网络改变后，自动登录成功"];
+                    KPostNotification(KNotificationAutoLoginSuccess, nil);
+                }else{
+                    [MBProgressHUD showErrorMessage:NSStringFormat(@"自动登录失败：%@",des)];
+                }
+            }];
+        }
+        
+    }else {//登陆失败加载登陆页面控制器
+        [MBProgressHUD showTopTipMessage:@"网络状态不佳" isWindow:YES];
+    }
+}
+
 
 #pragma mark ————— 友盟 初始化 —————
 -(void)initUMeng{
@@ -72,7 +139,7 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:kAppKey_Tencent/*设置QQ平台的appID*/  appSecret:nil redirectURL:nil];
 }
 
-#pragma mark - ——————— OpenURL 回调 ————————
+#pragma mark ————— OpenURL 回调 —————
 // 支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
@@ -84,19 +151,39 @@
     return result;
 }
 
-
-
-
-
+#pragma mark ————— 网络状态监听 —————
+- (void)monitorNetworkStatus
+{
+    // 网络状态改变一次, networkStatusWithBlock就会响应一次
+    [PPNetworkHelper networkStatusWithBlock:^(PPNetworkStatusType networkStatus) {
+        
+        switch (networkStatus) {
+                // 未知网络
+            case PPNetworkStatusUnknown:
+                DLog(@"网络环境：未知网络");
+                // 无网络
+            case PPNetworkStatusNotReachable:
+                DLog(@"网络环境：无网络");
+                KPostNotification(KNotificationNetWorkStateChange, @NO);
+                break;
+                // 手机网络
+            case PPNetworkStatusReachableViaWWAN:
+                DLog(@"网络环境：手机自带网络");
+                // 无线网络
+            case PPNetworkStatusReachableViaWiFi:
+                DLog(@"网络环境：WiFi");
+                KPostNotification(KNotificationNetWorkStateChange, @YES);
+                break;
+        }
+        
+    }];
+    
+}
 
 + (AppDelegate *)shareAppDelegate{
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
--(void)replaceRootViewController:(UIViewController *)rootViewController{
-    [self.window removeAllSubviews];
-    self.window.rootViewController = rootViewController;
-}
 
 -(UIViewController *)getCurrentVC{
     

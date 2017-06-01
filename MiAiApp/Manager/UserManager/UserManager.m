@@ -45,7 +45,9 @@ SINGLETON_FOR_CLASS(UserManager);
         [[UMSocialManager defaultManager] getUserInfoWithPlatform:platFormType currentViewController:nil completion:^(id result, NSError *error) {
             if (error) {
                 [MBProgressHUD hideHUD];
-                completion(NO,error.localizedDescription);
+                if (completion) {
+                    completion(NO,error.localizedDescription);
+                }
             } else {
                 
                 UMSocialUserInfoResponse *resp = result;
@@ -86,7 +88,9 @@ SINGLETON_FOR_CLASS(UserManager);
         
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUD];
-        completion(NO,error.localizedDescription);
+        if (completion) {
+            completion(NO,error.localizedDescription);
+        }
     }];
 }
 
@@ -96,7 +100,9 @@ SINGLETON_FOR_CLASS(UserManager);
         [self LoginSuccess:responseObject completion:completion];
         
     } failure:^(NSError *error) {
-        completion(NO,error.localizedDescription);
+        if (completion) {
+            completion(NO,error.localizedDescription);
+        }
     }];
 }
 
@@ -108,9 +114,16 @@ SINGLETON_FOR_CLASS(UserManager);
             self.curUserInfo = [UserInfo modelWithDictionary:data];
             [self saveUserInfo];
             self.isLogined = YES;
-            [MBProgressHUD showSuccessMessage:@"登录成功"];
-            completion(YES,nil);
+            if (completion) {
+                completion(YES,nil);
+            }
+            KPostNotification(KNotificationLoginStateChange, @YES);
         }
+    }else{
+        if (completion) {
+            completion(NO,nil);
+        }
+        KPostNotification(KNotificationLoginStateChange, @NO);
     }
 
 }
@@ -152,8 +165,6 @@ SINGLETON_FOR_CLASS(UserManager);
         }
     }];
     
-    //根视图切换为登录页面
-    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
-    ReplaceRootViewController(loginNavi);
+    KPostNotification(KNotificationLoginStateChange, @NO);
 }
 @end
