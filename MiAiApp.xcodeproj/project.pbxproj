@@ -90,6 +90,7 @@
 		29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C661ED41BA100B0879C /* AdPageView.m */; };
 		29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C6A1ED41E2100B0879C /* UserManager.m */; };
 		29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C701ED41ED200B0879C /* UserInfo.m */; };
+		29B90A111EE11292008AEC72 /* XYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B90A101EE11292008AEC72 /* XYButton.m */; };
 		29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */; };
 		29FEE77B1ECED1E200C81B60 /* MBHUD_Warn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */; };
 		29FEE77C1ECED1E200C81B60 /* MBHUD_Warn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7741ECED1E200C81B60 /* MBHUD_Warn@3x.png */; };
@@ -244,6 +245,8 @@
 		29AD6C6A1ED41E2100B0879C /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		29AD6C6F1ED41ED200B0879C /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		29AD6C701ED41ED200B0879C /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		29B90A0F1EE11292008AEC72 /* XYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYButton.h; sourceTree = "<group>"; };
+		29B90A101EE11292008AEC72 /* XYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYButton.m; sourceTree = "<group>"; };
 		29FEE7661ECEC27900C81B60 /* MBProgressHUD+XY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XY.h"; sourceTree = "<group>"; };
 		29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XY.m"; sourceTree = "<group>"; };
 		29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Warn@2x.png"; sourceTree = "<group>"; };
@@ -609,6 +612,7 @@
 		293D45E11ECD8B72007C64A9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				29B90A0E1EE1127E008AEC72 /* Button */,
 				293D45FE1ECDA56A007C64A9 /* TabbarController */,
 				293D45F21ECDA435007C64A9 /* RootViewController */,
 				293D46021ECDA9E4007C64A9 /* NavigationController */,
@@ -962,6 +966,15 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		29B90A0E1EE1127E008AEC72 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				29B90A0F1EE11292008AEC72 /* XYButton.h */,
+				29B90A101EE11292008AEC72 /* XYButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		29FEE7651ECEC25C00C81B60 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1234,6 +1247,7 @@
 				290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */,
 				2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */,
 				294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */,
+				29B90A111EE11292008AEC72 /* XYButton.m in Sources */,
 				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
 				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
 				293D46181ECDB305007C64A9 /* TabBar.m in Sources */,
@@ -1407,7 +1421,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MiAiApp/Supporting Flies/PrefixHeader.pch";
 				INFOPLIST_FILE = "MiAiApp/Supporting Flies/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1436,7 +1450,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MiAiApp/Supporting Flies/PrefixHeader.pch";
 				INFOPLIST_FILE = "MiAiApp/Supporting Flies/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
