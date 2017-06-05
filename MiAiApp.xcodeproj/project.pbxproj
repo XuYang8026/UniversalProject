@@ -62,6 +62,7 @@
 		293D46551ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D463E1ECDBB63007C64A9 /* icon_tabbar_onsite_new@2x.png */; };
 		293D46561ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D463F1ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png */; };
 		293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46591ECDC004007C64A9 /* LoginViewController.m */; };
+		293ECC2D1EE56D1D008061A1 /* IMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 293ECC2C1EE56D1D008061A1 /* IMManager.m */; };
 		294A68081ED58A3700AC382A /* TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A68071ED58A3700AC382A /* TabBarBadge.m */; };
 		294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A680A1ED58A7300AC382A /* TabBarItem.m */; };
 		294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */; };
@@ -197,6 +198,8 @@
 		293D463F1ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_onsite_selected@2x.png"; sourceTree = "<group>"; };
 		293D46581ECDC004007C64A9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		293D46591ECDC004007C64A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		293ECC2B1EE56D1D008061A1 /* IMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMManager.h; sourceTree = "<group>"; };
+		293ECC2C1EE56D1D008061A1 /* IMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMManager.m; sourceTree = "<group>"; };
 		294A68061ED58A3700AC382A /* TabBarBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarBadge.h; sourceTree = "<group>"; };
 		294A68071ED58A3700AC382A /* TabBarBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarBadge.m; sourceTree = "<group>"; };
 		294A68091ED58A7300AC382A /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
@@ -353,6 +356,8 @@
 			children = (
 				290DE9241ED19B7F00A45FF6 /* AppManager.h */,
 				290DE9251ED19B7F00A45FF6 /* AppManager.m */,
+				293ECC2B1EE56D1D008061A1 /* IMManager.h */,
+				293ECC2C1EE56D1D008061A1 /* IMManager.m */,
 				2917D2151EE02F9C00E76185 /* ShareManager.h */,
 				2917D2161EE02F9C00E76185 /* ShareManager.m */,
 				29AD6C681ED41E2100B0879C /* UserManager */,
@@ -1074,7 +1079,7 @@
 		296F9EB01ECC64CE0063A255 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = XY;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "徐阳";
 				TargetAttributes = {
@@ -1259,6 +1264,7 @@
 				290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */,
 				290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */,
 				290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */,
+				293ECC2D1EE56D1D008061A1 /* IMManager.m in Sources */,
 				29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */,
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
 				29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */,

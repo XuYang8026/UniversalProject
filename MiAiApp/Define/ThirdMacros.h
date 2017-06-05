@@ -21,4 +21,10 @@
 // 腾讯
 #define kAppKey_Tencent          @"1106139910"
 
+
+//网易云信
+#define kIMAppKey @"afc7265de3857bbaa7404b4ea92b191e"
+#define kIMAppSecret @"c34bd403b29a"
+#define kIMPushCerName @""
+
 #endif /* ThirdMacros_h */

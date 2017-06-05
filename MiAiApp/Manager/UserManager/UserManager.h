@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserInfo.h"
+#import "IMManager.h"
 
 typedef NS_ENUM(NSInteger, UserLoginType){
     kUserLoginTypeUnKnow = 0,//未知

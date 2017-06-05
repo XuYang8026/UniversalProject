@@ -9,6 +9,7 @@
 #import "AppDelegate+AppService.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "LoginViewController.h"
+#import "OpenUDID.h"
 
 @implementation AppDelegate (AppService)
 
@@ -19,7 +20,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loginStateChange:)
                                                  name:KNotificationLoginStateChange
-                                               object:nil];
+                                               object:nil];    
     
     //网络状态监听
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -41,6 +42,7 @@
 
 #pragma mark ————— 初始化用户系统 —————
 -(void)initUserManager{
+    DLog(@"设备IMEI ：%@",[OpenUDID value]);
     if([userManager loadUserInfo]){
         
         //如果有本地数据，先展示TabBar 随后异步自动登录

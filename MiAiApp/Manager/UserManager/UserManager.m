@@ -8,7 +8,6 @@
 
 #import "UserManager.h"
 #import <UMSocialCore/UMSocialCore.h>
-#import "LoginViewController.h"
 
 @implementation UserManager
 
@@ -17,7 +16,11 @@ SINGLETON_FOR_CLASS(UserManager);
 -(instancetype)init{
     self = [super init];
     if (self) {
-        
+        //被踢下线
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onKick)
+                                                     name:KNotificationOnKick
+                                                   object:nil];
     }
     return self;
 }
@@ -51,20 +54,20 @@ SINGLETON_FOR_CLASS(UserManager);
             } else {
                 
                 UMSocialUserInfoResponse *resp = result;
-                
-                // 授权信息
-                NSLog(@"QQ uid: %@", resp.uid);
-                NSLog(@"QQ openid: %@", resp.openid);
-                NSLog(@"QQ accessToken: %@", resp.accessToken);
-                NSLog(@"QQ expiration: %@", resp.expiration);
-                
-                // 用户信息
-                NSLog(@"QQ name: %@", resp.name);
-                NSLog(@"QQ iconurl: %@", resp.iconurl);
-                NSLog(@"QQ gender: %@", resp.unionGender);
-                
-                // 第三方平台SDK源数据
-                NSLog(@"QQ originalResponse: %@", resp.originalResponse);
+//                
+//                // 授权信息
+//                NSLog(@"QQ uid: %@", resp.uid);
+//                NSLog(@"QQ openid: %@", resp.openid);
+//                NSLog(@"QQ accessToken: %@", resp.accessToken);
+//                NSLog(@"QQ expiration: %@", resp.expiration);
+//                
+//                // 用户信息
+//                NSLog(@"QQ name: %@", resp.name);
+//                NSLog(@"QQ iconurl: %@", resp.iconurl);
+//                NSLog(@"QQ gender: %@", resp.unionGender);
+//                
+//                // 第三方平台SDK源数据
+//                NSLog(@"QQ originalResponse: %@", resp.originalResponse);
                 
                 //登录参数
                 NSDictionary *params = @{@"openid":resp.openid, @"nickname":resp.name, @"photo":resp.iconurl, @"sex":[resp.unionGender isEqualToString:@"男"]?@1:@2, @"cityname":resp.originalResponse[@"city"], @"fr":@(loginType)};
@@ -83,7 +86,6 @@ SINGLETON_FOR_CLASS(UserManager);
 -(void)loginToServer:(NSDictionary *)params completion:(loginBlock)completion{
     [MBProgressHUD showActivityMessageInView:@"登录中..."];
     [PPNetworkHelper POST:NSStringFormat(@"%@%@",URL_main,URL_user_login) parameters:params success:^(id responseObject) {
-        [MBProgressHUD hideHUD];
         [self LoginSuccess:responseObject completion:completion];
         
     } failure:^(NSError *error) {
@@ -111,21 +113,40 @@ SINGLETON_FOR_CLASS(UserManager);
     if (ValidDict(responseObject)) {
         if (ValidDict(responseObject[@"data"])) {
             NSDictionary *data = responseObject[@"data"];
-            self.curUserInfo = [UserInfo modelWithDictionary:data];
-            [self saveUserInfo];
-            self.isLogined = YES;
-            if (completion) {
-                completion(YES,nil);
+            if (ValidStr(data[@"imId"]) && ValidStr(data[@"imPass"])) {
+                //登录IM
+                [[IMManager sharedIMManager] IMLogin:data[@"imId"] IMPwd:data[@"imPass"] completion:^(BOOL success, NSString *des) {
+                    [MBProgressHUD hideHUD];
+                    if (success) {
+                        self.curUserInfo = [UserInfo modelWithDictionary:data];
+                        [self saveUserInfo];
+                        self.isLogined = YES;
+                        if (completion) {
+                            completion(YES,nil);
+                        }
+                        KPostNotification(KNotificationLoginStateChange, @YES);
+                    }else{
+                        if (completion) {
+                            completion(NO,@"IM登录失败");
+                        }
+                        KPostNotification(KNotificationLoginStateChange, @NO);
+                    }
+                }];
+            }else{
+                if (completion) {
+                    completion(NO,@"登录返回数据异常");
+                }
+                KPostNotification(KNotificationLoginStateChange, @NO);
             }
-            KPostNotification(KNotificationLoginStateChange, @YES);
+            
         }
     }else{
         if (completion) {
-            completion(NO,nil);
+            completion(NO,@"登录返回数据异常");
         }
         KPostNotification(KNotificationLoginStateChange, @NO);
     }
-
+    
 }
 #pragma mark ————— 储存用户信息 —————
 -(void)saveUserInfo{
@@ -146,6 +167,10 @@ SINGLETON_FOR_CLASS(UserManager);
     }
     return NO;
 }
+#pragma mark ————— 被踢下线 —————
+-(void)onKick{
+    [self logout:nil];
+}
 #pragma mark ————— 退出登录 —————
 - (void)logout:(void (^)(BOOL, NSString *))completion{
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
@@ -153,6 +178,8 @@ SINGLETON_FOR_CLASS(UserManager);
     [[UIApplication sharedApplication] unregisterForRemoteNotifications];
     
 //    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationLogout object:nil];//被踢下线通知用户退出直播间
+    
+    [[IMManager sharedIMManager] IMLogout];
     
     self.curUserInfo = nil;
     self.isLogined = NO;

@@ -18,6 +18,9 @@
     //初始化window
     [self initWindow];
     
+    //初始化IM
+    [[IMManager sharedIMManager] initIM];
+    
     //UMeng初始化
     [self initUMeng];
     
