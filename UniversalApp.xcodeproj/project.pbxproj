@@ -95,7 +95,6 @@
 		29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */; };
 		29FEE77B1ECED1E200C81B60 /* MBHUD_Warn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */; };
 		29FEE77C1ECED1E200C81B60 /* MBHUD_Warn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7741ECED1E200C81B60 /* MBHUD_Warn@3x.png */; };
-		8E4CE34B0C01EF794A2C7378 /* libPods-MiAiApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52865CE8C50E268AF7832120 /* libPods-MiAiApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +115,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14ED69325E9FD4BDB1CA95F8 /* Pods-UniversalApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversalApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-UniversalApp/Pods-UniversalApp.release.xcconfig"; sourceTree = "<group>"; };
 		290DE9211ED19B6B00A45FF6 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
 		290DE9221ED19B6B00A45FF6 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		290DE9241ED19B7F00A45FF6 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
@@ -205,11 +205,11 @@
 		294A68091ED58A7300AC382A /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
 		294A680A1ED58A7300AC382A /* TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
 		294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LCTabBarBadge@2x.png"; sourceTree = "<group>"; };
-		296F9EB81ECC64CE0063A255 /* MiAiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiAiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		296F9ED11ECC64CE0063A255 /* MiAiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		296F9EB81ECC64CE0063A255 /* UniversalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		296F9ED11ECC64CE0063A255 /* UniversalAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppTests.m; sourceTree = "<group>"; };
 		296F9ED71ECC64CE0063A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		296F9EDC1ECC64CE0063A255 /* MiAiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiAiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		296F9EDC1ECC64CE0063A255 /* UniversalAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppUITests.m; sourceTree = "<group>"; };
 		296F9EE21ECC64CE0063A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2973A8111EDEB895002751F0 /* CommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacros.h; sourceTree = "<group>"; };
@@ -254,9 +254,7 @@
 		29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XY.m"; sourceTree = "<group>"; };
 		29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Warn@2x.png"; sourceTree = "<group>"; };
 		29FEE7741ECED1E200C81B60 /* MBHUD_Warn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Warn@3x.png"; sourceTree = "<group>"; };
-		415162175F837CEF25F31662 /* Pods-MiAiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiAiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp.release.xcconfig"; sourceTree = "<group>"; };
-		49840D2CD21987EBE225F82C /* Pods-MiAiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiAiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp.debug.xcconfig"; sourceTree = "<group>"; };
-		52865CE8C50E268AF7832120 /* libPods-MiAiApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiAiApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51AB222BA7ACF202B5B1330 /* Pods-UniversalApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversalApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UniversalApp/Pods-UniversalApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,7 +269,6 @@
 				299610271ED84B5100BCED2A /* UMSocialCore.framework in Frameworks */,
 				2996102A1ED84B5100BCED2A /* libUMSocialLog.a in Frameworks */,
 				299610281ED84B5100BCED2A /* UMSocialNetwork.framework in Frameworks */,
-				8E4CE34B0C01EF794A2C7378 /* libPods-MiAiApp.a in Frameworks */,
 				2996102C1ED84B5100BCED2A /* UShareUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,8 +293,8 @@
 		24EA73B06C16F121CA87DD41 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				49840D2CD21987EBE225F82C /* Pods-MiAiApp.debug.xcconfig */,
-				415162175F837CEF25F31662 /* Pods-MiAiApp.release.xcconfig */,
+				A51AB222BA7ACF202B5B1330 /* Pods-UniversalApp.debug.xcconfig */,
+				14ED69325E9FD4BDB1CA95F8 /* Pods-UniversalApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -765,9 +762,9 @@
 		296F9EAF1ECC64CE0063A255 = {
 			isa = PBXGroup;
 			children = (
-				296F9EBA1ECC64CE0063A255 /* MiAiApp */,
-				296F9ED41ECC64CE0063A255 /* MiAiAppTests */,
-				296F9EDF1ECC64CE0063A255 /* MiAiAppUITests */,
+				296F9EBA1ECC64CE0063A255 /* UniversalApp */,
+				296F9ED41ECC64CE0063A255 /* UniversalAppTests */,
+				296F9EDF1ECC64CE0063A255 /* UniversalAppUITests */,
 				296F9EB91ECC64CE0063A255 /* Products */,
 				24EA73B06C16F121CA87DD41 /* Pods */,
 				6C3D66AC810B3ABDE56945D5 /* Frameworks */,
@@ -777,14 +774,14 @@
 		296F9EB91ECC64CE0063A255 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				296F9EB81ECC64CE0063A255 /* MiAiApp.app */,
-				296F9ED11ECC64CE0063A255 /* MiAiAppTests.xctest */,
-				296F9EDC1ECC64CE0063A255 /* MiAiAppUITests.xctest */,
+				296F9EB81ECC64CE0063A255 /* UniversalApp.app */,
+				296F9ED11ECC64CE0063A255 /* UniversalAppTests.xctest */,
+				296F9EDC1ECC64CE0063A255 /* UniversalAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		296F9EBA1ECC64CE0063A255 /* MiAiApp */ = {
+		296F9EBA1ECC64CE0063A255 /* UniversalApp */ = {
 			isa = PBXGroup;
 			children = (
 				29AD6C5D1ED3E4D600B0879C /* AppDelegate */,
@@ -797,7 +794,7 @@
 				293D45AB1ECD6926007C64A9 /* Resource */,
 				296F9EBB1ECC64CE0063A255 /* Supporting Files */,
 			);
-			path = MiAiApp;
+			path = UniversalApp;
 			sourceTree = "<group>";
 		};
 		296F9EBB1ECC64CE0063A255 /* Supporting Files */ = {
@@ -813,22 +810,22 @@
 			path = "Supporting Flies";
 			sourceTree = "<group>";
 		};
-		296F9ED41ECC64CE0063A255 /* MiAiAppTests */ = {
+		296F9ED41ECC64CE0063A255 /* UniversalAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */,
 				296F9ED71ECC64CE0063A255 /* Info.plist */,
 			);
-			path = MiAiAppTests;
+			path = UniversalAppTests;
 			sourceTree = "<group>";
 		};
-		296F9EDF1ECC64CE0063A255 /* MiAiAppUITests */ = {
+		296F9EDF1ECC64CE0063A255 /* UniversalAppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */,
 				296F9EE21ECC64CE0063A255 /* Info.plist */,
 			);
-			path = MiAiAppUITests;
+			path = UniversalAppUITests;
 			sourceTree = "<group>";
 		};
 		2996100F1ED8159900BCED2A /* AppIntroduction */ = {
@@ -1009,7 +1006,6 @@
 			children = (
 				299610121ED84A8D00BCED2A /* CoreGraphics.framework */,
 				299610101ED84A7100BCED2A /* libsqlite3.tbd */,
-				52865CE8C50E268AF7832120 /* libPods-MiAiApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1017,9 +1013,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		296F9EB71ECC64CE0063A255 /* MiAiApp */ = {
+		296F9EB71ECC64CE0063A255 /* UniversalApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 296F9EE51ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "MiAiApp" */;
+			buildConfigurationList = 296F9EE51ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "UniversalApp" */;
 			buildPhases = (
 				C14C4D77EDEC58243841D1EC /* [CP] Check Pods Manifest.lock */,
 				296F9EB41ECC64CE0063A255 /* Sources */,
@@ -1032,14 +1028,14 @@
 			);
 			dependencies = (
 			);
-			name = MiAiApp;
+			name = UniversalApp;
 			productName = MiAiApp;
-			productReference = 296F9EB81ECC64CE0063A255 /* MiAiApp.app */;
+			productReference = 296F9EB81ECC64CE0063A255 /* UniversalApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		296F9ED01ECC64CE0063A255 /* MiAiAppTests */ = {
+		296F9ED01ECC64CE0063A255 /* UniversalAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 296F9EE81ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "MiAiAppTests" */;
+			buildConfigurationList = 296F9EE81ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "UniversalAppTests" */;
 			buildPhases = (
 				296F9ECD1ECC64CE0063A255 /* Sources */,
 				296F9ECE1ECC64CE0063A255 /* Frameworks */,
@@ -1050,14 +1046,14 @@
 			dependencies = (
 				296F9ED31ECC64CE0063A255 /* PBXTargetDependency */,
 			);
-			name = MiAiAppTests;
+			name = UniversalAppTests;
 			productName = MiAiAppTests;
-			productReference = 296F9ED11ECC64CE0063A255 /* MiAiAppTests.xctest */;
+			productReference = 296F9ED11ECC64CE0063A255 /* UniversalAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		296F9EDB1ECC64CE0063A255 /* MiAiAppUITests */ = {
+		296F9EDB1ECC64CE0063A255 /* UniversalAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 296F9EEB1ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "MiAiAppUITests" */;
+			buildConfigurationList = 296F9EEB1ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "UniversalAppUITests" */;
 			buildPhases = (
 				296F9ED81ECC64CE0063A255 /* Sources */,
 				296F9ED91ECC64CE0063A255 /* Frameworks */,
@@ -1068,9 +1064,9 @@
 			dependencies = (
 				296F9EDE1ECC64CE0063A255 /* PBXTargetDependency */,
 			);
-			name = MiAiAppUITests;
+			name = UniversalAppUITests;
 			productName = MiAiAppUITests;
-			productReference = 296F9EDC1ECC64CE0063A255 /* MiAiAppUITests.xctest */;
+			productReference = 296F9EDC1ECC64CE0063A255 /* UniversalAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1100,7 +1096,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 296F9EB31ECC64CE0063A255 /* Build configuration list for PBXProject "MiAiApp" */;
+			buildConfigurationList = 296F9EB31ECC64CE0063A255 /* Build configuration list for PBXProject "UniversalApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1113,9 +1109,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				296F9EB71ECC64CE0063A255 /* MiAiApp */,
-				296F9ED01ECC64CE0063A255 /* MiAiAppTests */,
-				296F9EDB1ECC64CE0063A255 /* MiAiAppUITests */,
+				296F9EB71ECC64CE0063A255 /* UniversalApp */,
+				296F9ED01ECC64CE0063A255 /* UniversalAppTests */,
+				296F9EDB1ECC64CE0063A255 /* UniversalAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1197,7 +1193,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniversalApp/Pods-UniversalApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C14C4D77EDEC58243841D1EC /* [CP] Check Pods Manifest.lock */ = {
@@ -1227,7 +1223,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiAiApp/Pods-MiAiApp-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniversalApp/Pods-UniversalApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1299,12 +1295,12 @@
 /* Begin PBXTargetDependency section */
 		296F9ED31ECC64CE0063A255 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 296F9EB71ECC64CE0063A255 /* MiAiApp */;
+			target = 296F9EB71ECC64CE0063A255 /* UniversalApp */;
 			targetProxy = 296F9ED21ECC64CE0063A255 /* PBXContainerItemProxy */;
 		};
 		296F9EDE1ECC64CE0063A255 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 296F9EB71ECC64CE0063A255 /* MiAiApp */;
+			target = 296F9EB71ECC64CE0063A255 /* UniversalApp */;
 			targetProxy = 296F9EDD1ECC64CE0063A255 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1415,59 +1411,59 @@
 		};
 		296F9EE61ECC64CE0063A255 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49840D2CD21987EBE225F82C /* Pods-MiAiApp.debug.xcconfig */;
+			baseConfigurationReference = A51AB222BA7ACF202B5B1330 /* Pods-UniversalApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LLNHUK4DDQ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDK",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialUI",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/MiAiApp/Supporting Flies/PrefixHeader.pch";
-				INFOPLIST_FILE = "MiAiApp/Supporting Flies/Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UniversalApp/Supporting Flies/PrefixHeader.pch";
+				INFOPLIST_FILE = "UniversalApp/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/QQ",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/WeChat",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialSDKPlugin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/MiAiApp/Define";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/UniversalApp/Define";
 			};
 			name = Debug;
 		};
 		296F9EE71ECC64CE0063A255 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 415162175F837CEF25F31662 /* Pods-MiAiApp.release.xcconfig */;
+			baseConfigurationReference = 14ED69325E9FD4BDB1CA95F8 /* Pods-UniversalApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LLNHUK4DDQ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDK",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialUI",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/MiAiApp/Supporting Flies/PrefixHeader.pch";
-				INFOPLIST_FILE = "MiAiApp/Supporting Flies/Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UniversalApp/Supporting Flies/PrefixHeader.pch";
+				INFOPLIST_FILE = "UniversalApp/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/QQ",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/SocialLibraries/WeChat",
-					"$(PROJECT_DIR)/MiAiApp/ThridParty/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialSDKPlugin",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/MiAiApp/Define";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/UniversalApp/Define";
 			};
 			name = Release;
 		};
@@ -1479,7 +1475,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiAiApp.app/MiAiApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UniversalApp.app/UniversalApp";
 			};
 			name = Debug;
 		};
@@ -1491,7 +1487,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MiAiAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiAiApp.app/MiAiApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UniversalApp.app/UniversalApp";
 			};
 			name = Release;
 		};
@@ -1520,7 +1516,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		296F9EB31ECC64CE0063A255 /* Build configuration list for PBXProject "MiAiApp" */ = {
+		296F9EB31ECC64CE0063A255 /* Build configuration list for PBXProject "UniversalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				296F9EE31ECC64CE0063A255 /* Debug */,
@@ -1529,7 +1525,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		296F9EE51ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "MiAiApp" */ = {
+		296F9EE51ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "UniversalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				296F9EE61ECC64CE0063A255 /* Debug */,
@@ -1538,7 +1534,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		296F9EE81ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "MiAiAppTests" */ = {
+		296F9EE81ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "UniversalAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				296F9EE91ECC64CE0063A255 /* Debug */,
@@ -1547,7 +1543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		296F9EEB1ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "MiAiAppUITests" */ = {
+		296F9EEB1ECC64CE0063A255 /* Build configuration list for PBXNativeTarget "UniversalAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				296F9EEC1ECC64CE0063A255 /* Debug */,
