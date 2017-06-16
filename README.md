@@ -2,6 +2,16 @@
 
 原文传送门 http://www.jianshu.com/p/d553096914ff
 
+本项目下载后不能直接run起来，用命令行 CD 到项目根目录
+
+```
+执行 Pod install
+```
+
+没用过Pod的同学可以下载免Pod的完整项目，链接：https://pan.baidu.com/s/1c22BgiO
+
+
+
 # iOS 从0到1搭建高可用App框架
 
     最近在搭建新项目的iOS框架，一直在思考如何才能搭建出高可用App框架，能否避免后期因为代码质量问题的重构。
@@ -10,7 +20,7 @@
     下面分享一下我的架构思路。
 
 架构图：
-![image](http://upload-images.jianshu.io/upload_images/743749-7617df7bd2df5421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](http://upload-images.jianshu.io/upload_images/743749-55f6fe5299fddbfe.png?imageMogr2/auto-orient/strip)
 
 架构图
 架构原则：易读性、易维护性、易扩展性。
@@ -104,9 +114,20 @@ ThirdMacros 包含第三方框架相关的定义，例如keySecret等。只为�
 
 
 
+本文只是阐述本人近期架构的出发点和整体思路，代码的具体实现没有细说，感兴趣的可以下载源码阅读
 
+欢迎各路大神提出更好的架构思想大家一起学习交流
 
-以上就是我的基础架构思想
+下面对你也许有帮助：
 
-如有雷同属巧合，如有错误望指正。by：臭码农
+[iOS 团队编码规范 —— 团队开发需要共同遵守的代码规范](http://www.jianshu.com/p/1f0618a2ba9b)
+
+[代码注释，教你用快捷键+代码块实现快速注释 —— 让注释不再是负担，快捷键帮你解决](http://www.jianshu.com/p/78b8693d87cd)
+
+[通用工具类宏定义 —— 进一步提升编码效率](http://www.jianshu.com/p/2c55fcfeecb5)
+
+以上属于臭码农原创，若有雷同属巧合，如有错误望指正，转载请标明来源和作者。
+
 简书地址：http://www.jianshu.com/p/d553096914ff
+
+by：臭码农
