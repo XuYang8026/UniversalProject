@@ -8,7 +8,7 @@
 执行 Pod install
 ```
 
-没用过Pod的同学可以下载免Pod的完整项目，链接：https://pan.baidu.com/s/1c22BgiO
+没用过Pod的同学可以下载免Pod的完整项目，链接：https://pan.baidu.com/s/1i5oTHqP
 
 
 
