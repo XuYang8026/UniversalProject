@@ -66,6 +66,7 @@
 		294A68081ED58A3700AC382A /* TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A68071ED58A3700AC382A /* TabBarBadge.m */; };
 		294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A680A1ED58A7300AC382A /* TabBarItem.m */; };
 		294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */; };
+		296ED8B41EF3B6A300E33961 /* libPods-UniversalApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */; };
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
 		2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2973A8191EDEE6BE002751F0 /* GameInfo.m */; };
@@ -205,6 +206,7 @@
 		294A68091ED58A7300AC382A /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
 		294A680A1ED58A7300AC382A /* TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
 		294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LCTabBarBadge@2x.png"; sourceTree = "<group>"; };
+		296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UniversalApp.a"; path = "../../Library/Developer/Xcode/DerivedData/UniversalApp-ekowodordvfxkkdyohamowsftbba/Build/Products/Debug-iphonesimulator/libPods-UniversalApp.a"; sourceTree = "<group>"; };
 		296F9EB81ECC64CE0063A255 /* UniversalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9ED11ECC64CE0063A255 /* UniversalAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiAiAppTests.m; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296ED8B41EF3B6A300E33961 /* libPods-UniversalApp.a in Frameworks */,
 				299610251ED84B5100BCED2A /* libSocialQQ.a in Frameworks */,
 				299610261ED84B5100BCED2A /* libSocialWeChat.a in Frameworks */,
 				299610131ED84A8D00BCED2A /* CoreGraphics.framework in Frameworks */,
@@ -1004,6 +1007,7 @@
 		6C3D66AC810B3ABDE56945D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */,
 				299610121ED84A8D00BCED2A /* CoreGraphics.framework */,
 				299610101ED84A7100BCED2A /* libsqlite3.tbd */,
 			);
