@@ -2,6 +2,18 @@
 
 原文传送门 http://www.jianshu.com/p/d553096914ff
 
+本项目下载后不能直接run起来，用命令行 CD 到项目根目录
+
+```
+执行 Pod install
+```
+没用过Pod的同学建议安装一下Pod
+
+或者下载免Pod的完整项目 链接：https://pan.baidu.com/s/1c22BgiO
+
+
+
+
 # iOS 从0到1搭建高可用App框架
 
     最近在搭建新项目的iOS框架，一直在思考如何才能搭建出高可用App框架，能否避免后期因为代码质量问题的重构。
@@ -10,7 +22,7 @@
     下面分享一下我的架构思路。
 
 架构图：
-![image](http://upload-images.jianshu.io/upload_images/743749-7617df7bd2df5421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](http://upload-images.jianshu.io/upload_images/743749-55f6fe5299fddbfe.png?imageMogr2/auto-orient/strip)
 
 架构图
 架构原则：易读性、易维护性、易扩展性。
