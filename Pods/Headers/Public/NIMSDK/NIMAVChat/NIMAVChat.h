@@ -1,0 +1,1 @@
+../../../../NIMSDK/NIMAVChat/NIMAVChat.framework/Headers/NIMAVChat.h

@@ -1,0 +1,6 @@
+framework module NIMSDK {
+  umbrella header "NIMSDK.h"
+
+  export *
+  module * { export * }
+}

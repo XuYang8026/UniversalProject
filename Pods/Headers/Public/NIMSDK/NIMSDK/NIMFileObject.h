@@ -1,0 +1,1 @@
+../../../../NIMSDK/NIMSDK/NIMSDK.framework/Headers/NIMFileObject.h
