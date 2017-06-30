@@ -12,6 +12,7 @@
 #import "SecondViewController.h"
 #import "UICollectionView+IndexPath.h"
 #import "XYTransitionProtocol.h"
+#import "HomeViewController.h"
 
 #define itemWidthHeight ((kScreenWidth-10)/2)
 
@@ -24,9 +25,12 @@ PropertyNSMutableArray(dataArray);//数据源
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"瀑布流";
     _dataArray = @[].mutableCopy;
+    self.isShowLiftBack = NO;
     [self setupUI];
-    
+    [self addNavigationItemWithTitles
+     :@[@"粒子动画"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
     [self.collectionView.mj_header beginRefreshing];
 }
 #pragma mark ————— 初始化页面 —————
@@ -120,6 +124,11 @@ PropertyNSMutableArray(dataArray);//数据源
 
 -(BOOL)isNeedTransition{
     return YES;
+}
+
+
+-(void)naviBtnClick:(UIButton *)btn{
+    [self.navigationController pushViewController:[HomeViewController new] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
