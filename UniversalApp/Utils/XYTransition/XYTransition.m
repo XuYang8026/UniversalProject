@@ -1,0 +1,171 @@
+//
+//  XYTransition.m
+//  UniversalApp
+//
+//  Created by 徐阳 on 2017/6/30.
+//  Copyright © 2017年 徐阳. All rights reserved.
+//
+
+#import "XYTransition.h"
+#import "XYTransitionProtocol.h"
+
+@interface XYTransition()
+
+@property (nonatomic, assign) CGFloat animationScale;//缩放比例
+
+@end
+
+@implementation XYTransition
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.animationDuration = 0.3;
+    }
+    return self;
+}
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
+{
+    return self.animationDuration == 0 ?0.3 :self.animationDuration;
+}
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
+{
+    if (_isPush) {
+        [self pushAnimateTransition:transitionContext];
+    }else{
+        [self popAnimateTransition:transitionContext];
+    }
+}
+
+#pragma mark ————— push —————
+- (void)pushAnimateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
+{
+    //获取跳转的Controller和目标Controller
+    UIViewController<XYTransitionProtocol> * fromVC = (UIViewController <XYTransitionProtocol> * )[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController<XYTransitionProtocol> * toVC = (UIViewController <XYTransitionProtocol> * )[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    //from和to的两个视图
+    __block UIView * fromView = fromVC.view;
+    __block UIView * toView = toVC.view;
+    
+    //container容器加入要显示的视图 不加入fromVC 返回的时候就无法返回
+    UIView * containerView = [transitionContext containerView];
+    [containerView addSubview:fromView];
+    [containerView addSubview:toView];
+    
+    //获取collectionView 的cell
+//    __block UICollectionView * fromCollection = [fromVC transitionFromView];
+//    NSIndexPath * indexPath = [fromCollection currentIndexPath];
+//    __block UIView<PinterestTransitionProtocol> * fromCellView = (UIView<PinterestTransitionProtocol>*)[fromCollection cellForItemAtIndexPath:indexPath];
+    
+    UIView *fromCellView = [fromVC targetTransitionView];
+    
+    //获取cell相对左上角坐标 计算相对坐标
+    CGPoint leftUperPoint = [fromCellView convertPoint:CGPointZero toView:nil];
+    
+    toView.hidden = YES;
+    
+    //偏移量
+    CGFloat offsetY  = fromVC.navigationController.navigationBarHidden ? 0.0 : 64;
+    CGFloat offsetStatuBar = fromVC.navigationController.navigationBarHidden ? 0.0 : 20;
+    
+    
+    //复制一个Cell用于显示动画效果
+    __block UIImageView * snapShot =[[UIImageView alloc] initWithImage:[fromCellView snapshotImage]];
+    snapShot.backgroundColor = [UIColor yellowColor];
+    [containerView addSubview:snapShot];
+    
+    [snapShot setOrigin:leftUperPoint];
+    
+    _animationScale = MAX([toVC targetTransitionView].width, snapShot.width) / MIN([toVC targetTransitionView].width, snapShot.width);
+    
+    [UIView animateWithDuration:self.animationDuration animations:^{
+        //设置缩放变换 x,y分别放大多少倍
+        snapShot.transform =  CGAffineTransformMakeScale(_animationScale,_animationScale);
+        [snapShot setOrigin:CGPointMake(0, offsetY)];
+        
+        fromView.alpha = 0;
+        fromView.transform = snapShot.transform;
+        fromView.frame = CGRectMake(-(leftUperPoint.x)*_animationScale,
+                                    -(leftUperPoint.y - offsetStatuBar)*_animationScale + offsetY,
+                                    fromVC.view.frame.size.width,
+                                    fromVC.view.frame.size.height);
+    } completion:^(BOOL finished) {
+        if (finished) {
+            //没有这句过滤动画就不会结束
+            [snapShot removeFromSuperview];
+            toView.hidden = NO;
+            fromVC.view.transform = CGAffineTransformIdentity;
+            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+            
+        }
+    }];
+
+}
+
+#pragma mark ————— pop —————
+- (void)popAnimateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
+{
+    //获取跳转VC和目标VC
+    UIViewController <XYTransitionProtocol> * fromVC = (UIViewController<XYTransitionProtocol>*)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController <XYTransitionProtocol> * toVC = (UIViewController<XYTransitionProtocol>*)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    //添加要跳转的视图并且先隐藏掉
+    UIView * containerView = [transitionContext containerView];
+    __block UIView * toView = toVC.view;
+    [containerView addSubview:toView];
+    toView.hidden = YES;
+    
+    //来源View
+    UIView *fromCellView = [fromVC targetTransitionView];
+    
+    //取目标View
+    UIView *toCellView = [toVC targetTransitionView];
+    
+    //获取相对窗口的坐标
+    CGPoint leftUperPoint = [toCellView convertPoint:CGPointZero toView:nil];
+    //目标View快照 复制一个 并且放大2被用于后边显示缩小动画
+    //计算cell偏移量 为了更好的现实动画
+    CGFloat offsetY = fromVC.navigationController.navigationBarHidden ? 0.0 : 64;
+    
+    __block UIImageView * snapShot =[[UIImageView alloc] initWithImage:[toCellView snapshotImage]];
+    //计算缩放比例
+    _animationScale = MAX(fromCellView.width, snapShot.width) / MIN(fromCellView.width, snapShot.width);
+    
+    [containerView addSubview:snapShot];
+    snapShot.backgroundColor = [UIColor yellowColor];
+    snapShot.transform = CGAffineTransformMakeScale(_animationScale, _animationScale);
+    [snapShot setOrigin:CGPointMake(0, offsetY)];
+    //用于动画设置淡出缩小效果
+    toView.hidden = NO;
+    toView.alpha = 0;
+    toView.transform = snapShot.transform;
+    
+    toView.frame = CGRectMake(-(leftUperPoint.x * _animationScale), -((leftUperPoint.y - offsetY) * _animationScale + offsetY),
+                              toView.frame.size.width, toView.frame.size.height);
+    
+    
+    
+    //添加一个百色淡出效果
+    __block UIView *whiteViewContainer = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    whiteViewContainer.backgroundColor = [UIColor whiteColor];
+    
+    [containerView addSubview:whiteViewContainer];
+    [containerView insertSubview:whiteViewContainer belowSubview:toView];
+    
+    [UIView animateWithDuration:self.animationDuration animations:^{
+        snapShot.transform = CGAffineTransformIdentity; //恢复原来大小
+        [snapShot setOrigin:leftUperPoint]; //设置相对位置
+        toView.transform = CGAffineTransformIdentity;
+        toView.alpha = 1.0;
+        [toView setOrigin:CGPointZero];
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [snapShot removeFromSuperview];
+            [whiteViewContainer removeFromSuperview];
+            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+        }
+    }];
+}
+@end

@@ -19,16 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.isShowLiftBack = NO;
 
     [self addNavigationItemWithTitles
      :@[@"pre登录",@"push登录"] isLeft:YES target:self action:@selector(naviBtnClick:) tags:@[@1000,@1001]];
     [self addNavigationItemWithTitles:@[@"pre网页",@"push网页"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1002,@1003]];
     
-    [self addrainBtn:1 top:200];
-    [self addrainBtn:2 top:300];
-    [self addrainBtn:3 top:400];
+//    [self addrainBtn:1 top:200];
+//    [self addrainBtn:2 top:300];
+//    [self addrainBtn:3 top:400];
     
+//    _waterFall = [WaterFallListViewController new];
+//    [self addChildViewController:_waterFall];
+//    [self.view addSubview:_waterFall.view];
+//    
 }
 
 -(void)naviBtnClick:(UIButton *)btn{
@@ -135,6 +140,7 @@
     [self.view addSubview:snowBtn];
 
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

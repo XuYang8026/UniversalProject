@@ -13,4 +13,7 @@
 
 #define CNavBgColor  [UIColor colorWithHexString:@"00AE68"]
 
+//默认页面背景色
+#define CViewBgColor [UIColor colorWithHexString:@"f2f2f2"]
+
 #endif /* FontAndColorMacros_h */

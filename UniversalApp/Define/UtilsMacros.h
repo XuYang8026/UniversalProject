@@ -52,6 +52,7 @@
 #define PropertyNSInteger(s) @property (nonatomic,assign) NSInteger  s
 #define PropertyFloat(s) @property (nonatomic,assign) float  s
 #define PropertyLongLong(s) @property(nonatomic,assign)long long s
+#define PropertyBool(s) @property(nonatomic,assign)BOOL s
 #define PropertyNSDictionary(s) @property (nonatomic,strong) NSDictionary * s
 #define PropertyNSArray(s) @property (nonatomic,strong) NSArray * s
 #define PropertyNSMutableArray(s) @property (nonatomic,strong) NSMutableArray * s

@@ -10,6 +10,7 @@
 
 #import "RootNavigationController.h"
 #import "HomeViewController.h"
+#import "WaterFallListViewController.h"
 #import "MakeFriendsViewController.h"
 #import "MsgViewController.h"
 #import "MineViewController.h"
@@ -56,7 +57,8 @@ PropertyNSMutableArray(VCS);//tabbar root VC
 #pragma mark - ——————— 初始化VC ————————
 -(void)setUpAllChildViewController{
     _VCS = @[].mutableCopy;
-    HomeViewController *homeVC = [[HomeViewController alloc]init];
+//    HomeViewController *homeVC = [[HomeViewController alloc]init];
+    WaterFallListViewController *homeVC = [WaterFallListViewController new];
     [self setupChildViewController:homeVC title:@"首页" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
     
     MakeFriendsViewController *makeFriendVC = [[MakeFriendsViewController alloc]init];

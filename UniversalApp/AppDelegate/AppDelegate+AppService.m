@@ -63,7 +63,7 @@
     }else{
         //没有登录过，展示登录页面
         KPostNotification(KNotificationLoginStateChange, @NO)
-        [MBProgressHUD showErrorMessage:@"需要登录"];
+//        [MBProgressHUD showErrorMessage:@"需要登录"];
     }
 }
 

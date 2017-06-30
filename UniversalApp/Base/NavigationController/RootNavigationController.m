@@ -7,10 +7,17 @@
 //
 
 #import "RootNavigationController.h"
+#import "XYTransitionProtocol.h"
+#import "XYTransition.h"
 
-@interface RootNavigationController ()<UINavigationControllerDelegate>
+@interface RootNavigationController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) id popDelegate;
+@property (nonatomic,strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
+@property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *popRecognizer;
+//@property (nonatomic,strong) UIPanGestureRecognizer *popRecognizer;
+PropertyBool(isCanSlidBack);//是否可以滑动返回
+
 @end
 
 @implementation RootNavigationController
@@ -46,6 +53,11 @@
 //    self.navigationBar.barTintColor = KBlueColor;
 //    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont boldSystemFontOfSize:16]}];
 //    [self.navigationBar setTintColor:KWhiteColor];    // Do any additional setup after loading the view.
+
+    _popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self.popDelegate action:@selector(handleNavigationTransition:)];
+    _popRecognizer.edges = UIRectEdgeLeft;
+    _popRecognizer.delegate = self;
+    [self.view addGestureRecognizer:_popRecognizer];
 }
 
 //解决手势失效问题
@@ -123,6 +135,92 @@
 -(UIViewController *)childViewControllerForStatusBarStyle{
     return self.topViewController;
 }
+
+
+#pragma mark ————— 转场动画区 —————
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    return YES;
+}
+
+-(void)setIsCanSlidBack:(BOOL)isCanSlidBack{
+    _isCanSlidBack = isCanSlidBack;
+}
+
+#pragma mark -UIViewControllerAnimatedTransitioning
+//navigation切换是会走这个代理
+-(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    if ([fromVC conformsToProtocol:@protocol(XYTransitionProtocol)] && [toVC conformsToProtocol:@protocol(XYTransitionProtocol)]) {
+        
+        BOOL pinterestNedd = [self isNeedTransition:fromVC:toVC];
+        XYTransition *transion = [XYTransition new];
+        if (operation == UINavigationControllerOperationPush && pinterestNedd) {
+            transion.isPush = YES;
+        }
+        else if(operation == UINavigationControllerOperationPop && pinterestNedd)
+        {
+            transion.isPush = NO;
+        }
+        else{
+            return nil;
+        }
+        return transion;
+    }
+    return nil;
+}
+
+//判断fromVC和toVC是否需要实现pinterest效果
+-(BOOL)isNeedTransition:(UIViewController<XYTransitionProtocol> *)fromVC :(UIViewController<XYTransitionProtocol> *)toVC
+{
+    BOOL a = NO;
+    BOOL b = NO;
+    if ([fromVC respondsToSelector:@selector(isNeedTransition)] && [fromVC isNeedTransition]) {
+        a = YES;
+    }
+    if ([toVC respondsToSelector:@selector(isNeedTransition)] && [toVC isNeedTransition]) {
+        b = YES;
+    }
+    return (a && b) ;
+    
+}
+
+#pragma mark -- NavitionContollerDelegate
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                         interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
+{
+    if (!self.interactivePopTransition) { return nil; }
+    return self.interactivePopTransition;
+}
+
+
+#pragma mark UIGestureRecognizer handlers
+
+- (void)handleNavigationTransition:(UIScreenEdgePanGestureRecognizer*)recognizer
+{
+    CGFloat progress = [recognizer translationInView:self.navigationController.view].x / (self.navigationController.view.bounds.size.width);
+    progress = MIN(1.0, MAX(0.0, progress));
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        [self.interactivePopTransition updateInteractiveTransition:progress];
+    }
+    else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
+        CGPoint velocity = [recognizer velocityInView:recognizer.view];
+        
+        if (progress > 0.5 || velocity.x >1000) {
+            [self.interactivePopTransition finishInteractiveTransition];
+        }
+        else {
+            [self.interactivePopTransition cancelInteractiveTransition];
+        }
+        self.interactivePopTransition = nil;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
