@@ -2,13 +2,6 @@
 
 原文传送门 http://www.jianshu.com/p/d553096914ff
 
-本项目下载后不能直接run起来，用命令行 CD 到项目根目录
-
-```
-执行 Pod install
-```
-
-没用过Pod的同学可以下载免Pod的完整项目，链接：https://pan.baidu.com/s/1i5oTHqP
 
 
 
