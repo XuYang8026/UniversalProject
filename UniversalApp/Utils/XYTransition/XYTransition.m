@@ -27,7 +27,7 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return self.animationDuration == 0 ?0.3 :self.animationDuration;
+    return self.animationDuration;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
@@ -53,12 +53,8 @@
     UIView * containerView = [transitionContext containerView];
     [containerView addSubview:fromView];
     [containerView addSubview:toView];
-    
-    //获取collectionView 的cell
-//    __block UICollectionView * fromCollection = [fromVC transitionFromView];
-//    NSIndexPath * indexPath = [fromCollection currentIndexPath];
-//    __block UIView<PinterestTransitionProtocol> * fromCellView = (UIView<PinterestTransitionProtocol>*)[fromCollection cellForItemAtIndexPath:indexPath];
-    
+
+    //转场动画的目标View
     UIView *fromCellView = [fromVC targetTransitionView];
     
     //获取cell相对左上角坐标 计算相对坐标
@@ -77,7 +73,7 @@
     [containerView addSubview:snapShot];
     
     [snapShot setOrigin:leftUperPoint];
-    
+    //计算缩放比例
     _animationScale = MAX([toVC targetTransitionView].width, snapShot.width) / MIN([toVC targetTransitionView].width, snapShot.width);
     
     [UIView animateWithDuration:self.animationDuration animations:^{
@@ -120,21 +116,22 @@
     //来源View
     UIView *fromCellView = [fromVC targetTransitionView];
     
-    //取目标View
+    //转场动画的目标View
     UIView *toCellView = [toVC targetTransitionView];
     
     //获取相对窗口的坐标
     CGPoint leftUperPoint = [toCellView convertPoint:CGPointZero toView:nil];
-    //目标View快照 复制一个 并且放大2被用于后边显示缩小动画
     //计算cell偏移量 为了更好的现实动画
     CGFloat offsetY = fromVC.navigationController.navigationBarHidden ? 0.0 : 64;
-    
+    //复制一份截图用于动画过程
     __block UIImageView * snapShot =[[UIImageView alloc] initWithImage:[toCellView snapshotImage]];
+    
     //计算缩放比例
     _animationScale = MAX(fromCellView.width, snapShot.width) / MIN(fromCellView.width, snapShot.width);
     
     [containerView addSubview:snapShot];
     snapShot.backgroundColor = [UIColor yellowColor];
+    //将目标View先放大到跟当前view一样大，然后在动画中缩小，实现动画pop效果
     snapShot.transform = CGAffineTransformMakeScale(_animationScale, _animationScale);
     [snapShot setOrigin:CGPointMake(0, offsetY)];
     //用于动画设置淡出缩小效果

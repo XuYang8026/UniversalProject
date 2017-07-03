@@ -25,7 +25,6 @@
 		2917D2171EE02F9C00E76185 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2917D2161EE02F9C00E76185 /* ShareManager.m */; };
 		2924783E1ED6857300BB097A /* AppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924783D1ED6857300BB097A /* AppDelegate+PushService.m */; };
 		292478411ED6FFC900BB097A /* EmitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292478401ED6FFC900BB097A /* EmitterViewController.m */; };
-		29280E851F063ECC00BF52D9 /* XYTransitionNavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29280E841F063ECC00BF52D9 /* XYTransitionNavigationDelegate.m */; };
 		29280E881F063EE700BF52D9 /* XYTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29280E871F063EE700BF52D9 /* XYTransition.m */; };
 		293D45A11ECD6422007C64A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293D459B1ECD6422007C64A9 /* Assets.xcassets */; };
 		293D45A21ECD6422007C64A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293D459D1ECD6422007C64A9 /* LaunchScreen.storyboard */; };
@@ -65,6 +64,9 @@
 		293D46561ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D463F1ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png */; };
 		293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46591ECDC004007C64A9 /* LoginViewController.m */; };
 		293ECC2D1EE56D1D008061A1 /* IMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 293ECC2C1EE56D1D008061A1 /* IMManager.m */; };
+		2940C5321F0A3E73008BC29F /* BaseRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2940C5311F0A3E73008BC29F /* BaseRequestAPI.m */; };
+		2940C5351F0A3EAB008BC29F /* WaterFallListLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2940C5341F0A3EAB008BC29F /* WaterFallListLogic.m */; };
+		2940C5381F0A3EC5008BC29F /* GetWaterFallListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2940C5371F0A3EC5008BC29F /* GetWaterFallListAPI.m */; };
 		294A68081ED58A3700AC382A /* TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A68071ED58A3700AC382A /* TabBarBadge.m */; };
 		294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A680A1ED58A7300AC382A /* TabBarItem.m */; };
 		294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */; };
@@ -118,6 +120,7 @@
 		29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */; };
 		29FEE77B1ECED1E200C81B60 /* MBHUD_Warn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */; };
 		29FEE77C1ECED1E200C81B60 /* MBHUD_Warn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7741ECED1E200C81B60 /* MBHUD_Warn@3x.png */; };
+		5BC8C50C0BEF57AA0780D5DC /* libPods-UniversalApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E884624664B432D4FE5044F /* libPods-UniversalApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,8 +173,6 @@
 		2924783F1ED6FFC900BB097A /* EmitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterViewController.h; sourceTree = "<group>"; };
 		292478401ED6FFC900BB097A /* EmitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterViewController.m; sourceTree = "<group>"; };
 		29280E821F063D7500BF52D9 /* XYTransitionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYTransitionProtocol.h; sourceTree = "<group>"; };
-		29280E831F063ECC00BF52D9 /* XYTransitionNavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYTransitionNavigationDelegate.h; sourceTree = "<group>"; };
-		29280E841F063ECC00BF52D9 /* XYTransitionNavigationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYTransitionNavigationDelegate.m; sourceTree = "<group>"; };
 		29280E861F063EE700BF52D9 /* XYTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYTransition.h; sourceTree = "<group>"; };
 		29280E871F063EE700BF52D9 /* XYTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYTransition.m; sourceTree = "<group>"; };
 		293D459B1ECD6422007C64A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +229,12 @@
 		293D46591ECDC004007C64A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		293ECC2B1EE56D1D008061A1 /* IMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMManager.h; sourceTree = "<group>"; };
 		293ECC2C1EE56D1D008061A1 /* IMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMManager.m; sourceTree = "<group>"; };
+		2940C5301F0A3E73008BC29F /* BaseRequestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestAPI.h; sourceTree = "<group>"; };
+		2940C5311F0A3E73008BC29F /* BaseRequestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestAPI.m; sourceTree = "<group>"; };
+		2940C5331F0A3EAB008BC29F /* WaterFallListLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFallListLogic.h; sourceTree = "<group>"; };
+		2940C5341F0A3EAB008BC29F /* WaterFallListLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallListLogic.m; sourceTree = "<group>"; };
+		2940C5361F0A3EC5008BC29F /* GetWaterFallListAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetWaterFallListAPI.h; sourceTree = "<group>"; };
+		2940C5371F0A3EC5008BC29F /* GetWaterFallListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetWaterFallListAPI.m; sourceTree = "<group>"; };
 		294A68061ED58A3700AC382A /* TabBarBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarBadge.h; sourceTree = "<group>"; };
 		294A68071ED58A3700AC382A /* TabBarBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarBadge.m; sourceTree = "<group>"; };
 		294A68091ED58A7300AC382A /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
@@ -309,6 +316,7 @@
 		29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XY.m"; sourceTree = "<group>"; };
 		29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Warn@2x.png"; sourceTree = "<group>"; };
 		29FEE7741ECED1E200C81B60 /* MBHUD_Warn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Warn@3x.png"; sourceTree = "<group>"; };
+		9E884624664B432D4FE5044F /* libPods-UniversalApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UniversalApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51AB222BA7ACF202B5B1330 /* Pods-UniversalApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversalApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UniversalApp/Pods-UniversalApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -326,6 +334,7 @@
 				2996102A1ED84B5100BCED2A /* libUMSocialLog.a in Frameworks */,
 				299610281ED84B5100BCED2A /* UMSocialNetwork.framework in Frameworks */,
 				2996102C1ED84B5100BCED2A /* UShareUI.framework in Frameworks */,
+				5BC8C50C0BEF57AA0780D5DC /* libPods-UniversalApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,8 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				29280E821F063D7500BF52D9 /* XYTransitionProtocol.h */,
-				29280E831F063ECC00BF52D9 /* XYTransitionNavigationDelegate.h */,
-				29280E841F063ECC00BF52D9 /* XYTransitionNavigationDelegate.m */,
 				29280E861F063EE700BF52D9 /* XYTransition.h */,
 				29280E871F063EE700BF52D9 /* XYTransition.m */,
 			);
@@ -465,6 +472,7 @@
 		293D45AD1ECD6926007C64A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2940C52F1F0A3E73008BC29F /* BaseRequestApi */,
 				29280E7E1F063D3600BF52D9 /* XYTransition */,
 				2917D1FC1EDFC89A00E76185 /* Other */,
 				2996100F1ED8159900BCED2A /* AppIntroduction */,
@@ -697,9 +705,20 @@
 			path = tabBar;
 			sourceTree = "<group>";
 		};
+		2940C52F1F0A3E73008BC29F /* BaseRequestApi */ = {
+			isa = PBXGroup;
+			children = (
+				2940C5301F0A3E73008BC29F /* BaseRequestAPI.h */,
+				2940C5311F0A3E73008BC29F /* BaseRequestAPI.m */,
+			);
+			path = BaseRequestApi;
+			sourceTree = "<group>";
+		};
 		296F99FE1F04F11D00909CDB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				2940C5331F0A3EAB008BC29F /* WaterFallListLogic.h */,
+				2940C5341F0A3EAB008BC29F /* WaterFallListLogic.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -735,6 +754,8 @@
 		296F9A011F04F11D00909CDB /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2940C5361F0A3EC5008BC29F /* GetWaterFallListAPI.h */,
+				2940C5371F0A3EC5008BC29F /* GetWaterFallListAPI.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1142,6 +1163,7 @@
 				296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */,
 				299610121ED84A8D00BCED2A /* CoreGraphics.framework */,
 				299610101ED84A7100BCED2A /* libsqlite3.tbd */,
+				9E884624664B432D4FE5044F /* libPods-UniversalApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1386,7 +1408,6 @@
 				2917D2111EE0268A00E76185 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */,
 				296F9A411F05114B00909CDB /* WaterFallTransition.m in Sources */,
-				29280E851F063ECC00BF52D9 /* XYTransitionNavigationDelegate.m in Sources */,
 				293D45A41ECD6422007C64A9 /* main.m in Sources */,
 				29AD6C631ED3E4D600B0879C /* AppDelegate.m in Sources */,
 				2917D1FF1EDFC89A00E76185 /* YYFPSLabel.m in Sources */,
@@ -1405,9 +1426,11 @@
 				29B90A111EE11292008AEC72 /* XYButton.m in Sources */,
 				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
 				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
+				2940C5321F0A3E73008BC29F /* BaseRequestAPI.m in Sources */,
 				293D46181ECDB305007C64A9 /* TabBar.m in Sources */,
 				2917D2141EE02CF100E76185 /* UIButton+XYButton.m in Sources */,
 				2924783E1ED6857300BB097A /* AppDelegate+PushService.m in Sources */,
+				2940C5351F0A3EAB008BC29F /* WaterFallListLogic.m in Sources */,
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
 				296F9A3E1F050AA900909CDB /* SecondViewController.m in Sources */,
 				296F9A3B1F0504C900909CDB /* WaterFlowLayout.m in Sources */,
@@ -1422,6 +1445,7 @@
 				29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */,
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
 				29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */,
+				2940C5381F0A3EC5008BC29F /* GetWaterFallListAPI.m in Sources */,
 				293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */,
 				29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */,
 				2917D2171EE02F9C00E76185 /* ShareManager.m in Sources */,

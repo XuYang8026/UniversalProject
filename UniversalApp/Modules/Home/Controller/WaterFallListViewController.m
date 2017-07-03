@@ -13,12 +13,14 @@
 #import "UICollectionView+IndexPath.h"
 #import "XYTransitionProtocol.h"
 #import "HomeViewController.h"
+#import "WaterFallListLogic.h"
 
 #define itemWidthHeight ((kScreenWidth-10)/2)
 
-@interface WaterFallListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WaterFlowLayoutDelegate,XYTransitionProtocol>
+@interface WaterFallListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WaterFlowLayoutDelegate,XYTransitionProtocol,WaterFallListDelegate>
 
-PropertyNSMutableArray(dataArray);//数据源
+
+@property(nonatomic,strong) WaterFallListLogic *logic;//逻辑层
 @end
 
 @implementation WaterFallListViewController
@@ -26,15 +28,24 @@ PropertyNSMutableArray(dataArray);//数据源
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"瀑布流";
-    _dataArray = @[].mutableCopy;
-    self.isShowLiftBack = NO;
+    
+    self.isShowLiftBack = NO;//每个根视图需要设置该属性为NO，否则会出现导航栏异常
+    
+    //初始化逻辑类
+    _logic = [WaterFallListLogic new];
+    _logic.delegagte = self;
+    
     [self setupUI];
-    [self addNavigationItemWithTitles
-     :@[@"粒子动画"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
+    //开始第一次数据拉取
     [self.collectionView.mj_header beginRefreshing];
 }
 #pragma mark ————— 初始化页面 —————
 -(void)setupUI{
+    //添加导航栏按钮
+    [self addNavigationItemWithTitles
+     :@[@"粒子动画"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
+    
+    //设置瀑布流布局
     WaterFlowLayout *layout = [WaterFlowLayout new];
     layout.columnCount = 2;
     layout.sectionInset = UIEdgeInsetsZero;
@@ -49,35 +60,27 @@ PropertyNSMutableArray(dataArray);//数据源
     self.collectionView.dataSource = self;
     [self.view addSubview:self.collectionView];
 }
-#pragma mark ————— 拉取数据 —————
--(void)loadData{
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-        for (int i = 0; i < 14; i++) {
-            
-            NSString *imageName = NSStringFormat(@"%d.jpg", i);
-            
-            [_dataArray addObject:imageName];
-        }
-        [self.collectionView.mj_footer endRefreshing];
-        [self.collectionView.mj_header endRefreshing];
-
-        [UIView performWithoutAnimation:^{
-            [self.collectionView reloadData];
-        }];
-    });
-}
 
 #pragma mark ————— 下拉刷新 —————
 -(void)headerRereshing{
-    [_dataArray removeAllObjects];
-    [self loadData];
+    [_logic.dataArray removeAllObjects];
+    [_logic loadData];
 }
 
 #pragma mark ————— 上拉刷新 —————
 -(void)footerRereshing{
-    [self loadData];
+    [_logic loadData];
+}
+
+#pragma mark ————— 数据拉取完成 渲染页面 —————
+-(void)requestDataCompleted{
+    [self.collectionView.mj_footer endRefreshing];
+    [self.collectionView.mj_header endRefreshing];
+    
+    [UIView performWithoutAnimation:^{
+        [self.collectionView reloadData];
+    }];
+
 }
 
 #pragma mark ————— collection代理方法 —————
@@ -86,20 +89,20 @@ PropertyNSMutableArray(dataArray);//数据源
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _dataArray.count;
+    return _logic.dataArray.count;
 }
 
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     WaterFallCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([WaterFallCollectionViewCell class]) forIndexPath:indexPath];
-    cell.imageName = _dataArray[indexPath.row];
+    cell.imageName = _logic.dataArray[indexPath.row];
 
     return cell;
 }
 
 #pragma mark ————— layout 代理 —————
 -(CGFloat)waterFlowLayout:(WaterFlowLayout *)WaterFlowLayout heightForWidth:(CGFloat)width andIndexPath:(NSIndexPath *)indexPath{
-    UIImage *img = IMAGE_NAMED(_dataArray[indexPath.row]);
+    UIImage *img = IMAGE_NAMED(_logic.dataArray[indexPath.row]);
     
     return img.size.height * itemWidthHeight / img.size.width;
 }
@@ -110,7 +113,7 @@ PropertyNSMutableArray(dataArray);//数据源
     //pinterest需要的效果
     [self.collectionView setCurrentIndexPath:indexPath];
     SecondViewController *secondVC = [SecondViewController new];
-    secondVC.photoImg = IMAGE_NAMED(_dataArray[indexPath.row]);
+    secondVC.photoImg = IMAGE_NAMED(_logic.dataArray[indexPath.row]);
     [self.navigationController pushViewController:secondVC animated:YES];
     //    CellParticularController * con = [CellParticularController new];
     //    [self.navigationController pushViewController:con animated:YES];

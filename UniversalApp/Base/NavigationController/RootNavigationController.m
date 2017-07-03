@@ -16,7 +16,7 @@
 @property (nonatomic,strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 @property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *popRecognizer;
 //@property (nonatomic,strong) UIPanGestureRecognizer *popRecognizer;
-PropertyBool(isCanSlidBack);//是否可以滑动返回
+PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
 
 @end
 
@@ -54,9 +54,11 @@ PropertyBool(isCanSlidBack);//是否可以滑动返回
 //    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont boldSystemFontOfSize:16]}];
 //    [self.navigationBar setTintColor:KWhiteColor];    // Do any additional setup after loading the view.
 
-    _popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self.popDelegate action:@selector(handleNavigationTransition:)];
+    self.interactivePopGestureRecognizer.enabled = YES;
+    _popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
+//    _popRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
     _popRecognizer.edges = UIRectEdgeLeft;
-    _popRecognizer.delegate = self;
+    [_popRecognizer setEnabled:NO];
     [self.view addGestureRecognizer:_popRecognizer];
 }
 
@@ -67,6 +69,14 @@ PropertyBool(isCanSlidBack);//是否可以滑动返回
         self.interactivePopGestureRecognizer.delegate = self.popDelegate;
     }else{
         self.interactivePopGestureRecognizer.delegate = nil;
+    }
+    
+    if (_isSystemSlidBack) {
+        self.interactivePopGestureRecognizer.enabled = YES;
+        [_popRecognizer setEnabled:NO];
+    }else{
+        self.interactivePopGestureRecognizer.enabled = NO;
+        [_popRecognizer setEnabled:YES];
     }
 }
 
@@ -139,28 +149,27 @@ PropertyBool(isCanSlidBack);//是否可以滑动返回
 
 #pragma mark ————— 转场动画区 —————
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    return YES;
-}
-
--(void)setIsCanSlidBack:(BOOL)isCanSlidBack{
-    _isCanSlidBack = isCanSlidBack;
+-(void)setIsSystemSlidBack:(BOOL)isSystemSlidBack{
+    _isSystemSlidBack = isSystemSlidBack;
 }
 
 #pragma mark -UIViewControllerAnimatedTransitioning
 //navigation切换是会走这个代理
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
+    self.isSystemSlidBack = YES;
     if ([fromVC conformsToProtocol:@protocol(XYTransitionProtocol)] && [toVC conformsToProtocol:@protocol(XYTransitionProtocol)]) {
         
         BOOL pinterestNedd = [self isNeedTransition:fromVC:toVC];
         XYTransition *transion = [XYTransition new];
         if (operation == UINavigationControllerOperationPush && pinterestNedd) {
             transion.isPush = YES;
+            self.isSystemSlidBack = NO;
         }
         else if(operation == UINavigationControllerOperationPop && pinterestNedd)
         {
             transion.isPush = NO;
+            self.isSystemSlidBack = NO;
         }
         else{
             return nil;
@@ -198,12 +207,13 @@ PropertyBool(isCanSlidBack);//是否可以滑动返回
 
 - (void)handleNavigationTransition:(UIScreenEdgePanGestureRecognizer*)recognizer
 {
-    CGFloat progress = [recognizer translationInView:self.navigationController.view].x / (self.navigationController.view.bounds.size.width);
-    progress = MIN(1.0, MAX(0.0, progress));
+    CGFloat progress = [recognizer translationInView:self.view].x / (self.view.bounds.size.width);
+//    progress = MIN(1.0, MAX(0.0, progress));
+    NSLog(@"右划progress %.2f",progress);
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self popViewControllerAnimated:YES];
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged) {
         [self.interactivePopTransition updateInteractiveTransition:progress];

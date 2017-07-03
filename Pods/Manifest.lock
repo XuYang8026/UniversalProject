@@ -18,6 +18,8 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - NIMSDK (3.7.0)
+  - YTKNetwork (2.0.3):
+    - AFNetworking (~> 3.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -28,6 +30,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh
   - NIMSDK (~> 3.7.0)
+  - YTKNetwork
   - YYKit
 
 SPEC CHECKSUMS:
@@ -36,8 +39,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   NIMSDK: 33ecb2d53013618976de5a081b14d8305013680b
+  YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 14021720378a48f7c195b23141c97e2b33914707
+PODFILE CHECKSUM: c6ba28e5a8fe1f7e6b93fea46ce6b6864003554b
 
 COCOAPODS: 1.2.1

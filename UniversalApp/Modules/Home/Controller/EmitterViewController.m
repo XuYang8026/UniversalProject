@@ -118,8 +118,8 @@
 //    rainflake.emission = 0.3 * M_PI;
 //    rainflake.spin = 0.1 * M_PI;
     
-//    rainflake.emissionLatitude = 0.1 *M_PI;
-    rainflake.emissionLongitude =  M_PI_2; // 方向，M_PI_2 右斜
+    rainflake.emissionLatitude = 0.1 *M_PI;
+//    rainflake.emissionLongitude =  M_PI_2; // 方向，M_PI_2 右斜
     
     rainflake.contents          = (id)[UIImage imageNamed:@"rain"].CGImage;
     rainflake.color             = [UIColor whiteColor].CGColor;

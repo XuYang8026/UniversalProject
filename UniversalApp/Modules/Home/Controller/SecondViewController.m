@@ -7,9 +7,6 @@
 //
 
 #import "SecondViewController.h"
-//#import "NavigationControllerDelegate.h"
-//#import "PinterestProtocol.h"
-//#import "XYTransitionNavigationDelegate.h"
 #import "XYTransitionProtocol.h"
 
 @interface SecondViewController ()<XYTransitionProtocol>
@@ -23,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self addNavigationItemWithTitles
      :@[@"push"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
     
