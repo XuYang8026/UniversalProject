@@ -27,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"瀑布流";
     
     self.isShowLiftBack = NO;//每个根视图需要设置该属性为NO，否则会出现导航栏异常
     
