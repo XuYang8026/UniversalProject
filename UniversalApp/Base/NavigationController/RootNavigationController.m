@@ -149,11 +149,6 @@ PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
 
 #pragma mark ————— 转场动画区 —————
 
--(void)setIsSystemSlidBack:(BOOL)isSystemSlidBack{
-    _isSystemSlidBack = isSystemSlidBack;
-}
-
-#pragma mark -UIViewControllerAnimatedTransitioning
 //navigation切换是会走这个代理
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {

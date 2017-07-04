@@ -110,7 +110,7 @@
 //*******重写的时候需要走一句话
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //pinterest需要的效果
+    //标记cell
     [self.collectionView setCurrentIndexPath:indexPath];
     SecondViewController *secondVC = [SecondViewController new];
     secondVC.photoImg = IMAGE_NAMED(_logic.dataArray[indexPath.row]);

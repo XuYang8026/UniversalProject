@@ -53,7 +53,7 @@
     UIView * containerView = [transitionContext containerView];
     [containerView addSubview:fromView];
     [containerView addSubview:toView];
-
+    
     //转场动画的目标View
     UIView *fromCellView = [fromVC targetTransitionView];
     
@@ -69,13 +69,13 @@
     
     //复制一个Cell用于显示动画效果
     __block UIImageView * snapShot =[[UIImageView alloc] initWithImage:[fromCellView snapshotImage]];
-    snapShot.backgroundColor = [UIColor yellowColor];
+    snapShot.backgroundColor = [UIColor clearColor];
     [containerView addSubview:snapShot];
     
     [snapShot setOrigin:leftUperPoint];
     //计算缩放比例
     _animationScale = MAX([toVC targetTransitionView].width, snapShot.width) / MIN([toVC targetTransitionView].width, snapShot.width);
-    
+    CGRect originFrame = fromView.frame;
     [UIView animateWithDuration:self.animationDuration animations:^{
         //设置缩放变换 x,y分别放大多少倍
         snapShot.transform =  CGAffineTransformMakeScale(_animationScale,_animationScale);
@@ -94,10 +94,10 @@
             toView.hidden = NO;
             fromVC.view.transform = CGAffineTransformIdentity;
             [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
-            
+            fromVC.view.frame = originFrame;
         }
     }];
-
+    
 }
 
 #pragma mark ————— pop —————
@@ -130,11 +130,12 @@
     _animationScale = MAX(fromCellView.width, snapShot.width) / MIN(fromCellView.width, snapShot.width);
     
     [containerView addSubview:snapShot];
-    snapShot.backgroundColor = [UIColor yellowColor];
+    snapShot.backgroundColor = [UIColor clearColor];
     //将目标View先放大到跟当前view一样大，然后在动画中缩小，实现动画pop效果
     snapShot.transform = CGAffineTransformMakeScale(_animationScale, _animationScale);
     [snapShot setOrigin:CGPointMake(0, offsetY)];
     //用于动画设置淡出缩小效果
+    CGRect originFrame = toView.frame;
     toView.hidden = NO;
     toView.alpha = 0;
     toView.transform = snapShot.transform;
@@ -143,7 +144,7 @@
                               toView.frame.size.width, toView.frame.size.height);
     
     
-    
+    toCellView.hidden = YES;
     //添加一个百色淡出效果
     __block UIView *whiteViewContainer = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     whiteViewContainer.backgroundColor = [UIColor whiteColor];
@@ -161,7 +162,11 @@
         if (finished) {
             [snapShot removeFromSuperview];
             [whiteViewContainer removeFromSuperview];
+            toCellView.hidden = NO;
+            toView.frame = originFrame;
+            toView.transform = CGAffineTransformIdentity;
             [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+            
         }
     }];
 }
