@@ -66,11 +66,10 @@ PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (viewController == self.viewControllers[0]) {
-        self.interactivePopGestureRecognizer.delegate = self.popDelegate;
+        self.interactivePopGestureRecognizer.delegate = self;
     }else{
-        self.interactivePopGestureRecognizer.delegate = nil;
+        self.interactivePopGestureRecognizer.delegate = self;
     }
-    
     if (_isSystemSlidBack) {
         self.interactivePopGestureRecognizer.enabled = YES;
         [_popRecognizer setEnabled:NO];
@@ -99,6 +98,7 @@ PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
             [vc.navigationController setNavigationBarHidden:NO animated:animated];
         }
     }
+    
 }
 
 /**
@@ -152,7 +152,9 @@ PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
 //navigation切换是会走这个代理
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
+    NSLog(@"转场动画代理方法");
     self.isSystemSlidBack = YES;
+    //如果来源VC和目标VC都实现协议，那么都做动画
     if ([fromVC conformsToProtocol:@protocol(XYTransitionProtocol)] && [toVC conformsToProtocol:@protocol(XYTransitionProtocol)]) {
         
         BOOL pinterestNedd = [self isNeedTransition:fromVC:toVC];
@@ -170,6 +172,11 @@ PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
             return nil;
         }
         return transion;
+    }else if([toVC conformsToProtocol:@protocol(XYTransitionProtocol)]){
+        //如果只有目标VC开启动画，那么isSystemSlidBack也要随之改变
+        BOOL pinterestNedd = [self isNeedTransition:toVC];
+        self.isSystemSlidBack = !pinterestNedd;
+        return nil;
     }
     return nil;
 }
@@ -186,6 +193,16 @@ PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
         b = YES;
     }
     return (a && b) ;
+    
+}
+//判断fromVC和toVC是否需要实现pinterest效果
+-(BOOL)isNeedTransition:(UIViewController<XYTransitionProtocol> *)toVC
+{
+    BOOL b = NO;
+    if ([toVC respondsToSelector:@selector(isNeedTransition)] && [toVC isNeedTransition]) {
+        b = YES;
+    }
+    return b;
     
 }
 
