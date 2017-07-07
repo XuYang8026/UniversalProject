@@ -77,7 +77,16 @@
         //为避免自动登录成功刷新tabbar
         if (!self.mainTabBar || ![self.window.rootViewController isKindOfClass:[MainTabBarController class]]) {
             self.mainTabBar = [MainTabBarController new];
+
+            CATransition *anima = [CATransition animation];
+            anima.type = @"cube";//设置动画的类型
+            anima.subtype = kCATransitionFromRight; //设置动画的方向
+            anima.duration = 0.5f;
+            
             self.window.rootViewController = self.mainTabBar;
+            
+            [kAppWindow.layer addAnimation:anima forKey:@"revealAnimation"];
+            
         }
         
     }else {//登陆失败加载登陆页面控制器

@@ -50,7 +50,7 @@
 - (void)goLogin
 {
     RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
-    [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
+    [self presentViewController:loginNavi animated:YES completion:nil];
 }
 - (void)goLoginWithPush
 {

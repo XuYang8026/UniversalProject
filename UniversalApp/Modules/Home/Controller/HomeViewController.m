@@ -34,9 +34,12 @@
 
 -(void)naviBtnClick:(UIButton *)btn{
     switch (btn.tag) {
-        case 1000:
-            [[ShareManager sharedShareManager] showShareView];
-//            [self goLogin];
+        case 1000:{
+//            [[ShareManager sharedShareManager] showShareView];
+            //            [self goLogin];
+            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[HomeViewController new]];
+            [self presentViewController:loginNavi animated:YES completion:nil];
+        }
             break;
         case 1001:
         {

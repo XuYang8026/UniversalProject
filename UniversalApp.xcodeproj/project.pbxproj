@@ -89,7 +89,6 @@
 		296F9A381F04F39000909CDB /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 296F9A2A1F04F39000909CDB /* 9.jpg */; };
 		296F9A3B1F0504C900909CDB /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9A3A1F0504C900909CDB /* WaterFlowLayout.m */; };
 		296F9A3E1F050AA900909CDB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9A3D1F050AA900909CDB /* SecondViewController.m */; };
-		296F9A411F05114B00909CDB /* WaterFallTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9A401F05114B00909CDB /* WaterFallTransition.m */; };
 		296F9A541F0516A700909CDB /* UICollectionView+IndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9A531F0516A700909CDB /* UICollectionView+IndexPath.m */; };
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
@@ -263,8 +262,6 @@
 		296F9A3A1F0504C900909CDB /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
 		296F9A3C1F050AA900909CDB /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		296F9A3D1F050AA900909CDB /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		296F9A3F1F05114B00909CDB /* WaterFallTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFallTransition.h; sourceTree = "<group>"; };
-		296F9A401F05114B00909CDB /* WaterFallTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallTransition.m; sourceTree = "<group>"; };
 		296F9A521F0516A700909CDB /* UICollectionView+IndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+IndexPath.h"; sourceTree = "<group>"; };
 		296F9A531F0516A700909CDB /* UICollectionView+IndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+IndexPath.m"; sourceTree = "<group>"; };
 		296F9EB81ECC64CE0063A255 /* UniversalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -767,8 +764,6 @@
 				296F9A181F04F18400909CDB /* WaterFallCollectionViewCell.m */,
 				296F9A391F0504C900909CDB /* WaterFlowLayout.h */,
 				296F9A3A1F0504C900909CDB /* WaterFlowLayout.m */,
-				296F9A3F1F05114B00909CDB /* WaterFallTransition.h */,
-				296F9A401F05114B00909CDB /* WaterFallTransition.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1407,7 +1402,6 @@
 			files = (
 				2917D2111EE0268A00E76185 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */,
-				296F9A411F05114B00909CDB /* WaterFallTransition.m in Sources */,
 				293D45A41ECD6422007C64A9 /* main.m in Sources */,
 				29AD6C631ED3E4D600B0879C /* AppDelegate.m in Sources */,
 				2917D1FF1EDFC89A00E76185 /* YYFPSLabel.m in Sources */,
