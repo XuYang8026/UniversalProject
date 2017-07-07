@@ -13,7 +13,7 @@
     下面分享一下我的架构思路。
 
 架构图：
-![image](http://upload-images.jianshu.io/upload_images/743749-55f6fe5299fddbfe.png?imageMogr2/auto-orient/strip)
+![image](http://upload-images.jianshu.io/upload_images/743749-077e818f4b5f9f6e.png?imageMogr2/auto-orient/strip)
 
 架构图
 架构原则：易读性、易维护性、易扩展性。
