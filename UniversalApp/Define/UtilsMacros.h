@@ -54,7 +54,7 @@
 #define PropertyLongLong(s) @property(nonatomic,assign)long long s
 #define PropertyBool(s) @property(nonatomic,assign)BOOL s
 #define PropertyNSDictionary(s) @property (nonatomic,strong) NSDictionary * s
-#define PropertyNSArray(s) @property (nonatomic,strong) NSArray * s
+#define PropertyNSArray(s) @property (nonatomic,copy) NSArray * s
 #define PropertyNSMutableArray(s) @property (nonatomic,strong) NSMutableArray * s
 
 ///IOS 版本判断
