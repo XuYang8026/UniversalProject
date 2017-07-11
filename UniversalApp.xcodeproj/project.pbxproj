@@ -116,6 +116,10 @@
 		29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C6A1ED41E2100B0879C /* UserManager.m */; };
 		29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C701ED41ED200B0879C /* UserInfo.m */; };
 		29B90A111EE11292008AEC72 /* XYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B90A101EE11292008AEC72 /* XYButton.m */; };
+		29CF332A1F14B5CC00DB7507 /* MakeFriendsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF33291F14B5CC00DB7507 /* MakeFriendsLogic.m */; };
+		29CF332D1F14B5EA00DB7507 /* MsgLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF332C1F14B5EA00DB7507 /* MsgLogic.m */; };
+		29CF33301F14B60800DB7507 /* MineLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF332F1F14B60800DB7507 /* MineLogic.m */; };
+		29CF33331F14B62A00DB7507 /* LoginLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF33321F14B62A00DB7507 /* LoginLogic.m */; };
 		29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */; };
 		29FEE77B1ECED1E200C81B60 /* MBHUD_Warn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */; };
 		29FEE77C1ECED1E200C81B60 /* MBHUD_Warn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7741ECED1E200C81B60 /* MBHUD_Warn@3x.png */; };
@@ -309,6 +313,14 @@
 		29AD6C701ED41ED200B0879C /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		29B90A0F1EE11292008AEC72 /* XYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYButton.h; sourceTree = "<group>"; };
 		29B90A101EE11292008AEC72 /* XYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYButton.m; sourceTree = "<group>"; };
+		29CF33281F14B5CC00DB7507 /* MakeFriendsLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeFriendsLogic.h; sourceTree = "<group>"; };
+		29CF33291F14B5CC00DB7507 /* MakeFriendsLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeFriendsLogic.m; sourceTree = "<group>"; };
+		29CF332B1F14B5EA00DB7507 /* MsgLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgLogic.h; sourceTree = "<group>"; };
+		29CF332C1F14B5EA00DB7507 /* MsgLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgLogic.m; sourceTree = "<group>"; };
+		29CF332E1F14B60800DB7507 /* MineLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineLogic.h; sourceTree = "<group>"; };
+		29CF332F1F14B60800DB7507 /* MineLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLogic.m; sourceTree = "<group>"; };
+		29CF33311F14B62A00DB7507 /* LoginLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLogic.h; sourceTree = "<group>"; };
+		29CF33321F14B62A00DB7507 /* LoginLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginLogic.m; sourceTree = "<group>"; };
 		29FEE7661ECEC27900C81B60 /* MBProgressHUD+XY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XY.h"; sourceTree = "<group>"; };
 		29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XY.m"; sourceTree = "<group>"; };
 		29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Warn@2x.png"; sourceTree = "<group>"; };
@@ -486,12 +498,12 @@
 		293D45B41ECD69D8007C64A9 /* Mine(我的页) */ = {
 			isa = PBXGroup;
 			children = (
-				296F9A0D1F04F14400909CDB /* Logic */,
 				296F9A0E1F04F14400909CDB /* Model */,
-				296F9A0F1F04F14400909CDB /* Resource */,
-				296F9A101F04F14400909CDB /* Service */,
 				296F9A111F04F14400909CDB /* View */,
 				293D45E01ECD7B6E007C64A9 /* Controller */,
+				296F9A0D1F04F14400909CDB /* Logic */,
+				296F9A101F04F14400909CDB /* Service */,
+				296F9A0F1F04F14400909CDB /* Resource */,
 			);
 			name = "Mine(我的页)";
 			path = Mine;
@@ -529,12 +541,12 @@
 		293D45D31ECD7A4A007C64A9 /* MakeFriends(交友和许愿树) */ = {
 			isa = PBXGroup;
 			children = (
-				296F9A031F04F12E00909CDB /* Logic */,
 				296F9A041F04F12E00909CDB /* Model */,
-				296F9A051F04F12E00909CDB /* Resource */,
-				296F9A061F04F12E00909CDB /* Service */,
 				296F9A071F04F12E00909CDB /* View */,
 				293D45D91ECD7A91007C64A9 /* Controller */,
+				296F9A031F04F12E00909CDB /* Logic */,
+				296F9A051F04F12E00909CDB /* Resource */,
+				296F9A061F04F12E00909CDB /* Service */,
 			);
 			name = "MakeFriends(交友和许愿树)";
 			path = MakeFriends;
@@ -552,12 +564,12 @@
 		293D45DA1ECD7B46007C64A9 /* Message(消息页) */ = {
 			isa = PBXGroup;
 			children = (
-				296F9A081F04F13900909CDB /* Logic */,
 				296F9A091F04F13900909CDB /* Model */,
-				296F9A0A1F04F13900909CDB /* Resource */,
-				296F9A0B1F04F13900909CDB /* Service */,
 				296F9A0C1F04F13900909CDB /* View */,
 				293D45DB1ECD7B46007C64A9 /* Controller */,
+				296F9A081F04F13900909CDB /* Logic */,
+				296F9A0B1F04F13900909CDB /* Service */,
+				296F9A0A1F04F13900909CDB /* Resource */,
 			);
 			name = "Message(消息页)";
 			path = Message;
@@ -596,12 +608,12 @@
 		293D45EC1ECDA36E007C64A9 /* Login(登录相关) */ = {
 			isa = PBXGroup;
 			children = (
-				296F9A121F04F15B00909CDB /* Logic */,
 				296F9A131F04F15B00909CDB /* Model */,
-				296F9A141F04F15B00909CDB /* Resource */,
-				296F9A151F04F15B00909CDB /* Service */,
 				296F9A161F04F15B00909CDB /* View */,
 				293D45ED1ECDA36E007C64A9 /* Controller */,
+				296F9A121F04F15B00909CDB /* Logic */,
+				296F9A151F04F15B00909CDB /* Service */,
+				296F9A141F04F15B00909CDB /* Resource */,
 			);
 			name = "Login(登录相关)";
 			path = Login;
@@ -771,6 +783,8 @@
 		296F9A031F04F12E00909CDB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				29CF33281F14B5CC00DB7507 /* MakeFriendsLogic.h */,
+				29CF33291F14B5CC00DB7507 /* MakeFriendsLogic.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -806,6 +820,8 @@
 		296F9A081F04F13900909CDB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				29CF332B1F14B5EA00DB7507 /* MsgLogic.h */,
+				29CF332C1F14B5EA00DB7507 /* MsgLogic.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -841,6 +857,8 @@
 		296F9A0D1F04F14400909CDB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				29CF332E1F14B60800DB7507 /* MineLogic.h */,
+				29CF332F1F14B60800DB7507 /* MineLogic.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -876,6 +894,8 @@
 		296F9A121F04F15B00909CDB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				29CF33311F14B62A00DB7507 /* LoginLogic.h */,
+				29CF33321F14B62A00DB7507 /* LoginLogic.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -1404,6 +1424,7 @@
 				290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */,
 				293D45A41ECD6422007C64A9 /* main.m in Sources */,
 				29AD6C631ED3E4D600B0879C /* AppDelegate.m in Sources */,
+				29CF332A1F14B5CC00DB7507 /* MakeFriendsLogic.m in Sources */,
 				2917D1FF1EDFC89A00E76185 /* YYFPSLabel.m in Sources */,
 				290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */,
 				29AD6C621ED3E4D600B0879C /* AppDelegate+AppService.m in Sources */,
@@ -1420,9 +1441,12 @@
 				29B90A111EE11292008AEC72 /* XYButton.m in Sources */,
 				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
 				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
+				29CF33331F14B62A00DB7507 /* LoginLogic.m in Sources */,
 				2940C5321F0A3E73008BC29F /* BaseRequestAPI.m in Sources */,
 				293D46181ECDB305007C64A9 /* TabBar.m in Sources */,
+				29CF33301F14B60800DB7507 /* MineLogic.m in Sources */,
 				2917D2141EE02CF100E76185 /* UIButton+XYButton.m in Sources */,
+				29CF332D1F14B5EA00DB7507 /* MsgLogic.m in Sources */,
 				2924783E1ED6857300BB097A /* AppDelegate+PushService.m in Sources */,
 				2940C5351F0A3EAB008BC29F /* WaterFallListLogic.m in Sources */,
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
