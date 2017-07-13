@@ -15,8 +15,7 @@
 @property (nonatomic, weak) id popDelegate;
 @property (nonatomic,strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 @property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *popRecognizer;
-//@property (nonatomic,strong) UIPanGestureRecognizer *popRecognizer;
-PropertyBool(isSystemSlidBack);//是否开启系统右滑返回
+@property(nonatomic,assign) BOOL isSystemSlidBack;//是否开启系统右滑返回
 
 @end
 

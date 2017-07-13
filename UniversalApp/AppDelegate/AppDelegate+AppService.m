@@ -81,7 +81,7 @@
             CATransition *anima = [CATransition animation];
             anima.type = @"cube";//设置动画的类型
             anima.subtype = kCATransitionFromRight; //设置动画的方向
-            anima.duration = 0.5f;
+            anima.duration = 0.3f;
             
             self.window.rootViewController = self.mainTabBar;
             
@@ -93,7 +93,15 @@
         
         self.mainTabBar = nil;
         RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+        
+        CATransition *anima = [CATransition animation];
+        anima.type = @"fade";//设置动画的类型
+        anima.subtype = kCATransitionFromRight; //设置动画的方向
+        anima.duration = 0.3f;
+        
         self.window.rootViewController = loginNavi;
+        
+        [kAppWindow.layer addAnimation:anima forKey:@"revealAnimation"];
         
     }
     //展示FPS

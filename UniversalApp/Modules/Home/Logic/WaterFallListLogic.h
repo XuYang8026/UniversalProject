@@ -23,8 +23,8 @@
 
 @interface WaterFallListLogic : NSObject
 
-PropertyNSMutableArray(dataArray);//数据源
-PropertyNSInteger(page);//页码
+@property (nonatomic,strong) NSMutableArray * dataArray;//数据源
+@property (nonatomic,assign) NSInteger  page;//页码
 
 @property(nonatomic,weak)id<WaterFallListDelegate> delegagte;
 

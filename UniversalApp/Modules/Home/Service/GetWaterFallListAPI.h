@@ -13,6 +13,6 @@
  */
 @interface GetWaterFallListAPI : BaseRequestAPI
 
-PropertyNSInteger(page);//页码
+@property (nonatomic,assign) NSInteger page;//页码
 
 @end

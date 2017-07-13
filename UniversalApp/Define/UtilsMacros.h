@@ -47,15 +47,7 @@
 [View.layer setCornerRadius:(Radius)];\
 [View.layer setMasksToBounds:YES]
 
-//property 属性快速声明
-#define PropertyString(s) @property (nonatomic,copy) NSString * s
-#define PropertyNSInteger(s) @property (nonatomic,assign) NSInteger  s
-#define PropertyFloat(s) @property (nonatomic,assign) float  s
-#define PropertyLongLong(s) @property(nonatomic,assign)long long s
-#define PropertyBool(s) @property(nonatomic,assign)BOOL s
-#define PropertyNSDictionary(s) @property (nonatomic,strong) NSDictionary * s
-#define PropertyNSArray(s) @property (nonatomic,copy) NSArray * s
-#define PropertyNSMutableArray(s) @property (nonatomic,strong) NSMutableArray * s
+//property 属性快速声明 别用宏定义了，使用代码块+快捷键实现吧
 
 ///IOS 版本判断
 #define IOSAVAILABLEVERSION(version) ([[UIDevice currentDevice] availableVersion:version] < 0)

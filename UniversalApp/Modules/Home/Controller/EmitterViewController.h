@@ -10,5 +10,5 @@
 
 @interface EmitterViewController : RootViewController
 
-PropertyLongLong(animation_type);//1 雪花，2雨，3火焰
+@property(nonatomic,assign) long long animation_type;//1 雪花，2雨，3火焰
 @end

@@ -18,7 +18,7 @@
 
 @interface MainTabBarController ()<TabBarDelegate>
 
-PropertyNSMutableArray(VCS);//tabbar root VC
+@property (nonatomic,strong) NSMutableArray * VCS;//tabbar root VC
 
 @end
 

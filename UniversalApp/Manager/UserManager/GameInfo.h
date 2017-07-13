@@ -10,10 +10,10 @@
 
 @interface GameInfo : NSObject
 
-PropertyLongLong(gold_coin);//金币数
-PropertyLongLong(flow);//流量币
-PropertyLongLong(growth_value);//成长值
-PropertyNSInteger(level);//用户等级
-PropertyLongLong(cash);//现金
+@property(nonatomic,assign) long long gold_coin;//金币数
+@property(nonatomic,assign) long long flow;//流量币
+@property(nonatomic,assign) long long growth_value;//成长值
+@property (nonatomic,assign) NSInteger  level;//用户等级
+@property(nonatomic,assign) long long cash;//现金
 
 @end

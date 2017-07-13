@@ -17,15 +17,16 @@ typedef NS_ENUM(NSInteger,UserGender){
 
 @interface UserInfo : NSObject
 
-PropertyLongLong(userid);//用户ID
-PropertyString(idcard);//展示用的用户ID
-PropertyString(photo);//头像
-PropertyString(nickname);//昵称
+@property(nonatomic,assign)long long userid;//用户ID
+@property (nonatomic,copy) NSString * idcard;//展示用的用户ID
+@property (nonatomic,copy) NSString * photo;//头像
+@property (nonatomic,copy) NSString * nickname;//昵称
 @property (nonatomic, assign) UserGender sex;//性别
-PropertyString(imId);//IM账号
-PropertyString(imPass);//IM密码
-PropertyNSInteger(degreeId);//用户等级
-PropertyString(signature);//个性签名
+@property (nonatomic,copy) NSString * imId;//IM账号
+@property (nonatomic,copy) NSString * imPass;//IM密码
+@property (nonatomic,assign) NSInteger  degreeId;//用户等级
+@property (nonatomic,copy) NSString * signature;//个性签名
+@property (nonatomic,copy) NSString * token;//用户登录后分配的登录Token
 @property (nonatomic, strong) GameInfo *info;//游戏数据
 
 @end
