@@ -18,9 +18,6 @@
     //初始化window
     [self initWindow];
     
-    //广告页
-    [AppManager appStart];
-    
     //UMeng初始化
     [self initUMeng];
     
@@ -35,6 +32,9 @@
     
     //网络监听
     [self monitorNetworkStatus];
+    
+    //广告页
+    [AppManager appStart];
     
     return YES;
 }

@@ -92,9 +92,10 @@
             //没有这句过滤动画就不会结束
             [snapShot removeFromSuperview];
             toView.hidden = NO;
+            fromView.alpha = 1;
             fromVC.view.transform = CGAffineTransformIdentity;
-            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
             fromVC.view.frame = originFrame;
+            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
         }
     }];
     
@@ -159,15 +160,21 @@
         toView.alpha = 1.0;
         [toView setOrigin:CGPointZero];
     } completion:^(BOOL finished) {
-        if (finished) {
-            [snapShot removeFromSuperview];
-            [whiteViewContainer removeFromSuperview];
-            toCellView.hidden = NO;
-            toView.frame = originFrame;
-            toView.transform = CGAffineTransformIdentity;
-            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
-            
+        //        if (finished) {
+        if (transitionContext.transitionWasCancelled) {
+            NSLog(@"动画取消");
+        }else{
+            NSLog(@"动画完成");
         }
+        
+        [snapShot removeFromSuperview];
+        [whiteViewContainer removeFromSuperview];
+        toCellView.hidden = NO;
+        toView.transform = CGAffineTransformIdentity;
+        toView.frame = originFrame;
+        [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+        
+        //        }
     }];
 }
 @end

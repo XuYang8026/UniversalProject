@@ -25,7 +25,7 @@
 @end
 
 // 广告显示的时间
-static int const showtime = 0;
+static int const showtime = 5;
 
 @implementation AdPageView
 
@@ -72,7 +72,7 @@ static int const showtime = 0;
 //            AdvertiseView *advertiseView = [[AdvertiseView alloc] initWithFrame:self.window.bounds];
 //            advertiseView.filePath = filePath;
 //            [advertiseView show];
-            self.filePath = filePath;
+            [self setFilePath:filePath];
             self.tapBlock = tapBlock;
             [self show];
             
@@ -196,33 +196,48 @@ static int const showtime = 0;
 - (void)getAdvertisingImage
 {
     
+    NSArray *imageArray = @[@"http://imgsrc.baidu.com/forum/pic/item/9213b07eca80653846dc8fab97dda144ad348257.jpg", @"http://pic.paopaoche.net/up/2012-2/20122220201612322865.png", @"http://img5.pcpop.com/ArticleImages/picshow/0x0/20110801/2011080114495843125.jpg", @"http://www.mangowed.com/uploads/allimg/130410/1-130410215449417.jpg"];
+    NSString *imageUrl = imageArray[arc4random() % imageArray.count];
+
+    NSArray *stringArr = [imageUrl componentsSeparatedByString:@"/"];
+    NSString *imageName = stringArr.lastObject;
+    
+    // 拼接沙盒路径
+    NSString *filePath = [self getFilePathWithImageName:imageName];
+    BOOL isExist = [self isFileExistWithFilePath:filePath];
+    if (!isExist){// 如果该图片不存在，则删除老图片，下载新图片
+        
+        [self downloadAdImageWithUrl:imageUrl imageName:imageName];
+        
+    }
+    
     // TODO 请求广告接口
     
-    [PPNetworkHelper POST:NSStringFormat(@"%@%@",URL_main,URL_Test) parameters:@{@"versionId":@100} success:^(id responseObject) {
-        if (ValidDict(responseObject)) {
-            if (ValidDict(responseObject[@"data"])) {
-                NSDictionary *data = responseObject[@"data"];
-                if (ValidStr(data[@"picUrl"])) {
-                    // 获取图片名:43-130P5122Z60-50.jpg
-                    NSArray *stringArr = [data[@"picUrl"] componentsSeparatedByString:@"/"];
-                    NSString *imageName = stringArr.lastObject;
-                    
-                    // 拼接沙盒路径
-                    NSString *filePath = [self getFilePathWithImageName:imageName];
-                    BOOL isExist = [self isFileExistWithFilePath:filePath];
-                    if (!isExist){// 如果该图片不存在，则删除老图片，下载新图片
-                        
-                        [self downloadAdImageWithUrl:data[@"picUrl"] imageName:imageName];
-                        
-                    }
-
-                }
-            }
-        }
-        
-    } failure:^(NSError *error) {
-        
-    }];
+//    [PPNetworkHelper POST:NSStringFormat(@"%@%@",URL_main,URL_Test) parameters:@{@"versionId":@100} success:^(id responseObject) {
+//        if (ValidDict(responseObject)) {
+//            if (ValidDict(responseObject[@"data"])) {
+//                NSDictionary *data = responseObject[@"data"];
+//                if (ValidStr(data[@"picUrl"])) {
+//                    // 获取图片名:43-130P5122Z60-50.jpg
+//                    NSArray *stringArr = [data[@"picUrl"] componentsSeparatedByString:@"/"];
+//                    NSString *imageName = stringArr.lastObject;
+//                    
+//                    // 拼接沙盒路径
+//                    NSString *filePath = [self getFilePathWithImageName:imageName];
+//                    BOOL isExist = [self isFileExistWithFilePath:filePath];
+//                    if (!isExist){// 如果该图片不存在，则删除老图片，下载新图片
+//                        
+//                        [self downloadAdImageWithUrl:data[@"picUrl"] imageName:imageName];
+//                        
+//                    }
+//
+//                }
+//            }
+//        }
+//        
+//    } failure:^(NSError *error) {
+//        
+//    }];
     
     
     
