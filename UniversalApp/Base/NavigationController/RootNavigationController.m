@@ -16,7 +16,6 @@
 @property (nonatomic,strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 @property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *popRecognizer;
 @property(nonatomic,assign) BOOL isSystemSlidBack;//是否开启系统右滑返回
-
 @end
 
 @implementation RootNavigationController
@@ -27,20 +26,20 @@
     //导航栏主题 title文字属性
     UINavigationBar *navBar = [UINavigationBar appearance];
     //导航栏背景图
-//    [navBar setBackgroundImage:[UIImage imageNamed:@"tabBarBj"] forBarMetrics:UIBarMetricsDefault];
+    //    [navBar setBackgroundImage:[UIImage imageNamed:@"tabBarBj"] forBarMetrics:UIBarMetricsDefault];
     [navBar setBarTintColor:CNavBgColor];
-    [navBar setTintColor:KWhiteColor];
-    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName :KWhiteColor, NSFontAttributeName : [UIFont systemFontOfSize:18]}];
+    [navBar setTintColor:CNavBgFontColor];
+    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName :CNavBgFontColor, NSFontAttributeName : [UIFont systemFontOfSize:18]}];
     
     //导航栏左右文字主题
     UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
     
-//    [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
+    //    [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
     
-//    //tabBar主题 title文字属性
-//    UITabBarItem *tabBarItem = [UITabBarItem appearance];
-//    [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : GRAYTEXTCOLOR} forState:UIControlStateNormal];
-//    [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : ButtonNormalColor} forState:UIControlStateSelected];
+    //    //tabBar主题 title文字属性
+    //    UITabBarItem *tabBarItem = [UITabBarItem appearance];
+    //    [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : GRAYTEXTCOLOR} forState:UIControlStateNormal];
+    //    [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : ButtonNormalColor} forState:UIControlStateSelected];
     
 }
 
@@ -49,13 +48,14 @@
     self.popDelegate = self.interactivePopGestureRecognizer.delegate;
     self.delegate = self;
     //navigationBar样式设置
-//    self.navigationBar.barTintColor = KBlueColor;
-//    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont boldSystemFontOfSize:16]}];
-//    [self.navigationBar setTintColor:KWhiteColor];    // Do any additional setup after loading the view.
-
+    //    self.navigationBar.barTintColor = KBlueColor;
+    //    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont boldSystemFontOfSize:16]}];
+    //    [self.navigationBar setTintColor:KWhiteColor];    // Do any additional setup after loading the view.
+    
     self.interactivePopGestureRecognizer.enabled = YES;
     _popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
-//    _popRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
+    //    _popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
+    //    _popRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
     _popRecognizer.edges = UIRectEdgeLeft;
     [_popRecognizer setEnabled:NO];
     [self.view addGestureRecognizer:_popRecognizer];
@@ -82,7 +82,9 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.viewControllers.count > 0) {
-        viewController.hidesBottomBarWhenPushed = YES;
+        if (![viewController conformsToProtocol:@protocol(XYTransitionProtocol)] ) {
+            viewController.hidesBottomBarWhenPushed = YES;
+        }
     }
     [super pushViewController:viewController animated:animated];
 }
@@ -160,10 +162,16 @@
         XYTransition *transion = [XYTransition new];
         if (operation == UINavigationControllerOperationPush && pinterestNedd) {
             transion.isPush = YES;
+            
+            //暂时屏蔽带动画的右划返回
             self.isSystemSlidBack = NO;
+            //            self.isSystemSlidBack = YES;
         }
         else if(operation == UINavigationControllerOperationPop && pinterestNedd)
         {
+            //暂时屏蔽带动画的右划返回
+            //            return nil;
+            
             transion.isPush = NO;
             self.isSystemSlidBack = NO;
         }
@@ -219,7 +227,7 @@
 - (void)handleNavigationTransition:(UIScreenEdgePanGestureRecognizer*)recognizer
 {
     CGFloat progress = [recognizer translationInView:self.view].x / (self.view.bounds.size.width);
-//    progress = MIN(1.0, MAX(0.0, progress));
+    //    progress = MIN(1.0, MAX(0.0, progress));
     NSLog(@"右划progress %.2f",progress);
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -249,13 +257,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

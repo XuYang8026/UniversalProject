@@ -87,6 +87,7 @@
                                     -(leftUperPoint.y - offsetStatuBar)*_animationScale + offsetY,
                                     fromVC.view.frame.size.width,
                                     fromVC.view.frame.size.height);
+        kAppDelegate.mainTabBar.tabBar.alpha = 0;
     } completion:^(BOOL finished) {
         if (finished) {
             //没有这句过滤动画就不会结束
@@ -159,10 +160,12 @@
         toView.transform = CGAffineTransformIdentity;
         toView.alpha = 1.0;
         [toView setOrigin:CGPointZero];
+        kAppDelegate.mainTabBar.tabBar.alpha = 1;
     } completion:^(BOOL finished) {
         //        if (finished) {
         if (transitionContext.transitionWasCancelled) {
             NSLog(@"动画取消");
+            kAppDelegate.mainTabBar.tabBar.alpha = 0;
         }else{
             NSLog(@"动画完成");
         }

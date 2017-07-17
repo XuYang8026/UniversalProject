@@ -11,9 +11,32 @@
 #ifndef FontAndColorMacros_h
 #define FontAndColorMacros_h
 
+#pragma mark -  颜色区
+//主题色 导航栏颜色
+//白色主题
+//#define CNavBgColor  [UIColor colorWithHexString:@"ffffff"]
+//#define CNavBgFontColor  [UIColor colorWithHexString:@"000000"]
+
+//绿色主题
 #define CNavBgColor  [UIColor colorWithHexString:@"00AE68"]
+#define CNavBgFontColor  [UIColor colorWithHexString:@"ffffff"]
 
 //默认页面背景色
 #define CViewBgColor [UIColor colorWithHexString:@"f2f2f2"]
+
+//分割线颜色
+#define CLineColor [UIColor colorWithHexString:@"ededed"]
+
+//次级字色
+#define CFontColor1 [UIColor colorWithHexString:@"1f1f1f"]
+
+//再次级字色
+#define CFontColor2 [UIColor colorWithHexString:@"5c5c5c"]
+
+
+#pragma mark -  字体区
+
+
+#define FFont1 [UIFont systemFontOfSize:12.0f]
 
 #endif /* FontAndColorMacros_h */
