@@ -82,9 +82,12 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.viewControllers.count > 0) {
-        if (![viewController conformsToProtocol:@protocol(XYTransitionProtocol)] ) {
+        if ([viewController conformsToProtocol:@protocol(XYTransitionProtocol)] && [self isNeedTransition:viewController]) {
+            viewController.hidesBottomBarWhenPushed = NO;
+        }else{
             viewController.hidesBottomBarWhenPushed = YES;
         }
+        
     }
     [super pushViewController:viewController animated:animated];
 }
@@ -240,7 +243,7 @@
     else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
         CGPoint velocity = [recognizer velocityInView:recognizer.view];
         
-        if (progress > 0.5 || velocity.x >1000) {
+        if (progress > 0.5 || velocity.x >100) {
             [self.interactivePopTransition finishInteractiveTransition];
         }
         else {
