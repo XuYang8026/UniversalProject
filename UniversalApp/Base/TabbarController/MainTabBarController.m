@@ -11,6 +11,7 @@
 #import "RootNavigationController.h"
 #import "HomeViewController.h"
 #import "WaterFallListViewController.h"
+#import "PersonListViewController.h"
 #import "MakeFriendsViewController.h"
 #import "MsgViewController.h"
 #import "MineViewController.h"
@@ -59,6 +60,7 @@
     _VCS = @[].mutableCopy;
 //    HomeViewController *homeVC = [[HomeViewController alloc]init];
     WaterFallListViewController *homeVC = [WaterFallListViewController new];
+//    PersonListViewController *homeVC = [[PersonListViewController alloc]init];
     [self setupChildViewController:homeVC title:@"首页" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
     
     MakeFriendsViewController *makeFriendVC = [[MakeFriendsViewController alloc]init];

@@ -13,6 +13,11 @@
 		290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */; };
 		290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */; };
 		290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */; };
+		2914E4871F20A45C001C01DB /* PersonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E4861F20A45C001C01DB /* PersonListViewController.m */; };
+		2914E48A1F20A462001C01DB /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E4891F20A462001C01DB /* PersonModel.m */; };
+		2914E48D1F20A471001C01DB /* PersonListLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E48C1F20A471001C01DB /* PersonListLogic.m */; };
+		2914E4901F20A4D1001C01DB /* PersonListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E48F1F20A4D1001C01DB /* PersonListCollectionViewCell.m */; };
+		2914E4931F20A4F8001C01DB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E4921F20A4F8001C01DB /* ProfileViewController.m */; };
 		2917D1FF1EDFC89A00E76185 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2917D1FE1EDFC89A00E76185 /* YYFPSLabel.m */; };
 		2917D2061EE007C300E76185 /* MBHUD_Success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2917D2001EE007C300E76185 /* MBHUD_Success@3x.png */; };
 		2917D2071EE007C300E76185 /* MBHUD_Success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2917D2011EE007C300E76185 /* MBHUD_Success@2x.png */; };
@@ -157,6 +162,16 @@
 		290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
 		290DE9331ED2EDF100A45FF6 /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
 		290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
+		2914E4851F20A45C001C01DB /* PersonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListViewController.h; sourceTree = "<group>"; };
+		2914E4861F20A45C001C01DB /* PersonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListViewController.m; sourceTree = "<group>"; };
+		2914E4881F20A462001C01DB /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		2914E4891F20A462001C01DB /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		2914E48B1F20A471001C01DB /* PersonListLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListLogic.h; sourceTree = "<group>"; };
+		2914E48C1F20A471001C01DB /* PersonListLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListLogic.m; sourceTree = "<group>"; };
+		2914E48E1F20A4D1001C01DB /* PersonListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListCollectionViewCell.h; sourceTree = "<group>"; };
+		2914E48F1F20A4D1001C01DB /* PersonListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListCollectionViewCell.m; sourceTree = "<group>"; };
+		2914E4911F20A4F8001C01DB /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		2914E4921F20A4F8001C01DB /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		2917D1FD1EDFC89A00E76185 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		2917D1FE1EDFC89A00E76185 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		2917D2001EE007C300E76185 /* MBHUD_Success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Success@3x.png"; sourceTree = "<group>"; };
@@ -534,6 +549,8 @@
 				296F9A3D1F050AA900909CDB /* SecondViewController.m */,
 				2924783F1ED6FFC900BB097A /* EmitterViewController.h */,
 				292478401ED6FFC900BB097A /* EmitterViewController.m */,
+				2914E4851F20A45C001C01DB /* PersonListViewController.h */,
+				2914E4861F20A45C001C01DB /* PersonListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -589,6 +606,8 @@
 			children = (
 				293D460F1ECDAEED007C64A9 /* MineViewController.h */,
 				293D46101ECDAEED007C64A9 /* MineViewController.m */,
+				2914E4911F20A4F8001C01DB /* ProfileViewController.h */,
+				2914E4921F20A4F8001C01DB /* ProfileViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -726,6 +745,8 @@
 		296F99FE1F04F11D00909CDB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				2914E48B1F20A471001C01DB /* PersonListLogic.h */,
+				2914E48C1F20A471001C01DB /* PersonListLogic.m */,
 				2940C5331F0A3EAB008BC29F /* WaterFallListLogic.h */,
 				2940C5341F0A3EAB008BC29F /* WaterFallListLogic.m */,
 			);
@@ -735,6 +756,8 @@
 		296F99FF1F04F11D00909CDB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2914E4881F20A462001C01DB /* PersonModel.h */,
+				2914E4891F20A462001C01DB /* PersonModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -772,6 +795,8 @@
 		296F9A021F04F11D00909CDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2914E48E1F20A4D1001C01DB /* PersonListCollectionViewCell.h */,
+				2914E48F1F20A4D1001C01DB /* PersonListCollectionViewCell.m */,
 				296F9A171F04F18400909CDB /* WaterFallCollectionViewCell.h */,
 				296F9A181F04F18400909CDB /* WaterFallCollectionViewCell.m */,
 				296F9A391F0504C900909CDB /* WaterFlowLayout.h */,
@@ -1432,10 +1457,13 @@
 				29AD6C5B1ED3E28800B0879C /* PPNetworkCache.m in Sources */,
 				296F9A1B1F04F18400909CDB /* WaterFallCollectionViewCell.m in Sources */,
 				292478411ED6FFC900BB097A /* EmitterViewController.m in Sources */,
+				2914E4901F20A4D1001C01DB /* PersonListCollectionViewCell.m in Sources */,
 				293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */,
 				296F99F11F04F05000909CDB /* WaterFallListViewController.m in Sources */,
 				293D46011ECDA56A007C64A9 /* MainTabBarController.m in Sources */,
+				2914E4871F20A45C001C01DB /* PersonListViewController.m in Sources */,
 				290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */,
+				2914E4931F20A4F8001C01DB /* ProfileViewController.m in Sources */,
 				2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */,
 				294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */,
 				29B90A111EE11292008AEC72 /* XYButton.m in Sources */,
@@ -1447,6 +1475,7 @@
 				29CF33301F14B60800DB7507 /* MineLogic.m in Sources */,
 				2917D2141EE02CF100E76185 /* UIButton+XYButton.m in Sources */,
 				29CF332D1F14B5EA00DB7507 /* MsgLogic.m in Sources */,
+				2914E48A1F20A462001C01DB /* PersonModel.m in Sources */,
 				2924783E1ED6857300BB097A /* AppDelegate+PushService.m in Sources */,
 				2940C5351F0A3EAB008BC29F /* WaterFallListLogic.m in Sources */,
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
@@ -1459,6 +1488,7 @@
 				290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */,
 				290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */,
 				290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */,
+				2914E48D1F20A471001C01DB /* PersonListLogic.m in Sources */,
 				293ECC2D1EE56D1D008061A1 /* IMManager.m in Sources */,
 				29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */,
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
