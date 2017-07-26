@@ -34,6 +34,8 @@
 
 @property (nonatomic, copy) NSString *hobbys;
 
+@property (nonatomic,assign) float hobbysHeight;
+
 @property (nonatomic, copy) NSString *nickName;
 
 @property (nonatomic, copy) NSString *objectId;

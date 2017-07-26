@@ -45,6 +45,7 @@
         
         _imgHead=[[UIImageView alloc]initWithFrame:CGRectMake(10, _line1.bottom+10, 30, 30)];
         ViewRadius(_imgHead, 15);
+        
         _imgHead.contentMode=UIViewContentModeScaleAspectFill;
         _imgHead.clipsToBounds=YES;
         _imgHead.backgroundColor=CViewBgColor;
@@ -94,12 +95,18 @@
     //    }
     CGFloat itemH = personModel.height * self.width / personModel.width;
     _imgView.frame=CGRectMake(0, 0, self.frame.size.width, itemH);
-    //计算hobby的高度
-    CGFloat hobbyH=[personModel.hobbys heightForFont:FFont1 width:(KScreenWidth-30)/2-20];
-    if (hobbyH>43) {
-        hobbyH=43;
+    
+    if (personModel.hobbys && personModel.hobbysHeight == 0) {
+        //计算hobby的高度
+        CGFloat hobbyH=[personModel.hobbys heightForFont:FFont1 width:(KScreenWidth-30)/2-20];
+        if (hobbyH>43) {
+            hobbyH=43;
+        }
+        personModel.hobbysHeight = hobbyH;
     }
-    _lblHobby.frame=CGRectMake(10, _imgView.bottom+10, self.frame.size.width-20, hobbyH);
+    
+    _lblHobby.frame=CGRectMake(10, _imgView.bottom+10, self.frame.size.width-20, personModel.hobbysHeight);
+    
     _line1.top=_lblHobby.bottom+10;
     _imgHead.top=_line1.bottom+10;
     _lblNickName.top=_imgHead.top;

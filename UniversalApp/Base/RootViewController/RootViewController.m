@@ -258,6 +258,24 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark -  屏幕旋转
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    //当前支持的旋转类型
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate
+{
+    // 是否支持旋转
+    return NO;
+}
+
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    // 默认进去类型
+    return   UIInterfaceOrientationPortrait;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

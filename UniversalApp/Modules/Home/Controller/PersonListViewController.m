@@ -127,19 +127,13 @@
 
 #pragma mark ————— layout 代理 —————
 -(CGFloat)waterFlowLayout:(WaterFlowLayout *)WaterFlowLayout heightForWidth:(CGFloat)width andIndexPath:(NSIndexPath *)indexPath{
-//    UIImage *img = IMAGE_NAMED(_logic.dataArray[indexPath.row]);
-//    
-//    return img.size.height * itemWidthHeight / img.size.width;
+
     PersonModel *model = _logic.dataArray[indexPath.row];
-    
-    CGFloat hobbyH=[model.hobbys heightForFont:FFont1 width:(KScreenWidth-30)/2-20];
-    if (hobbyH>43) {
-        hobbyH=43;
-    }
+
     
     CGFloat imgH = model.height * itemWidthHeight / model.width;
     
-    return imgH + 110+hobbyH;
+    return imgH + 110+ model.hobbysHeight;
 }
 
 //*******重写的时候需要走一句话

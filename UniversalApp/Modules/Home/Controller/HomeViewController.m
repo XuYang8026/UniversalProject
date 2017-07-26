@@ -36,9 +36,9 @@
     switch (btn.tag) {
         case 1000:{
 //            [[ShareManager sharedShareManager] showShareView];
-            //            [self goLogin];
-            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[HomeViewController new]];
-            [self presentViewController:loginNavi animated:YES completion:nil];
+                        [self goLogin];
+//            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[HomeViewController new]];
+//            [self presentViewController:loginNavi animated:YES completion:nil];
         }
             break;
         case 1001:
@@ -139,6 +139,28 @@
     [self.view addSubview:snowBtn];
 
 }
+
+#pragma mark -  屏幕旋转
+//在需要旋转的页面重写以下三个方法 默认不可旋转
+
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    //当前支持的旋转类型
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+- (BOOL)shouldAutorotate
+{
+    // 是否支持旋转
+    return YES;
+}
+
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    // 默认进去类型
+    return   UIInterfaceOrientationPortrait;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

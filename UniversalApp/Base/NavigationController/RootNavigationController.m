@@ -253,6 +253,18 @@
     }
 }
 
+#pragma mark ————— 屏幕旋转 —————
+- (BOOL)shouldAutorotate
+{
+    //也可以用topViewController判断VC是否需要旋转
+    return self.topViewController.shouldAutorotate;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    //也可以用topViewController判断VC支持的方向
+    return self.topViewController.supportedInterfaceOrientations;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
