@@ -89,24 +89,12 @@
     _lblAge.text=personModel.age;
     _lblFrom.text=personModel.city;
     _juli.text = personModel.juli;
-    //    [_lblHobby sizeToFit];
-    //    if (_lblHobby.numberOfLines>3) {
-    //        _lblHobby.numberOfLines=3;
-    //    }
+
     CGFloat itemH = personModel.height * self.width / personModel.width;
     _imgView.frame=CGRectMake(0, 0, self.frame.size.width, itemH);
-    
-    if (personModel.hobbys && personModel.hobbysHeight == 0) {
-        //计算hobby的高度
-        CGFloat hobbyH=[personModel.hobbys heightForFont:FFont1 width:(KScreenWidth-30)/2-20];
-        if (hobbyH>43) {
-            hobbyH=43;
-        }
-        personModel.hobbysHeight = hobbyH;
-    }
-    
+
     _lblHobby.frame=CGRectMake(10, _imgView.bottom+10, self.frame.size.width-20, personModel.hobbysHeight);
-    
+
     _line1.top=_lblHobby.bottom+10;
     _imgHead.top=_line1.bottom+10;
     _lblNickName.top=_imgHead.top;

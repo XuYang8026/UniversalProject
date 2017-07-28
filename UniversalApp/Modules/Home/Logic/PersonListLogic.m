@@ -34,12 +34,8 @@
 
 #pragma mark ————— 拉取数据 —————
 -(void)loadData{
-    //发起请求
-    GetWaterFallListAPI *req = [GetWaterFallListAPI new];
-    [req startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"请求成功");
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"请求失败 %@",req.message);
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //模拟成功
         for (int i = 0; i < 50; i++) {
             
@@ -60,7 +56,16 @@
         if (self.delegagte && [self.delegagte respondsToSelector:@selector(requestDataCompleted)]) {
             [self.delegagte requestDataCompleted];
         }
-    }];
+
+    });
+    
+    //发起请求 示例
+//    GetWaterFallListAPI *req = [GetWaterFallListAPI new];
+//    [req startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        NSLog(@"请求成功");
+//    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        NSLog(@"请求失败 %@",req.message);
+//    }];
 }
 
 @end

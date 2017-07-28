@@ -40,6 +40,10 @@
     [self.collectionView.mj_header beginRefreshing];
 
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.StatusBarStyle = UIStatusBarStyleLightContent;
+}
 #pragma mark ————— 初始化页面 —————
 -(void)setupUI{
     //添加导航栏按钮
@@ -105,7 +109,7 @@
 //    [UIView performWithoutAnimation:^{
         [self.collectionView reloadData];
 //    }];
-    
+
 }
 
 #pragma mark ————— collection代理方法 —————
@@ -128,12 +132,19 @@
 #pragma mark ————— layout 代理 —————
 -(CGFloat)waterFlowLayout:(WaterFlowLayout *)WaterFlowLayout heightForWidth:(CGFloat)width andIndexPath:(NSIndexPath *)indexPath{
 
-    PersonModel *model = _logic.dataArray[indexPath.row];
-
+    PersonModel *personModel = _logic.dataArray[indexPath.row];
+    if (personModel.hobbys && personModel.hobbysHeight == 0) {
+        //计算hobby的高度 并缓存
+        CGFloat hobbyH=[personModel.hobbys heightForFont:FFont1 width:(KScreenWidth-30)/2-20];
+        if (hobbyH>43) {
+            hobbyH=43;
+        }
+        personModel.hobbysHeight = hobbyH;
+    }
+    CGFloat imgH = personModel.height * itemWidthHeight / personModel.width;
     
-    CGFloat imgH = model.height * itemWidthHeight / model.width;
+    return imgH + 110 + personModel.hobbysHeight;
     
-    return imgH + 110+ model.hobbysHeight;
 }
 
 //*******重写的时候需要走一句话
@@ -187,12 +198,14 @@
     if (velocity <- 50) {
         //向上拖动，隐藏导航栏
         [self.navigationController setNavigationBarHidden:YES animated:YES];
+        self.StatusBarStyle = UIStatusBarStyleDefault;
         [UIView animateWithDuration:0.2 animations:^{
             self.topView.bottom = 0;
         }];
     }else if (velocity > 50) {
         //向下拖动，显示导航栏
         [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.StatusBarStyle = UIStatusBarStyleLightContent;
         [UIView animateWithDuration:0.2 animations:^{
             self.topView.top = 64+10;
         }];
