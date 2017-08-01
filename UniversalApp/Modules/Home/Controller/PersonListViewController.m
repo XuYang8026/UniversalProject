@@ -38,7 +38,6 @@
     [self setupUI];
     //开始第一次数据拉取
     [self.collectionView.mj_header beginRefreshing];
-
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -58,6 +57,8 @@
     layout.columnMargin = 10;
     layout.delegate = self;
     
+
+    self.collectionView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
     [self.collectionView setCollectionViewLayout:layout];
     self.collectionView.backgroundColor = CViewBgColor;
     [self.collectionView registerClass:[PersonListCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([PersonListCollectionViewCell class])];
@@ -131,7 +132,6 @@
 
 #pragma mark ————— layout 代理 —————
 -(CGFloat)waterFlowLayout:(WaterFlowLayout *)WaterFlowLayout heightForWidth:(CGFloat)width andIndexPath:(NSIndexPath *)indexPath{
-
     PersonModel *personModel = _logic.dataArray[indexPath.row];
     if (personModel.hobbys && personModel.hobbysHeight == 0) {
         //计算hobby的高度 并缓存

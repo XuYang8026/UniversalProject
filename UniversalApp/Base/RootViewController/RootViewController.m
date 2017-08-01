@@ -107,13 +107,19 @@
         
         //底部刷新
         _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
-        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
-        _tableView.mj_footer.ignoredScrollViewContentInsetBottom = 30;
+//        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+//        _tableView.mj_footer.ignoredScrollViewContentInsetBottom = 30;
+        
+        if (@available(iOS 11.0, *)) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            _tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+            _tableView.scrollIndicatorInsets = _tableView.contentInset;
+        } else {
+            // Fallback on earlier versions
+        }
         
         _tableView.backgroundColor=CViewBgColor;
         _tableView.scrollsToTop = YES;
-        //        _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-        //        _tableView.separatorInset = UIEdgeInsetsMake(0, -10, 0, -10);//{top, left, bottom, right}
         _tableView.tableFooterView = [[UIView alloc] init];
     }
     return _tableView;
@@ -138,8 +144,14 @@
         
         //底部刷新
         _collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
-        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
-        _collectionView.mj_footer.ignoredScrollViewContentInsetBottom = 30;
+
+        if (@available(iOS 11.0, *)) {
+            _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            _collectionView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+            _collectionView.scrollIndicatorInsets = _collectionView.contentInset;
+        } else {
+            // Fallback on earlier versions
+        }
         
         _collectionView.backgroundColor=CViewBgColor;
         _collectionView.scrollsToTop = YES;

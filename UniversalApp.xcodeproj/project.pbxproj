@@ -121,6 +121,8 @@
 		29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C6A1ED41E2100B0879C /* UserManager.m */; };
 		29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C701ED41ED200B0879C /* UserInfo.m */; };
 		29B90A111EE11292008AEC72 /* XYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B90A101EE11292008AEC72 /* XYButton.m */; };
+		29CD2C6B1F30227100A0F5DC /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD2C6A1F30227100A0F5DC /* TableViewCell.m */; };
+		29CD2C6E1F30229B00A0F5DC /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD2C6D1F30229B00A0F5DC /* CellModel.m */; };
 		29CF332A1F14B5CC00DB7507 /* MakeFriendsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF33291F14B5CC00DB7507 /* MakeFriendsLogic.m */; };
 		29CF332D1F14B5EA00DB7507 /* MsgLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF332C1F14B5EA00DB7507 /* MsgLogic.m */; };
 		29CF33301F14B60800DB7507 /* MineLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF332F1F14B60800DB7507 /* MineLogic.m */; };
@@ -328,6 +330,10 @@
 		29AD6C701ED41ED200B0879C /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		29B90A0F1EE11292008AEC72 /* XYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYButton.h; sourceTree = "<group>"; };
 		29B90A101EE11292008AEC72 /* XYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYButton.m; sourceTree = "<group>"; };
+		29CD2C691F30227100A0F5DC /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		29CD2C6A1F30227100A0F5DC /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		29CD2C6C1F30229B00A0F5DC /* CellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
+		29CD2C6D1F30229B00A0F5DC /* CellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
 		29CF33281F14B5CC00DB7507 /* MakeFriendsLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeFriendsLogic.h; sourceTree = "<group>"; };
 		29CF33291F14B5CC00DB7507 /* MakeFriendsLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeFriendsLogic.m; sourceTree = "<group>"; };
 		29CF332B1F14B5EA00DB7507 /* MsgLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgLogic.h; sourceTree = "<group>"; };
@@ -499,7 +505,6 @@
 				2940C52F1F0A3E73008BC29F /* BaseRequestApi */,
 				29280E7E1F063D3600BF52D9 /* XYTransition */,
 				2917D1FC1EDFC89A00E76185 /* Other */,
-				2996100F1ED8159900BCED2A /* AppIntroduction */,
 				29AD6C641ED41BA100B0879C /* AdPage */,
 				29AD6C531ED3E28800B0879C /* NetWork */,
 				29AD6C521ED3E28800B0879C /* Category */,
@@ -817,6 +822,8 @@
 		296F9A041F04F12E00909CDB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				29CD2C6C1F30229B00A0F5DC /* CellModel.h */,
+				29CD2C6D1F30229B00A0F5DC /* CellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -838,6 +845,8 @@
 		296F9A071F04F12E00909CDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				29CD2C691F30227100A0F5DC /* TableViewCell.h */,
+				29CD2C6A1F30227100A0F5DC /* TableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1020,13 +1029,6 @@
 				296F9EE21ECC64CE0063A255 /* Info.plist */,
 			);
 			path = UniversalAppUITests;
-			sourceTree = "<group>";
-		};
-		2996100F1ED8159900BCED2A /* AppIntroduction */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppIntroduction;
 			sourceTree = "<group>";
 		};
 		299610141ED84B5100BCED2A /* UMSocial */ = {
@@ -1476,6 +1478,7 @@
 				2917D2141EE02CF100E76185 /* UIButton+XYButton.m in Sources */,
 				29CF332D1F14B5EA00DB7507 /* MsgLogic.m in Sources */,
 				2914E48A1F20A462001C01DB /* PersonModel.m in Sources */,
+				29CD2C6E1F30229B00A0F5DC /* CellModel.m in Sources */,
 				2924783E1ED6857300BB097A /* AppDelegate+PushService.m in Sources */,
 				2940C5351F0A3EAB008BC29F /* WaterFallListLogic.m in Sources */,
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
@@ -1494,6 +1497,7 @@
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
 				29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */,
 				2940C5381F0A3EC5008BC29F /* GetWaterFallListAPI.m in Sources */,
+				29CD2C6B1F30227100A0F5DC /* TableViewCell.m in Sources */,
 				293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */,
 				29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */,
 				2917D2171EE02F9C00E76185 /* ShareManager.m in Sources */,

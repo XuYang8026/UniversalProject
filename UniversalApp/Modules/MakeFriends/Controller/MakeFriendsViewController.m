@@ -7,40 +7,67 @@
 //
 
 #import "MakeFriendsViewController.h"
+#import "CellModel.h"
+#import "TableViewCell.h"
+#import "MakeFriendsLogic.h"
 
-@interface MakeFriendsViewController ()
+@interface MakeFriendsViewController ()<UITableViewDelegate,UITableViewDataSource,MakeFriendsDelegate>
 
+@property (nonatomic,strong) NSMutableArray * dataArray;
+@property (nonatomic,strong) MakeFriendsLogic * logic;
 @end
 
 @implementation MakeFriendsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isHidenNaviBar = YES;
-    self.StatusBarStyle = UIStatusBarStyleDefault;
-    
-    UILabel * lbl = [UILabel new];
-    lbl.font = SYSTEMFONT(30);
-    lbl.text = @"社交页控制器";
-    lbl.textAlignment = NSTextAlignmentCenter;
-    lbl.textColor = KBlackColor;
-    lbl.frame = self.view.bounds;
-    [self.view addSubview:lbl];
-    kWeakSelf(self)
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithActionBlock:^(id  _Nonnull sender) {
-        [weakself goLoginWithPush];
-//        weakself.StatusBarStyle = weakself.StatusBarStyle == 1 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
-    }];
-    [self.view addGestureRecognizer:tap];
-
-    [self addNavigationItemWithTitles:@[@"登录"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
+    _dataArray = @[].mutableCopy;
+    _logic = [MakeFriendsLogic new];
+    _logic.delegagte = self;
+    [self initUI];
+    [self.tableView.mj_header beginRefreshing];
 }
--(void)naviBtnClick:(UIButton *)btn{
-    [MBProgressHUD showTopTipMessage:NSStringFormat(@"点击了%@按钮", btn.titleLabel.text)];
+#pragma mark -  初始化UI
+-(void)initUI{
+    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight-0);
+    [self.view addSubview:self.tableView];
+    [self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:NSStringFromClass([TableViewCell class])];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
 }
 
+#pragma mark -  tableView delegate
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _logic.dataArray.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 45.0f;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TableViewCell class]) forIndexPath:indexPath];
+    cell.model = _logic.dataArray[indexPath.row];
+    return cell;
+}
 
+#pragma mark ————— 下拉刷新 —————
+-(void)headerRereshing{
+    [_logic.dataArray removeAllObjects];
+    [_logic loadData];
+}
+
+#pragma mark ————— 上拉刷新 —————
+-(void)footerRereshing{
+    [_logic loadData];
+}
+
+
+#pragma mark -  logic delegate
+-(void)requestDataCompleted{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    [self.tableView reloadData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

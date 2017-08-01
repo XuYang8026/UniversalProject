@@ -40,6 +40,10 @@
     
     [super viewWillAppear:animated];
     
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
     [self removeOriginControls];
 }
 
