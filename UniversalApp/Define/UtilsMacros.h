@@ -19,6 +19,13 @@
 #define kUserDefaults       [NSUserDefaults standardUserDefaults]
 #define kNotificationCenter [NSNotificationCenter defaultCenter]
 
+//系统版本
+//判断是在iOS11之前
+#ifndef kiOS11Before
+#define kiOS11Before (kSystemVersion < 11)
+#endif
+
+
 //获取屏幕宽高
 #define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 #define KScreenHeight [[UIScreen mainScreen] bounds].size.height

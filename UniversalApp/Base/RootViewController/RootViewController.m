@@ -110,13 +110,14 @@
 //        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
 //        _tableView.mj_footer.ignoredScrollViewContentInsetBottom = 30;
         
-        if (@available(iOS 11.0, *)) {
-            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-            _tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
-            _tableView.scrollIndicatorInsets = _tableView.contentInset;
-        } else {
-            // Fallback on earlier versions
-        }
+#ifdef kiOS11Before
+        
+#else
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        _tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+        _tableView.scrollIndicatorInsets = _tableView.contentInset;
+#endif
+
         
         _tableView.backgroundColor=CViewBgColor;
         _tableView.scrollsToTop = YES;
@@ -145,13 +146,13 @@
         //底部刷新
         _collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
 
-        if (@available(iOS 11.0, *)) {
-            _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-            _collectionView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
-            _collectionView.scrollIndicatorInsets = _collectionView.contentInset;
-        } else {
-            // Fallback on earlier versions
-        }
+#ifdef kiOS11Before
+        
+#else
+        _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        _collectionView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+        _collectionView.scrollIndicatorInsets = _collectionView.contentInset;
+#endif
         
         _collectionView.backgroundColor=CViewBgColor;
         _collectionView.scrollsToTop = YES;
