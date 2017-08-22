@@ -25,6 +25,10 @@
 
 -(void)showAnimation{
     switch (_animation_type) {
+        case 0://彩带
+            [self caiDai];
+            break;
+            
         case 1://下雪
             [self snow];
             break;
@@ -59,10 +63,10 @@
     // 粒子的名字
     snowflake.name = @"snow";
     // 粒子参数的速度乘数因子
-    snowflake.birthRate = 100.0;  //每秒生成数量
+    snowflake.birthRate = 60.0;  //每秒生成数量
     snowflake.lifetime = 60;        //生存时间
     // 粒子速度
-    snowflake.velocity = 20.0;
+    snowflake.velocity = 50.0;
 //    // 粒子的速度范围
     snowflake.velocityRange = 40;
     // 粒子y方向的加速度分量
@@ -112,8 +116,8 @@
     
     //rainflake.speed             = 10;   //速度
     rainflake.velocity          = 200;   //加速度
-    //rainflake.velocityRange     = 75;   //加速度范围
-    rainflake.yAcceleration     = 300;  //重力
+    rainflake.velocityRange     = 75;   //加速度范围
+    rainflake.yAcceleration     = 500;  //重力
     
 //    rainflake.emission = 0.3 * M_PI;
 //    rainflake.spin = 0.1 * M_PI;
@@ -236,6 +240,48 @@
     [self.view.layer addSublayer:fireworkdEmitter];
 
 }
+-(void)caiDai
+{
+    CAEmitterLayer *snowEmitter = [CAEmitterLayer layer];
+    //例子发射位置
+    snowEmitter.emitterPosition = CGPointMake(kScreenWidth/2,-30);
+    snowEmitter.preservesDepth=YES;
+    //    snowEmitter.lifetime=0.1;
+    
+    //发射源的尺寸大小
+    snowEmitter.emitterSize = CGSizeMake(kScreenWidth*2, KScreenHeight);
+    //发射模式
+    snowEmitter.emitterMode = kCAEmitterLayerOutline;
+    //发射源的形状
+    snowEmitter.emitterShape = kCAEmitterLayerLine;
+    
+    NSMutableArray *cellArr=[[NSMutableArray alloc]init];
+    for (int i=1; i<9; i++) {
+        CAEmitterCell *snowflake = [CAEmitterCell emitterCell];
+        snowflake.birthRate		= 10.0;
+        snowflake.lifetime		= 4.0;
+        
+        snowflake.velocity		= 150;				// falling down slowly
+        snowflake.velocityRange = 30;
+        snowflake.yAcceleration = 100;
+        snowflake.emissionRange = M_PI;		// some variation in angle
+        snowflake.spinRange		= M_PI;		// slow spin
+        
+        snowflake.contents		= (id) [[UIImage imageNamed:[NSString stringWithFormat:@"stepPk_win_colour%d",i]] CGImage];
+        //        snowflake.color			= [[UIColor colorWithRed:0.600 green:0.658 blue:0.743 alpha:1.000] CGColor];
+        [cellArr addObject:snowflake];
+    }
+    snowEmitter.shadowOpacity = 1.0;
+    snowEmitter.shadowRadius = 0.0;
+    snowEmitter.shadowOffset = CGSizeMake(0.0, 1.0);
+    //粒子边缘的颜色
+    //    snowEmitter.shadowColor = [[UIColor redColor] CGColor];
+    
+    snowEmitter.emitterCells = cellArr;
+    [self.view.layer addSublayer:snowEmitter];
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning {

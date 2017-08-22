@@ -65,6 +65,7 @@
 #import <YYKit.h>
 #import <MBProgressHUD.h>
 #import <Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 
 #endif /* PrefixHeader_pch */

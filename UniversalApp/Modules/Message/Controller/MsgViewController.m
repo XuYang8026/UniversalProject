@@ -7,6 +7,7 @@
 //
 
 #import "MsgViewController.h"
+#import "EmitterViewController.h"
 
 @interface MsgViewController ()
 
@@ -16,42 +17,61 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isHidenNaviBar = YES;
+    self.StatusBarStyle = UIStatusBarStyleDefault;
     
-    UIButton *_btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _btn.frame = CGRectMake(40, 100,150, 50);
-    _btn.center = self.view.center;
-    [_btn setBackgroundColor:[UIColor redColor]];
-    [_btn setTitle:@"测试AlertView" forState:UIControlStateNormal];
-    [_btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _btn.showsTouchWhenHighlighted = YES;
-    _btn.tag = 3000;
-    [_btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_btn];
+    EmitterViewController *emitter = [EmitterViewController new];
+    emitter.animation_type = 1;
+    [self addChildViewController:emitter];
+    [self.view addSubview:emitter.view];
     
-    UIButton *_btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
-    _btn2.frame = CGRectMake(40, 100,150, 50);
-    _btn2.center = self.view.center;
-    _btn2.top = _btn.bottom + 20;
-    [_btn2 setBackgroundColor:[UIColor redColor]];
-    [_btn2 setTitle:@"测试ActionSheet" forState:UIControlStateNormal];
-    [_btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _btn2.showsTouchWhenHighlighted = YES;
-    _btn2.tag = 3001;
-
-    [_btn2 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_btn2];
-}
--(void)btnClick:(UIButton *)btn{
-    if (btn.tag == 3000) {
-        [self AlertWithTitle:@"测试标题" message:@"测试内容" andOthers:@[@"取消",@"确定"] animated:YES action:^(NSInteger index) {
-            DLog(@"点击了 %ld",index);
-        }];
-    }else{
-        [self ActionSheetWithTitle:@"测试" message:@"测试内容" destructive:nil destructiveAction:nil andOthers:@[@"1",@"2",@"3",@"4"] animated:YES action:^(NSInteger index) {
-            DLog(@"点了 %ld",index);
-        }];
+    NSMutableAttributedString *text = [NSMutableAttributedString new];
+    NSString *str = @"Coming Soon...";
+    {
+        NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:str];
+        one.font = [UIFont boldSystemFontOfSize:30];
+        one.color = [UIColor whiteColor];
+        
+        YYTextShadow *shadow = [YYTextShadow new];
+        shadow.color = [UIColor colorWithWhite:0.000 alpha:0.490];
+        shadow.offset = CGSizeMake(0, 1);
+        shadow.radius = 5;
+        one.textShadow = shadow;
+        
+        YYTextShadow *shadow0 = [YYTextShadow new];
+        shadow0.color = [UIColor colorWithWhite:0.000 alpha:0.20];
+        shadow0.offset = CGSizeMake(0, -1);
+        shadow0.radius = 1.5;
+        YYTextShadow *shadow1 = [YYTextShadow new];
+        shadow1.color = [UIColor colorWithWhite:1 alpha:0.99];
+        shadow1.offset = CGSizeMake(0, 1);
+        shadow1.radius = 1.5;
+        shadow0.subShadow = shadow1;
+        
+        YYTextShadow *innerShadow0 = [YYTextShadow new];
+        innerShadow0.color = [UIColor colorWithRed:0.851 green:0.311 blue:0.000 alpha:0.780];
+        innerShadow0.offset = CGSizeMake(0, 1);
+        innerShadow0.radius = 1;
+        
+        YYTextHighlight *highlight = [YYTextHighlight new];
+        [highlight setColor:[UIColor colorWithRed:1.000 green:0.795 blue:0.014 alpha:1.000]];
+        [highlight setShadow:shadow0];
+        [highlight setInnerShadow:innerShadow0];
+        [one setTextHighlight:highlight range:one.rangeOfAll];
+        
+        [text appendAttributedString:one];
     }
+    
+    YYLabel *snowBtn = [[YYLabel alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 30)];
+    snowBtn.attributedText = text;
+    snowBtn.textAlignment = NSTextAlignmentCenter;
+    snowBtn.textVerticalAlignment = YYTextVerticalAlignmentCenter;
+//    snowBtn.centerX = KScreenWidth/2;
+    snowBtn.center = self.view.center;
+
+    
+    [self.view addSubview:snowBtn];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -15,7 +15,7 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
-        self.isOpenAES = YES;//默认开启
+        self.isOpenAES = YES;
     }
     return self;
 }

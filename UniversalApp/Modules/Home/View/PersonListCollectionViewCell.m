@@ -82,9 +82,9 @@
     _personModel=personModel;
 //    _imgView.backgroundColor=[UIColor colorWithHexString:personModel.imageAve];
     _imgView.backgroundColor=KWhiteColor;
-    [_imgView setImageWithURL:[NSURL URLWithString:personModel.picture] options:YYWebImageOptionShowNetworkActivity];
+    [_imgView sd_setImageWithURL:[NSURL URLWithString:personModel.picture] placeholderImage:[UIImage imageWithColor:KGrayColor]];
     _lblHobby.text=personModel.hobbys;
-    [_imgHead setImageWithURL:[NSURL URLWithString:personModel.headImg] options:YYWebImageOptionShowNetworkActivity];
+    [_imgHead sd_setImageWithURL:[NSURL URLWithString:personModel.headImg] placeholderImage:[UIImage imageWithColor:KGrayColor]];
     _lblNickName.text=personModel.nickName;
     _lblAge.text=personModel.age;
     _lblFrom.text=personModel.city;

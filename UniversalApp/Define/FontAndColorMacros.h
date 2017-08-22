@@ -11,15 +11,16 @@
 #ifndef FontAndColorMacros_h
 #define FontAndColorMacros_h
 
+#pragma mark -  间距区
+
+//默认间距
+#define KNormalSpace 12.0f
+
 #pragma mark -  颜色区
 //主题色 导航栏颜色
-//白色主题
-//#define CNavBgColor  [UIColor colorWithHexString:@"ffffff"]
-//#define CNavBgFontColor  [UIColor colorWithHexString:@"000000"]
-
-//绿色主题
-#define CNavBgColor  [UIColor colorWithHexString:@"00AE68"]
-#define CNavBgFontColor  [UIColor colorWithHexString:@"ffffff"]
+#define CNavBgColor2  [UIColor colorWithHexString:@"00AE68"]
+#define CNavBgColor  [UIColor colorWithHexString:@"ffffff"]
+#define CNavBgFontColor  [UIColor colorWithHexString:@"000000"]
 
 //默认页面背景色
 #define CViewBgColor [UIColor colorWithHexString:@"f2f2f2"]

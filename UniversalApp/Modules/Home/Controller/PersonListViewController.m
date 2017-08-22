@@ -39,10 +39,7 @@
     //开始第一次数据拉取
     [self.collectionView.mj_header beginRefreshing];
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.StatusBarStyle = UIStatusBarStyleLightContent;
-}
+
 #pragma mark ————— 初始化页面 —————
 -(void)setupUI{
     //添加导航栏按钮
@@ -66,30 +63,7 @@
     self.collectionView.dataSource = self;
     [self.view addSubview:self.collectionView];
     
-//    [self.view addSubview:self.topView];
 }
-
-#pragma mark -  置顶view
--(UIView *)topView{
-    if (!_topView) {
-        _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 64+10, KScreenWidth, 37)];
-        _topView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-        
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(KScreenWidth - 65, 0, 59, 37);
-        [btn setImage:IMAGE_NAMED(@"top_icon") forState:UIControlStateNormal];
-        [_topView addSubview:btn];
-        
-        [btn addTarget:self action:@selector(topAction) forControlEvents:UIControlEventTouchUpInside];
-        
-    }
-    return _topView;
-}
-
--(void)topAction{
-    [self.collectionView setContentOffset:CGPointMake(0, -64) animated:YES];
-}
-
 
 #pragma mark ————— 下拉刷新 —————
 -(void)headerRereshing{
@@ -150,10 +124,6 @@
 //*******重写的时候需要走一句话
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    PersonModel *model = _logic.dataArray[indexPath.row];
-    NSLog(@"问题URL：%@",model.picture);
-    
-    
     //标记cell
     [self.collectionView setCurrentIndexPath:indexPath];
     
@@ -164,11 +134,6 @@
     profileVC.isTransition = YES;
     [self.navigationController pushViewController:profileVC animated:YES];
     
-//    SecondViewController *secondVC = [SecondViewController new];
-//    secondVC.photoImg = IMAGE_NAMED(_logic.dataArray[indexPath.row]);
-//    [self.navigationController pushViewController:secondVC animated:YES];
-    //    CellParticularController * con = [CellParticularController new];
-    //    [self.navigationController pushViewController:con animated:YES];
 }
 #pragma mark ————— 转场动画起始View —————
 -(UIView *)targetTransitionView{
@@ -183,7 +148,7 @@
 
 
 -(void)naviBtnClick:(UIButton *)btn{
-    [self.navigationController pushViewController:[HomeViewController new] animated:YES];
+    DLog(@"点击了筛选按钮");
 }
 
 #pragma mark -  上下滑动隐藏/显示导航栏
@@ -198,14 +163,12 @@
     if (velocity <- 50) {
         //向上拖动，隐藏导航栏
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        self.StatusBarStyle = UIStatusBarStyleDefault;
         [UIView animateWithDuration:0.2 animations:^{
             self.topView.bottom = 0;
         }];
     }else if (velocity > 50) {
         //向下拖动，显示导航栏
         [self.navigationController setNavigationBarHidden:NO animated:YES];
-        self.StatusBarStyle = UIStatusBarStyleLightContent;
         [UIView animateWithDuration:0.2 animations:^{
             self.topView.top = 64+10;
         }];

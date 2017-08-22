@@ -12,8 +12,9 @@
 
 @interface ProfileViewController ()<XYTransitionProtocol>
 
-@property (nonatomic, strong) UIImageView *headerImageView;
-@property (nonatomic, strong) UIView *detailsView;
+@property (nonatomic, strong) YYAnimatedImageView *headerImageView;
+@property (nonatomic, strong) UIView *detailsView;//详情view
+@property (nonatomic, strong) UIScrollView *parentView;//容器
 
 @end
 
@@ -22,29 +23,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.title = @"个人信息";
-    _headerImageView = [UIImageView new];
-    _headerImageView.frame = CGRectMake(0, 64, self.view.width , KScreenWidth/_headerImage.size.width * _headerImage.size.height);
-    [self.view addSubview:_headerImageView];
-    [_headerImageView setImage:_headerImage];
+    [self initUI];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self createDetails];
 }
+
+#pragma mark -  初始化UI
+-(void)initUI{
+    _parentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
+    [self.view addSubview:_parentView];
+    _parentView.contentSize = CGSizeMake(KScreenWidth, KScreenHeight+100);
+    
+    
+    _headerImageView = [YYAnimatedImageView new];
+    _headerImageView.frame = CGRectMake(0, 0, self.view.width , KScreenWidth/_headerImage.size.width * _headerImage.size.height);
+    [_parentView addSubview:_headerImageView];
+    [_headerImageView setImage:_headerImage];
+    
+    
+}
+
 #pragma mark -  信息详情
 -(void)createDetails{
     if (_detailsView) {
         return;
     }
     _detailsView = [[UIView alloc] initWithFrame:CGRectMake(0, _headerImageView.bottom, KScreenWidth, 1000)];
-    [self.view addSubview:_detailsView];
+    [_parentView addSubview:_detailsView];
     UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 20, KScreenWidth-30, 230)];
     lbl.numberOfLines = 0;
     lbl.text = @"个人信息\n\n\n昵称：萌萌哒小萌新\n\n性别：女\n\n个人爱好：琴棋书画我样样不会，只会打王者荣耀😜";
-//    [lbl sizeToFit];
+    //    [lbl sizeToFit];
     lbl.font = SYSTEMFONT(20);
     lbl.textColor = KBlackColor;
     [_detailsView addSubview:lbl];
@@ -71,13 +85,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

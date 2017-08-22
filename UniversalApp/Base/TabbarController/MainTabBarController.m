@@ -15,6 +15,7 @@
 #import "MakeFriendsViewController.h"
 #import "MsgViewController.h"
 #import "MineViewController.h"
+#import "ToolDemoViewController.h"
 #import "TabBarItem.h"
 
 @interface MainTabBarController ()<TabBarDelegate>
@@ -67,8 +68,9 @@
     PersonListViewController *homeVC = [[PersonListViewController alloc]init];
     [self setupChildViewController:homeVC title:@"首页" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
     
-    MakeFriendsViewController *makeFriendVC = [[MakeFriendsViewController alloc]init];
-    [self setupChildViewController:makeFriendVC title:@"交友" imageName:@"icon_tabbar_onsite" seleceImageName:@"icon_tabbar_onsite_selected"];
+//    MakeFriendsViewController *makeFriendVC = [[MakeFriendsViewController alloc]init];
+    ToolDemoViewController *makeFriendVC = [[ToolDemoViewController alloc]init];
+    [self setupChildViewController:makeFriendVC title:@"Demo" imageName:@"icon_tabbar_onsite" seleceImageName:@"icon_tabbar_onsite_selected"];
     
     MsgViewController *msgVC = [[MsgViewController alloc]init];
     [self setupChildViewController:msgVC title:@"消息" imageName:@"icon_tabbar_merchant_normal" seleceImageName:@"icon_tabbar_merchant_selected"];
@@ -100,7 +102,7 @@
     self.TabBar.itemTitleFont          = SYSTEMFONT(10.0f);
     self.TabBar.itemImageRatio         = self.itemImageRatio == 0 ? 0.7 : self.itemImageRatio;
     self.TabBar.itemTitleColor         = KBlackColor;
-    self.TabBar.selectedItemTitleColor = CNavBgColor;
+    self.TabBar.selectedItemTitleColor = CNavBgColor2;
     
     self.TabBar.tabBarItemCount = viewControllers.count;
     

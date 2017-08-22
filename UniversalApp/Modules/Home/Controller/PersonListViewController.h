@@ -8,6 +8,9 @@
 
 #import "RootViewController.h"
 
+/**
+ 瀑布流列表 带转场动画
+ */
 @interface PersonListViewController : RootViewController
 
 @end

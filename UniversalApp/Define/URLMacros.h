@@ -31,18 +31,18 @@
 #if DevelopSever
 
 /**开发服务器*/
-#define URL_main @"http://192.168.20.31:20000"
+#define URL_main @"http://192.168.20.31:20000/shark-miai-service"
 //#define URL_main @"http://192.168.11.122:8090" //展鹏
 
 #elif TestSever
 
 /**测试服务器*/
-#define URL_main @"http://192.168.20.31:20000"
+#define URL_main @"http://192.168.20.31:20000/shark-miai-service"
 
 #elif ProductSever
 
 /**生产服务器*/
-#define URL_main @"http://192.168.20.31:20000"
+#define URL_main @"http://192.168.20.31:20000/shark-miai-service"
 #endif
 
 
