@@ -39,10 +39,6 @@
 		290A98231F4AC153006BF882 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290A98221F4AC153006BF882 /* StoreKit.framework */; };
 		290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9221ED19B6B00A45FF6 /* AESCipher.m */; };
 		290DE9261ED19B7F00A45FF6 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9251ED19B7F00A45FF6 /* AppManager.m */; };
-		290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */; };
-		290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */; };
-		290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */; };
-		290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */; };
 		2914E4871F20A45C001C01DB /* PersonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E4861F20A45C001C01DB /* PersonListViewController.m */; };
 		2914E48A1F20A462001C01DB /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E4891F20A462001C01DB /* PersonModel.m */; };
 		2914E48D1F20A471001C01DB /* PersonListLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2914E48C1F20A471001C01DB /* PersonListLogic.m */; };
@@ -228,14 +224,6 @@
 		290DE9221ED19B6B00A45FF6 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		290DE9241ED19B7F00A45FF6 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		290DE9251ED19B7F00A45FF6 /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
-		290DE92D1ED2EDF100A45FF6 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
-		290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
-		290DE92F1ED2EDF100A45FF6 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
-		290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
-		290DE9311ED2EDF100A45FF6 /* RxWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewController.h; sourceTree = "<group>"; };
-		290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
-		290DE9331ED2EDF100A45FF6 /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
-		290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
 		2914E4851F20A45C001C01DB /* PersonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListViewController.h; sourceTree = "<group>"; };
 		2914E4861F20A45C001C01DB /* PersonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListViewController.m; sourceTree = "<group>"; };
 		2914E4881F20A462001C01DB /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
@@ -582,17 +570,6 @@
 			path = AES;
 			sourceTree = "<group>";
 		};
-		290DE92C1ED2EDF100A45FF6 /* NJKWebViewProgress */ = {
-			isa = PBXGroup;
-			children = (
-				290DE92D1ED2EDF100A45FF6 /* NJKWebViewProgress.h */,
-				290DE92E1ED2EDF100A45FF6 /* NJKWebViewProgress.m */,
-				290DE92F1ED2EDF100A45FF6 /* NJKWebViewProgressView.h */,
-				290DE9301ED2EDF100A45FF6 /* NJKWebViewProgressView.m */,
-			);
-			path = NJKWebViewProgress;
-			sourceTree = "<group>";
-		};
 		2917D1FC1EDFC89A00E76185 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,11 +828,6 @@
 			children = (
 				293D45F81ECDA4D8007C64A9 /* RootWebViewController.h */,
 				293D45F91ECDA4D8007C64A9 /* RootWebViewController.m */,
-				290DE92C1ED2EDF100A45FF6 /* NJKWebViewProgress */,
-				290DE9311ED2EDF100A45FF6 /* RxWebViewController.h */,
-				290DE9321ED2EDF100A45FF6 /* RxWebViewController.m */,
-				290DE9331ED2EDF100A45FF6 /* RxWebViewNavigationViewController.h */,
-				290DE9341ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m */,
 			);
 			path = WebViewController;
 			sourceTree = "<group>";
@@ -1667,7 +1639,6 @@
 				29AD6C631ED3E4D600B0879C /* AppDelegate.m in Sources */,
 				29CF332A1F14B5CC00DB7507 /* MakeFriendsLogic.m in Sources */,
 				2917D1FF1EDFC89A00E76185 /* YYFPSLabel.m in Sources */,
-				290DE9381ED2EDF100A45FF6 /* NJKWebViewProgressView.m in Sources */,
 				29AD6C621ED3E4D600B0879C /* AppDelegate+AppService.m in Sources */,
 				293D46051ECDAA02007C64A9 /* RootNavigationController.m in Sources */,
 				29AD6C5B1ED3E28800B0879C /* PPNetworkCache.m in Sources */,
@@ -1705,10 +1676,7 @@
 				293D46081ECDAEAD007C64A9 /* HomeViewController.m in Sources */,
 				290A981D1F4ABEB9006BF882 /* BaseRequestAPI.m in Sources */,
 				29280E881F063EE700BF52D9 /* XYTransition.m in Sources */,
-				290DE9371ED2EDF100A45FF6 /* NJKWebViewProgress.m in Sources */,
-				290DE9391ED2EDF100A45FF6 /* RxWebViewController.m in Sources */,
 				290A97FF1F4ABC12006BF882 /* NickNameLbel.m in Sources */,
-				290DE93A1ED2EDF100A45FF6 /* RxWebViewNavigationViewController.m in Sources */,
 				290A98051F4ABCD9006BF882 /* IAPManager.m in Sources */,
 				290A981F1F4ABEB9006BF882 /* HSBaseCellModel.m in Sources */,
 				2914E48D1F20A471001C01DB /* PersonListLogic.m in Sources */,
