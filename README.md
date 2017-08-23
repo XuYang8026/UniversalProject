@@ -12,10 +12,16 @@
     清晰的项目结构和良好的代码规范是保证产品质量的关键，
     下面分享一下我的架构思路。
 
+
+效果图：
+
+![image](https://github.com/XuYang8026/UniversalProject/blob/master/Gif/demo.gif)
+
+
 架构图：
+
 ![image](http://upload-images.jianshu.io/upload_images/743749-077e818f4b5f9f6e.png?imageMogr2/auto-orient/strip)
 
-架构图
 架构原则：易读性、易维护性、易扩展性。
 
 一、思考
