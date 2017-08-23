@@ -13,12 +13,12 @@
     下面分享一下我的架构思路。
 
 
-###效果图：
+### 效果图：
 
 <div align=center><img width="375" height="667" src="https://github.com/XuYang8026/UniversalProject/blob/master/Gif/demo.gif"/></div>
 
 
-###架构图：
+### 架构图：
 
 <div align=center><img src="http://upload-images.jianshu.io/upload_images/743749-077e818f4b5f9f6e.png?imageMogr2/auto-orient/strip"/></div>
 
