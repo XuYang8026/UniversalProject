@@ -1,4 +1,4 @@
-这是一个基于MVC设计的通用APP框架，封装了基类、网络服务和工具库，为快速搭建高性能APP而生，好用记得点🌟 
+这是一个基于MVC设计的通用APP框架，封装了基类、网络服务和工具库，为快速搭建高性能APP而生，欢迎交流&Star🌟 
 
 原文传送门 http://www.jianshu.com/p/d553096914ff
 
@@ -13,14 +13,14 @@
     下面分享一下我的架构思路。
 
 
-效果图：
+###效果图：
 
-![image](https://github.com/XuYang8026/UniversalProject/blob/master/Gif/demo.gif)
+<div align=center><img width="375" height="667" src="https://github.com/XuYang8026/UniversalProject/blob/master/Gif/demo.gif"/></div>
 
 
-架构图：
+###架构图：
 
-![image](http://upload-images.jianshu.io/upload_images/743749-077e818f4b5f9f6e.png?imageMogr2/auto-orient/strip)
+<div align=center><img src="http://upload-images.jianshu.io/upload_images/743749-077e818f4b5f9f6e.png?imageMogr2/auto-orient/strip"/></div>
 
 架构原则：易读性、易维护性、易扩展性。
 
