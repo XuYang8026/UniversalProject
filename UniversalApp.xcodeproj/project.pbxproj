@@ -33,8 +33,6 @@
 		290A98051F4ABCD9006BF882 /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A98041F4ABCD9006BF882 /* IAPManager.m */; };
 		290A98091F4ABCF6006BF882 /* XZPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A98081F4ABCF6006BF882 /* XZPickView.m */; };
 		290A980D1F4ABD00006BF882 /* SandBoxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A980C1F4ABD00006BF882 /* SandBoxHelper.m */; };
-		290A98131F4ABD0B006BF882 /* FFTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A980F1F4ABD0B006BF882 /* FFTagsView.m */; };
-		290A98141F4ABD0B006BF882 /* TagsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A98111F4ABD0B006BF882 /* TagsButton.m */; };
 		290A981D1F4ABEB9006BF882 /* BaseRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A98171F4ABEB9006BF882 /* BaseRequestAPI.m */; };
 		290A981E1F4ABEB9006BF882 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A981A1F4ABEB9006BF882 /* BaseTableViewCell.m */; };
 		290A981F1F4ABEB9006BF882 /* HSBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A981C1F4ABEB9006BF882 /* HSBaseCellModel.m */; };
@@ -156,6 +154,8 @@
 		29CF332D1F14B5EA00DB7507 /* MsgLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF332C1F14B5EA00DB7507 /* MsgLogic.m */; };
 		29CF33301F14B60800DB7507 /* MineLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF332F1F14B60800DB7507 /* MineLogic.m */; };
 		29CF33331F14B62A00DB7507 /* LoginLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF33321F14B62A00DB7507 /* LoginLogic.m */; };
+		29D3C0091F4D11A200FD3914 /* FFTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D3C0061F4D11A200FD3914 /* FFTagsView.m */; };
+		29D3C00A1F4D11A200FD3914 /* TagsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D3C0081F4D11A200FD3914 /* TagsButton.m */; };
 		29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */; };
 		29FEE77B1ECED1E200C81B60 /* MBHUD_Warn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */; };
 		29FEE77C1ECED1E200C81B60 /* MBHUD_Warn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEE7741ECED1E200C81B60 /* MBHUD_Warn@3x.png */; };
@@ -217,10 +217,6 @@
 		290A98081F4ABCF6006BF882 /* XZPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZPickView.m; sourceTree = "<group>"; };
 		290A980B1F4ABD00006BF882 /* SandBoxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxHelper.h; sourceTree = "<group>"; };
 		290A980C1F4ABD00006BF882 /* SandBoxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxHelper.m; sourceTree = "<group>"; };
-		290A980E1F4ABD0B006BF882 /* FFTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTagsView.h; sourceTree = "<group>"; };
-		290A980F1F4ABD0B006BF882 /* FFTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTagsView.m; sourceTree = "<group>"; };
-		290A98101F4ABD0B006BF882 /* TagsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsButton.h; sourceTree = "<group>"; };
-		290A98111F4ABD0B006BF882 /* TagsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsButton.m; sourceTree = "<group>"; };
 		290A98161F4ABEB9006BF882 /* BaseRequestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestAPI.h; sourceTree = "<group>"; };
 		290A98171F4ABEB9006BF882 /* BaseRequestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestAPI.m; sourceTree = "<group>"; };
 		290A98191F4ABEB9006BF882 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
@@ -412,6 +408,10 @@
 		29CF332F1F14B60800DB7507 /* MineLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLogic.m; sourceTree = "<group>"; };
 		29CF33311F14B62A00DB7507 /* LoginLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLogic.h; sourceTree = "<group>"; };
 		29CF33321F14B62A00DB7507 /* LoginLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginLogic.m; sourceTree = "<group>"; };
+		29D3C0051F4D11A200FD3914 /* FFTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTagsView.h; sourceTree = "<group>"; };
+		29D3C0061F4D11A200FD3914 /* FFTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTagsView.m; sourceTree = "<group>"; };
+		29D3C0071F4D11A200FD3914 /* TagsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsButton.h; sourceTree = "<group>"; };
+		29D3C0081F4D11A200FD3914 /* TagsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsButton.m; sourceTree = "<group>"; };
 		29FEE7661ECEC27900C81B60 /* MBProgressHUD+XY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XY.h"; sourceTree = "<group>"; };
 		29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XY.m"; sourceTree = "<group>"; };
 		29FEE7731ECED1E200C81B60 /* MBHUD_Warn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Warn@2x.png"; sourceTree = "<group>"; };
@@ -553,18 +553,6 @@
 			path = SandBoxHelper;
 			sourceTree = "<group>";
 		};
-		290A98121F4ABD0B006BF882 /* TagsView */ = {
-			isa = PBXGroup;
-			children = (
-				290A980E1F4ABD0B006BF882 /* FFTagsView.h */,
-				290A980F1F4ABD0B006BF882 /* FFTagsView.m */,
-				290A98101F4ABD0B006BF882 /* TagsButton.h */,
-				290A98111F4ABD0B006BF882 /* TagsButton.m */,
-			);
-			name = TagsView;
-			path = "../../../老虎工作/MiAiApp/MiAiApp/Utils/TagsView";
-			sourceTree = "<group>";
-		};
 		290A98151F4ABEB9006BF882 /* BaseRequestApi */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,7 +684,7 @@
 		293D45AD1ECD6926007C64A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				290A98121F4ABD0B006BF882 /* TagsView */,
+				29D3C0041F4D11A200FD3914 /* TagsView */,
 				290A980A1F4ABD00006BF882 /* SandBoxHelper */,
 				290A98061F4ABCF6006BF882 /* PickerView */,
 				29280E7E1F063D3600BF52D9 /* XYTransition */,
@@ -1368,6 +1356,17 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		29D3C0041F4D11A200FD3914 /* TagsView */ = {
+			isa = PBXGroup;
+			children = (
+				29D3C0051F4D11A200FD3914 /* FFTagsView.h */,
+				29D3C0061F4D11A200FD3914 /* FFTagsView.m */,
+				29D3C0071F4D11A200FD3914 /* TagsButton.h */,
+				29D3C0081F4D11A200FD3914 /* TagsButton.m */,
+			);
+			path = TagsView;
+			sourceTree = "<group>";
+		};
 		29FEE7651ECEC25C00C81B60 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1722,7 +1721,7 @@
 				290A97FD1F4ABC12006BF882 /* MineTableViewCell.m in Sources */,
 				2940C5381F0A3EC5008BC29F /* GetWaterFallListAPI.m in Sources */,
 				29CD2C6B1F30227100A0F5DC /* TableViewCell.m in Sources */,
-				290A98141F4ABD0B006BF882 /* TagsButton.m in Sources */,
+				29D3C00A1F4D11A200FD3914 /* TagsButton.m in Sources */,
 				293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */,
 				29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */,
 				2917D2171EE02F9C00E76185 /* ShareManager.m in Sources */,
@@ -1731,7 +1730,7 @@
 				290A980D1F4ABD00006BF882 /* SandBoxHelper.m in Sources */,
 				29AD6C5A1ED3E28800B0879C /* HeaderModel.m in Sources */,
 				293D45FA1ECDA4D8007C64A9 /* RootWebViewController.m in Sources */,
-				290A98131F4ABD0B006BF882 /* FFTagsView.m in Sources */,
+				29D3C0091F4D11A200FD3914 /* FFTagsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
