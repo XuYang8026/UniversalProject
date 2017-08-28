@@ -13,6 +13,7 @@
 #import "TagsViewController.h"
 #import "IAPManager.h"
 #import "XZPickView.h"
+#import "UINavigationBar+Awesome.h"
 
 @interface ToolDemoViewController ()<UITableViewDelegate,UITableViewDataSource,IApRequestResultsDelegate,XZPickViewDelegate,XZPickViewDataSource>
 @property (nonatomic,copy) NSArray * dataArray;
@@ -36,10 +37,13 @@
     NSDictionary *alert = @{@"titleText":@"07 - AlertView封装（兼容iOS 7+）",@"clickSelector":@"alertView"};
     NSDictionary *action = @{@"titleText":@"08 - ActionSheet封装（兼容iOS 7+）",@"clickSelector":@"actionSheet"};
     NSDictionary *status = @{@"titleText":@"09 - 改变状态栏样式",@"clickSelector":@"changeStatusStyle"};
+    NSDictionary *NavColor = @{@"titleText":@"10 - 改变导航栏颜色",@"clickSelector":@"changeNavBarColor"};
     
-    self.dataArray = @[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status];
+    self.dataArray = @[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status,NavColor];
     
     [self initUI];
+    
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
 }
 
 
@@ -284,6 +288,36 @@
 #pragma mark -  修改状态栏样式
 -(void)changeStatusStyle{
     self.StatusBarStyle = !self.StatusBarStyle;
+}
+
+#pragma mark -  修改导航栏颜色
+-(void)changeNavBarColor{
+    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+    [self.navigationController.navigationBar lt_setBackgroundColor:color];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tableView.delegate = self;
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tableView.delegate = nil;
+    [self.navigationController.navigationBar lt_reset];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > 50) {
+        CGFloat alpha = MIN(1, 1 - ((50 + 64 - offsetY) / 64));
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+    } else {
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+    }
 }
 
 -(XZPickView *)emitterPickView{

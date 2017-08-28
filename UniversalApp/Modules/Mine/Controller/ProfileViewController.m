@@ -25,6 +25,13 @@
     [super viewDidLoad];
     self.title = @"个人信息";
     [self initUI];
+    self.isHidenNaviBar = YES;
+    self.StatusBarStyle = UIStatusBarStyleLightContent;
+    self.automaticallyAdjustsScrollViewInsets = false;//解决scrollview被自动ContentOffset.y = -20 问题
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
 }
 

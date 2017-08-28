@@ -56,15 +56,15 @@
     
     //转场动画的目标View
     UIView *fromCellView = [fromVC targetTransitionView];
+    UIView *toCellView = [toVC targetTransitionView];
     
     //获取cell相对左上角坐标 计算相对坐标
-    CGPoint leftUperPoint = [fromCellView convertPoint:CGPointZero toView:nil];
+    CGPoint nowViewPoint = [fromCellView convertPoint:CGPointZero toView:nil];
+    
+    //获取当前view相对窗口坐标
+    CGPoint toViewPoint = [toCellView convertPoint:CGPointZero toView:nil];
     
     toView.hidden = YES;
-    
-    //偏移量
-    CGFloat offsetY  = fromVC.navigationController.navigationBarHidden ? 0.0 : 64;
-    CGFloat offsetStatuBar = fromVC.navigationController.navigationBarHidden ? 0.0 : 20;
     
     
     //复制一个Cell用于显示动画效果
@@ -72,19 +72,19 @@
     snapShot.backgroundColor = [UIColor clearColor];
     [containerView addSubview:snapShot];
     
-    [snapShot setOrigin:leftUperPoint];
+    [snapShot setOrigin:nowViewPoint];
     //计算缩放比例
     _animationScale = MAX([toVC targetTransitionView].width, snapShot.width) / MIN([toVC targetTransitionView].width, snapShot.width);
     CGRect originFrame = fromView.frame;
     [UIView animateWithDuration:self.animationDuration animations:^{
         //设置缩放变换 x,y分别放大多少倍
         snapShot.transform =  CGAffineTransformMakeScale(_animationScale,_animationScale);
-        [snapShot setOrigin:CGPointMake(0, offsetY)];
+        [snapShot setOrigin:CGPointMake(0, toViewPoint.y)];
         
         fromView.alpha = 0;
         fromView.transform = snapShot.transform;
-        fromView.frame = CGRectMake(-(leftUperPoint.x)*_animationScale,
-                                    -(leftUperPoint.y - offsetStatuBar)*_animationScale + offsetY,
+        fromView.frame = CGRectMake(-(nowViewPoint.x)*_animationScale,
+                                    -(nowViewPoint.y)*_animationScale + toViewPoint.y,
                                     fromVC.view.frame.size.width,
                                     fromVC.view.frame.size.height);
         kAppDelegate.mainTabBar.tabBar.alpha = 0;
@@ -123,8 +123,12 @@
     
     //获取相对窗口的坐标
     CGPoint leftUperPoint = [toCellView convertPoint:CGPointZero toView:nil];
+    
+    //获取当前view相对窗口坐标
+    CGPoint nowViewPoint = [fromCellView convertPoint:CGPointZero toView:nil];
+    
     //计算cell偏移量 为了更好的现实动画
-    CGFloat offsetY = fromVC.navigationController.navigationBarHidden ? 0.0 : 64;
+//    CGFloat offsetY = fromVC.navigationController.navigationBarHidden ? 0.0 : 64;
     //复制一份截图用于动画过程
     __block UIImageView * snapShot =[[UIImageView alloc] initWithImage:[toCellView snapshotImage]];
     
@@ -135,14 +139,14 @@
     snapShot.backgroundColor = [UIColor clearColor];
     //将目标View先放大到跟当前view一样大，然后在动画中缩小，实现动画pop效果
     snapShot.transform = CGAffineTransformMakeScale(_animationScale, _animationScale);
-    [snapShot setOrigin:CGPointMake(0, offsetY)];
+    [snapShot setOrigin:CGPointMake(0, nowViewPoint.y)];
     //用于动画设置淡出缩小效果
     CGRect originFrame = toView.frame;
     toView.hidden = NO;
     toView.alpha = 0;
     toView.transform = snapShot.transform;
     
-    toView.frame = CGRectMake(-(leftUperPoint.x * _animationScale), -((leftUperPoint.y - offsetY) * _animationScale + offsetY),
+    toView.frame = CGRectMake(-(leftUperPoint.x * _animationScale), -((leftUperPoint.y - nowViewPoint.y) * _animationScale + nowViewPoint.y),
                               toView.frame.size.width, toView.frame.size.height);
     
     

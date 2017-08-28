@@ -122,6 +122,7 @@
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
 		2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2973A8191EDEE6BE002751F0 /* GameInfo.m */; };
+		298A76771F5421CF00F639B7 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A76761F5421CF00F639B7 /* UINavigationBar+Awesome.m */; };
 		2996100C1ED7E81900BCED2A /* DazFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 299610091ED7E81900BCED2A /* DazFire.png */; };
 		2996100D1ED7E81900BCED2A /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100A1ED7E81900BCED2A /* rain.png */; };
 		2996100E1ED7E81900BCED2A /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100B1ED7E81900BCED2A /* snow.png */; };
@@ -351,6 +352,8 @@
 		2973A8111EDEB895002751F0 /* CommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacros.h; sourceTree = "<group>"; };
 		2973A8181EDEE6BE002751F0 /* GameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfo.h; sourceTree = "<group>"; };
 		2973A8191EDEE6BE002751F0 /* GameInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfo.m; sourceTree = "<group>"; };
+		298A76751F5421CF00F639B7 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		298A76761F5421CF00F639B7 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		299610091ED7E81900BCED2A /* DazFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazFire.png; sourceTree = "<group>"; };
 		2996100A1ED7E81900BCED2A /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
 		2996100B1ED7E81900BCED2A /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
@@ -1270,6 +1273,8 @@
 		29AD6C521ED3E28800B0879C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				298A76751F5421CF00F639B7 /* UINavigationBar+Awesome.h */,
+				298A76761F5421CF00F639B7 /* UINavigationBar+Awesome.m */,
 				296F9A521F0516A700909CDB /* UICollectionView+IndexPath.h */,
 				296F9A531F0516A700909CDB /* UICollectionView+IndexPath.m */,
 				2917D20F1EE0268A00E76185 /* UIViewController+AlertViewAndActionSheet.h */,
@@ -1692,6 +1697,7 @@
 				29D3C00A1F4D11A200FD3914 /* TagsButton.m in Sources */,
 				293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */,
 				29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */,
+				298A76771F5421CF00F639B7 /* UINavigationBar+Awesome.m in Sources */,
 				2917D2171EE02F9C00E76185 /* ShareManager.m in Sources */,
 				29AD6C5C1ED3E28800B0879C /* PPNetworkHelper.m in Sources */,
 				293D460B1ECDAEC6007C64A9 /* MakeFriendsViewController.m in Sources */,
