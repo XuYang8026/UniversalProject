@@ -7,13 +7,9 @@
 //
 
 #import "RootWebViewController.h"
-#import <WebKit/WebKit.h>
 
 @interface RootWebViewController ()<WKNavigationDelegate,WKUIDelegate>
-{
-    WKUserContentController * userContentController;
-}
-@property(nonatomic, strong) WKWebView *wkwebView;
+
 @property (strong, nonatomic) UIProgressView *progressView;//这个是加载页面的进度条
 
 @end
@@ -48,17 +44,13 @@
 {
     WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];//先实例化配置类 以前UIWebView的属性有的放到了这里
     //注册供js调用的方法
-    userContentController =[[WKUserContentController alloc]init];
-//    //弹出登录
-//    [userContentController addScriptMessageHandler:self  name:@"loginVC"];
+    _userContentController =[[WKUserContentController alloc]init];
+
+//    [userContentController addScriptMessageHandler:self name:@"showMobile"];
+//    [userContentController addScriptMessageHandler:self name:@"showName"];
+//    [userContentController addScriptMessageHandler:self name:@"showSendMsg"];
 //    
-//    //加载首页
-//    [userContentController addScriptMessageHandler:self name:@"gotoFirstVC"];
-//    
-//    //进入详情页
-//    [userContentController addScriptMessageHandler:self  name:@"gotodetailVC"];
-    
-    configuration.userContentController = userContentController;
+    configuration.userContentController = _userContentController;
     configuration.preferences.javaScriptEnabled = YES;//打开js交互
     _wkwebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) configuration:configuration];
     [self.view addSubview:_wkwebView];
@@ -124,6 +116,7 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self updateNavigationItems];
 }
+
 // 页面加载失败时调用
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
     

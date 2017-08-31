@@ -7,11 +7,21 @@
 //
 
 #import "RootViewController.h"
-//#import "RxWebViewController.h"
+#import <WebKit/WebKit.h>
 /**
  WebView 基类
  */
 @interface RootWebViewController : RootViewController
+
+/**
+ webView
+ */
+@property(nonatomic, strong) WKWebView *wkwebView;
+
+/**
+ JS 注册
+ */
+@property(nonatomic,strong) WKUserContentController * userContentController;
 /**
  *  origin url
  */

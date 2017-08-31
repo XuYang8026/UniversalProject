@@ -14,6 +14,7 @@
 #import "IAPManager.h"
 #import "XZPickView.h"
 #import "UINavigationBar+Awesome.h"
+#import "JSWebViewController.h"
 
 @interface ToolDemoViewController ()<UITableViewDelegate,UITableViewDataSource,IApRequestResultsDelegate,XZPickViewDelegate,XZPickViewDataSource>
 @property (nonatomic,copy) NSArray * dataArray;
@@ -38,8 +39,9 @@
     NSDictionary *action = @{@"titleText":@"08 - ActionSheet封装（兼容iOS 7+）",@"clickSelector":@"actionSheet"};
     NSDictionary *status = @{@"titleText":@"09 - 改变状态栏样式",@"clickSelector":@"changeStatusStyle"};
     NSDictionary *NavColor = @{@"titleText":@"10 - 改变导航栏颜色",@"clickSelector":@"changeNavBarColor"};
-    
-    self.dataArray = @[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status,NavColor];
+    NSDictionary *JSCore = @{@"titleText":@"11 - JS与Native交互",@"clickSelector":@"JSCallNative"};
+//    http://192.168.11.11:8080/testWebAPP/JSCallNative.html?__hbt=1504145287954
+    self.dataArray = @[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status,NavColor,JSCore];
     
     [self initUI];
     
@@ -294,6 +296,12 @@
 -(void)changeNavBarColor{
     UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
     [self.navigationController.navigationBar lt_setBackgroundColor:color];
+}
+
+#pragma mark -  JSCallNative
+-(void)JSCallNative{
+    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[JSWebViewController alloc] initWithUrl:@"http://192.168.11.11:8080/testWebAPP/JSCallNative.html?__hbt=1504145287954"]];
+    [self presentViewController:loginNavi animated:YES completion:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

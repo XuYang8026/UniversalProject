@@ -145,6 +145,7 @@
 		29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C661ED41BA100B0879C /* AdPageView.m */; };
 		29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C6A1ED41E2100B0879C /* UserManager.m */; };
 		29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C701ED41ED200B0879C /* UserInfo.m */; };
+		29ADE8231F57BCE400F58F49 /* JSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ADE8221F57BCE400F58F49 /* JSWebViewController.m */; };
 		29CD2C6B1F30227100A0F5DC /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD2C6A1F30227100A0F5DC /* TableViewCell.m */; };
 		29CD2C6E1F30229B00A0F5DC /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD2C6D1F30229B00A0F5DC /* CellModel.m */; };
 		29CF332A1F14B5CC00DB7507 /* MakeFriendsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF33291F14B5CC00DB7507 /* MakeFriendsLogic.m */; };
@@ -387,6 +388,8 @@
 		29AD6C6A1ED41E2100B0879C /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		29AD6C6F1ED41ED200B0879C /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		29AD6C701ED41ED200B0879C /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		29ADE8211F57BCE400F58F49 /* JSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWebViewController.h; sourceTree = "<group>"; };
+		29ADE8221F57BCE400F58F49 /* JSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWebViewController.m; sourceTree = "<group>"; };
 		29CD2C691F30227100A0F5DC /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		29CD2C6A1F30227100A0F5DC /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		29CD2C6C1F30229B00A0F5DC /* CellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
@@ -831,6 +834,8 @@
 			children = (
 				293D45F81ECDA4D8007C64A9 /* RootWebViewController.h */,
 				293D45F91ECDA4D8007C64A9 /* RootWebViewController.m */,
+				29ADE8211F57BCE400F58F49 /* JSWebViewController.h */,
+				29ADE8221F57BCE400F58F49 /* JSWebViewController.m */,
 			);
 			path = WebViewController;
 			sourceTree = "<group>";
@@ -1688,6 +1693,7 @@
 				293ECC2D1EE56D1D008061A1 /* IMManager.m in Sources */,
 				29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */,
 				290A97FE1F4ABC12006BF882 /* MineHeaderView.m in Sources */,
+				29ADE8231F57BCE400F58F49 /* JSWebViewController.m in Sources */,
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
 				29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */,
 				290A98021F4ABC4F006BF882 /* SettingViewController.m in Sources */,

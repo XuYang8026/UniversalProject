@@ -21,10 +21,10 @@ static NSMutableArray *fields = nil;
 
 #pragma mark - *****  alert view
 - (void)AlertWithTitle:(NSString *)title
-                 message:(NSString *)message
-               andOthers:(NSArray<NSString *> *)others
-                animated:(BOOL)animated
-                  action:(click)click
+               message:(NSString *)message
+             andOthers:(NSArray<NSString *> *)others
+              animated:(BOOL)animated
+                action:(click)click
 {
 #ifdef kiOS8Later
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
@@ -35,7 +35,7 @@ static NSMutableArray *fields = nil;
         {
             [alertController addAction:[UIAlertAction actionWithTitle:obj style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 
-                if (action)
+                if (action && click)
                 {
                     click(idx);
                 }
@@ -45,7 +45,7 @@ static NSMutableArray *fields = nil;
         {
             [alertController addAction:[UIAlertAction actionWithTitle:obj style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 
-                if (action)
+                if (action && click)
                 {
                     click(idx);
                 }
@@ -102,12 +102,12 @@ static NSMutableArray *fields = nil;
 
 #pragma mark - *****  sheet
 - (void)ActionSheetWithTitle:(NSString *)title
-                       message:(NSString *)message
-                   destructive:(NSString *)destructive
-             destructiveAction:(click )destructiveAction
-                     andOthers:(NSArray <NSString *> *)others
-                      animated:(BOOL )animated
-                        action:(click )click
+                     message:(NSString *)message
+                 destructive:(NSString *)destructive
+           destructiveAction:(click )destructiveAction
+                   andOthers:(NSArray <NSString *> *)others
+                    animated:(BOOL )animated
+                      action:(click )click
 {
 #ifdef kiOS8Later
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
@@ -127,7 +127,7 @@ static NSMutableArray *fields = nil;
         if (idx == 0)
         {
             [alertController addAction:[UIAlertAction actionWithTitle:obj style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                if (action)
+                if (action && click)
                 {
                     click(idx);
                 }
@@ -136,7 +136,7 @@ static NSMutableArray *fields = nil;
         else
         {
             [alertController addAction:[UIAlertAction actionWithTitle:obj style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                if (action)
+                if (action && click)
                 {
                     click(idx);
                 }
@@ -194,12 +194,12 @@ static NSMutableArray *fields = nil;
 
 #pragma mark - *****  textField
 - (void)AlertWithTitle:(NSString *)title
-                 message:(NSString *)message
-                 buttons:(NSArray<NSString *> *)buttons
-         textFieldNumber:(NSInteger )number
-           configuration:(configuration )configuration
-                animated:(BOOL )animated
-                  action:(clickHaveField )click
+               message:(NSString *)message
+               buttons:(NSArray<NSString *> *)buttons
+       textFieldNumber:(NSInteger )number
+         configuration:(configuration )configuration
+              animated:(BOOL )animated
+                action:(clickHaveField )click
 {
     if (fields == nil)
     {
@@ -226,7 +226,7 @@ static NSMutableArray *fields = nil;
         if (idx == 0)
         {
             [alertController addAction:[UIAlertAction actionWithTitle:obj style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                if (action)
+                if (action && click)
                 {
                     click(fields,idx);
                 }
@@ -235,7 +235,7 @@ static NSMutableArray *fields = nil;
         else
         {
             [alertController addAction:[UIAlertAction actionWithTitle:obj style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                if (action)
+                if (action && click)
                 {
                     click(fields,idx);
                 }
