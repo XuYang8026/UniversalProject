@@ -15,6 +15,7 @@
 #import "XZPickView.h"
 #import "UINavigationBar+Awesome.h"
 #import "JSWebViewController.h"
+#import "ScrollBannerVC.h"
 
 @interface ToolDemoViewController ()<UITableViewDelegate,UITableViewDataSource,IApRequestResultsDelegate,XZPickViewDelegate,XZPickViewDataSource>
 @property (nonatomic,copy) NSArray * dataArray;
@@ -40,8 +41,9 @@
     NSDictionary *status = @{@"titleText":@"09 - 改变状态栏样式",@"clickSelector":@"changeStatusStyle"};
     NSDictionary *NavColor = @{@"titleText":@"10 - 改变导航栏颜色",@"clickSelector":@"changeNavBarColor"};
     NSDictionary *JSCore = @{@"titleText":@"11 - JS与Native交互",@"clickSelector":@"JSCallNative"};
-//    http://192.168.11.11:8080/testWebAPP/JSCallNative.html?__hbt=1504145287954
-    self.dataArray = @[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status,NavColor,JSCore];
+    NSDictionary *scrollBanner = @{@"titleText":@"12 - 轮播图",@"clickSelector":@"scrollBanner"};
+    
+    self.dataArray = @[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status,NavColor,JSCore,scrollBanner];
     
     [self initUI];
     
@@ -302,6 +304,11 @@
 -(void)JSCallNative{
     RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[JSWebViewController alloc] initWithUrl:@"http://192.168.11.11:8080/testWebAPP/JSCallNative.html?__hbt=1504145287954"]];
     [self presentViewController:loginNavi animated:YES completion:nil];
+}
+
+#pragma mark -  scrollBanner
+-(void)scrollBanner{
+    [self.navigationController pushViewController:[ScrollBannerVC new] animated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
