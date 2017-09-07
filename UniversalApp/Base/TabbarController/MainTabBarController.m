@@ -17,6 +17,7 @@
 #import "MineViewController.h"
 #import "ToolDemoViewController.h"
 #import "TabBarItem.h"
+#import "DraggingCardViewController.h"
 
 @interface MainTabBarController ()<TabBarDelegate>
 
@@ -72,8 +73,10 @@
     ToolDemoViewController *makeFriendVC = [[ToolDemoViewController alloc]init];
     [self setupChildViewController:makeFriendVC title:@"Demo" imageName:@"icon_tabbar_onsite" seleceImageName:@"icon_tabbar_onsite_selected"];
     
-    MsgViewController *msgVC = [[MsgViewController alloc]init];
+//    MsgViewController *msgVC = [[MsgViewController alloc]init];
+    DraggingCardViewController *msgVC = [DraggingCardViewController new];
     [self setupChildViewController:msgVC title:@"消息" imageName:@"icon_tabbar_merchant_normal" seleceImageName:@"icon_tabbar_merchant_selected"];
+    
     
     MineViewController *mineVC = [[MineViewController alloc]init];
     [self setupChildViewController:mineVC title:@"我的" imageName:@"icon_tabbar_mine" seleceImageName:@"icon_tabbar_mine_selected"];
