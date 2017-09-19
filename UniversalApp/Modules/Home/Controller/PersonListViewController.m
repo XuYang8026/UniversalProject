@@ -67,7 +67,6 @@
 
 #pragma mark ————— 下拉刷新 —————
 -(void)headerRereshing{
-    [_logic.dataArray removeAllObjects];
     [_logic loadData];
 }
 
