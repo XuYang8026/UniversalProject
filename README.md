@@ -1,13 +1,11 @@
-这是一个基于MVC设计的通用APP框架，封装了基类、网络服务和工具库，为快速搭建高性能APP而生，欢迎交流&Star🌟 
+## 简介
+`UniversalProject`是基于MVC架构的iOS轻量级框架，封装了基类、基于猿题库YTKNetwork的网络服务、工具库，基于NavigationController的瀑布流/转场动画/粒子动画以及常用功能demo，已适配iOS11 & iPhone X。欢迎交流 & Star🌟 
 
 原文传送门 http://www.jianshu.com/p/d553096914ff
 
-
-
 ## 最近更新
-已对iOS11 & iPhone X 适配 [10分钟适配 iOS 11 & iPhone X](http://www.jianshu.com/p/94d3fdc0f20d)
-###### 欢迎各路大神小白加群
-###### iOS 超级码农交流群：538549344
+已对iOS11 & iPhone X 适配, 适配参考：[10分钟适配 iOS 11 & iPhone X](http://www.jianshu.com/p/94d3fdc0f20d)
+###### 欢迎各路大神小白加群  iOS 超级码农交流群：538549344
 
 ## iOS 从0到1搭建高可用App框架
 
@@ -28,7 +26,7 @@
 
 架构原则：易读性、易维护性、易扩展性。
 
-一、思考
+## 一、思考
 
 做好一件事，花在思考上的时间应该多于执行。
 
@@ -48,14 +46,14 @@
 
 程序猿长得可以保守，思想一定不能太保守。
 
-二、搭建目录结构
+## 二、搭建目录结构
 
 ![image](http://upload-images.jianshu.io/upload_images/743749-5eec25e5a69c7138.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 目录图解
 如上图，我是这样搭建App目录结构的，从下到上，使用Pods管理第三方框架，将第三方框架进行二次封装，供给顶层使用，尽可能减少各模块之间的耦合度，只为更清晰。
 
-三、封装基础类
+## 三、封装基础类
 
 ![image](http://upload-images.jianshu.io/upload_images/743749-f88f1bf3414b0d65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
