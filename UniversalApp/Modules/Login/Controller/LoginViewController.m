@@ -23,7 +23,7 @@
     snowBtn.text = @"微信登录";
     snowBtn.font = SYSTEMFONT(20);
     snowBtn.textColor = KWhiteColor;
-    snowBtn.backgroundColor = CNavBgColor2;
+    snowBtn.backgroundColor = CNavBgColor;
     snowBtn.textAlignment = NSTextAlignmentCenter;
     snowBtn.textVerticalAlignment = YYTextVerticalAlignmentCenter;
     snowBtn.centerX = KScreenWidth/2;

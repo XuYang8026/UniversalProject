@@ -19,12 +19,10 @@
 #define kUserDefaults       [NSUserDefaults standardUserDefaults]
 #define kNotificationCenter [NSNotificationCenter defaultCenter]
 
-//系统版本
-//判断是在iOS11之前
-#ifndef kiOS11Before
-#define kiOS11Before (kSystemVersion < 11)
-#endif
-
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kNavBarHeight 44.0
+#define kTabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
+#define kTopHeight (kStatusBarHeight + kNavBarHeight)
 
 //获取屏幕宽高
 #define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)

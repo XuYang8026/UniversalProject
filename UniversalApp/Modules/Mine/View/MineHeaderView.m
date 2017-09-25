@@ -23,7 +23,7 @@
 -(void)setUserInfo:(UserInfo *)userInfo{
     _userInfo = userInfo;
     
-    UIImage *bgImg = [ImageWithFile(@"my_back_img") imageByBlurRadius:15 tintColor:nil tintMode:0 saturation:1 maskImage:nil];
+    UIImage *bgImg = [[UIImage imageNamed:@"my_back_img"] imageByBlurRadius:15 tintColor:nil tintMode:0 saturation:1 maskImage:nil];
     
     [self.bgImgView setImage:bgImg];
     

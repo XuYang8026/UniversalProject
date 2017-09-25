@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title></title>
+            <script>
+                //调用页面返回
+                function backPage(){
+                    window.webkit.messageHandlers.backPage.postMessage(0);
+                }
+            
+            //播放一组图片  key：imageArray value: 图片数组
+            function showImages() {
+                var dic = {'imageArray':["http://pic35.nipic.com/20131104/12954233_100827450197_2.jpg",
+                                         "http://pic35.nipic.com/20131104/12954233_100827450197_2.jpg",
+                                         "http://www.taopic.com/uploads/allimg/140326/235113-1403260G01561.jpg",],
+                                         'index':2
+                };
+                window.webkit.messageHandlers.showImages.postMessage(dic);
+            }
+            
+            //显示视频 key:videoUrl value:视频地址
+            function showVideo(){
+                var dic = {"videoUrl" : "http://192.168.20.30/v/t/2016/12/30/1483062337134_241.mp4"}
+                window.webkit.messageHandlers.showVideo.postMessage(dic);
+            }
+            
+            //动态图片发布页
+            function issuePicture(){
+                window.webkit.messageHandlers.issueMoment.postMessage(1);
+            }
+            
+            //动态视频发布页
+            function issueVideo(){
+                window.webkit.messageHandlers.issueMoment.postMessage(2);
+            }
+            
+            
+                </script>
+            
+            </head>
+    <body>
+        <button onclick="backPage()" style="width: 200px;height: 200px;font-size: 20px;"> 返回按钮 </button>
+        <button onclick="showImages()" style="width: 200px;height: 200px;font-size: 20px;"> 播放一组图片 </button>
+        <button onclick="showVideo()" style="width: 200px;height: 200px;font-size: 20px;"> 显示视频 </button>
+        <button onclick="issuePicture()" style="width: 200px;height: 200px;font-size: 20px;"> 发布动态图片 </button>
+        <button onclick="issueVideo()" style="width: 200px;height: 200px;font-size: 20px;"> 发布动态视频 </button>
+    </body>
+</html>

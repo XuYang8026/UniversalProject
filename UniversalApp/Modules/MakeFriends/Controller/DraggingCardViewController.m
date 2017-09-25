@@ -41,13 +41,13 @@
         
         UIView *view = [[UIView alloc]init];
         CGFloat size = self.view.frame.size.width / 4;
-        view.frame = CGRectMake(size * i, curViewHeight - size, size, size);
+        view.frame = CGRectMake(size * i, curViewHeight - kTabBarHeight - size, size, size);
 //        view.backgroundColor = [UIColor darkGrayColor];
         [self.view addSubview:view];
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(10, 10, size - 20, size - 20);
-        [button setBackgroundColor:CNavBgColor2];
+        [button setBackgroundColor:CNavBgColor];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont fontWithName:@"Futura-Medium" size:18];
         button.clipsToBounds = YES;

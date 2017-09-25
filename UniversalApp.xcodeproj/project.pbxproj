@@ -110,6 +110,11 @@
 		29530FD81F60F1BB00D24E05 /* photo_sample_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 29530FD11F60F1BB00D24E05 /* photo_sample_05.png */; };
 		29530FD91F60F1BB00D24E05 /* photo_sample_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 29530FD21F60F1BB00D24E05 /* photo_sample_06.png */; };
 		29530FDA1F60F1BB00D24E05 /* photo_sample_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 29530FD31F60F1BB00D24E05 /* photo_sample_07.png */; };
+		29629EE91F78E49B002CFCBD /* back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29629EE81F78E2C7002CFCBD /* back_icon@2x.png */; };
+		29629EEA1F78E49D002CFCBD /* back_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29629EE71F78E2C7002CFCBD /* back_icon@3x.png */; };
+		29629EF01F78E669002CFCBD /* XLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29629EED1F78E667002CFCBD /* XLWebViewController.m */; };
+		29629EF11F78E669002CFCBD /* XLJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 29629EEE1F78E668002CFCBD /* XLJSHandler.m */; };
+		29629EF21F78E67E002CFCBD /* JSToOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 29629EEF1F78E668002CFCBD /* JSToOC.html */; };
 		296DEA6F1F5D50D100C6FD00 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296DEA621F5D50D100C6FD00 /* TAAbstractDotView.m */; };
 		296DEA701F5D50D100C6FD00 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296DEA641F5D50D100C6FD00 /* TAAnimatedDotView.m */; };
 		296DEA711F5D50D100C6FD00 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296DEA661F5D50D100C6FD00 /* TADotView.m */; };
@@ -146,7 +151,6 @@
 		296F9ED61ECC64CE0063A255 /* MiAiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9ED51ECC64CE0063A255 /* MiAiAppTests.m */; };
 		296F9EE11ECC64CE0063A255 /* MiAiAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9EE01ECC64CE0063A255 /* MiAiAppUITests.m */; };
 		2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2973A8191EDEE6BE002751F0 /* GameInfo.m */; };
-		298A76771F5421CF00F639B7 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A76761F5421CF00F639B7 /* UINavigationBar+Awesome.m */; };
 		2996100C1ED7E81900BCED2A /* DazFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 299610091ED7E81900BCED2A /* DazFire.png */; };
 		2996100D1ED7E81900BCED2A /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100A1ED7E81900BCED2A /* rain.png */; };
 		2996100E1ED7E81900BCED2A /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2996100B1ED7E81900BCED2A /* snow.png */; };
@@ -169,7 +173,6 @@
 		29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C661ED41BA100B0879C /* AdPageView.m */; };
 		29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C6A1ED41E2100B0879C /* UserManager.m */; };
 		29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD6C701ED41ED200B0879C /* UserInfo.m */; };
-		29ADE8231F57BCE400F58F49 /* JSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ADE8221F57BCE400F58F49 /* JSWebViewController.m */; };
 		29CD2C6B1F30227100A0F5DC /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD2C6A1F30227100A0F5DC /* TableViewCell.m */; };
 		29CD2C6E1F30229B00A0F5DC /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD2C6D1F30229B00A0F5DC /* CellModel.m */; };
 		29CF332A1F14B5CC00DB7507 /* MakeFriendsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CF33291F14B5CC00DB7507 /* MakeFriendsLogic.m */; };
@@ -357,6 +360,13 @@
 		29530FD11F60F1BB00D24E05 /* photo_sample_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_sample_05.png; sourceTree = "<group>"; };
 		29530FD21F60F1BB00D24E05 /* photo_sample_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_sample_06.png; sourceTree = "<group>"; };
 		29530FD31F60F1BB00D24E05 /* photo_sample_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_sample_07.png; sourceTree = "<group>"; };
+		29629EE71F78E2C7002CFCBD /* back_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon@3x.png"; sourceTree = "<group>"; };
+		29629EE81F78E2C7002CFCBD /* back_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon@2x.png"; sourceTree = "<group>"; };
+		29629EEB1F78E667002CFCBD /* XLJSHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLJSHandler.h; sourceTree = "<group>"; };
+		29629EEC1F78E667002CFCBD /* XLWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLWebViewController.h; sourceTree = "<group>"; };
+		29629EED1F78E667002CFCBD /* XLWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLWebViewController.m; sourceTree = "<group>"; };
+		29629EEE1F78E668002CFCBD /* XLJSHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLJSHandler.m; sourceTree = "<group>"; };
+		29629EEF1F78E668002CFCBD /* JSToOC.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = JSToOC.html; sourceTree = "<group>"; };
 		296DEA611F5D50D100C6FD00 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		296DEA621F5D50D100C6FD00 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		296DEA631F5D50D100C6FD00 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -413,8 +423,6 @@
 		2973A8111EDEB895002751F0 /* CommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacros.h; sourceTree = "<group>"; };
 		2973A8181EDEE6BE002751F0 /* GameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfo.h; sourceTree = "<group>"; };
 		2973A8191EDEE6BE002751F0 /* GameInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfo.m; sourceTree = "<group>"; };
-		298A76751F5421CF00F639B7 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
-		298A76761F5421CF00F639B7 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		299610091ED7E81900BCED2A /* DazFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazFire.png; sourceTree = "<group>"; };
 		2996100A1ED7E81900BCED2A /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
 		2996100B1ED7E81900BCED2A /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
@@ -448,8 +456,6 @@
 		29AD6C6A1ED41E2100B0879C /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		29AD6C6F1ED41ED200B0879C /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		29AD6C701ED41ED200B0879C /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
-		29ADE8211F57BCE400F58F49 /* JSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWebViewController.h; sourceTree = "<group>"; };
-		29ADE8221F57BCE400F58F49 /* JSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWebViewController.m; sourceTree = "<group>"; };
 		29CD2C691F30227100A0F5DC /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		29CD2C6A1F30227100A0F5DC /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		29CD2C6C1F30229B00A0F5DC /* CellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
@@ -714,6 +720,8 @@
 		293D45AB1ECD6926007C64A9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				29629EE81F78E2C7002CFCBD /* back_icon@2x.png */,
+				29629EE71F78E2C7002CFCBD /* back_icon@3x.png */,
 				299610091ED7E81900BCED2A /* DazFire.png */,
 				2996100A1ED7E81900BCED2A /* rain.png */,
 				2996100B1ED7E81900BCED2A /* snow.png */,
@@ -902,10 +910,13 @@
 		293D45F71ECDA49F007C64A9 /* WebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				29629EEF1F78E668002CFCBD /* JSToOC.html */,
+				29629EEB1F78E667002CFCBD /* XLJSHandler.h */,
+				29629EEE1F78E668002CFCBD /* XLJSHandler.m */,
+				29629EEC1F78E667002CFCBD /* XLWebViewController.h */,
+				29629EED1F78E667002CFCBD /* XLWebViewController.m */,
 				293D45F81ECDA4D8007C64A9 /* RootWebViewController.h */,
 				293D45F91ECDA4D8007C64A9 /* RootWebViewController.m */,
-				29ADE8211F57BCE400F58F49 /* JSWebViewController.h */,
-				29ADE8221F57BCE400F58F49 /* JSWebViewController.m */,
 			);
 			path = WebViewController;
 			sourceTree = "<group>";
@@ -1398,8 +1409,6 @@
 		29AD6C521ED3E28800B0879C /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				298A76751F5421CF00F639B7 /* UINavigationBar+Awesome.h */,
-				298A76761F5421CF00F639B7 /* UINavigationBar+Awesome.m */,
 				296F9A521F0516A700909CDB /* UICollectionView+IndexPath.h */,
 				296F9A531F0516A700909CDB /* UICollectionView+IndexPath.m */,
 				2917D20F1EE0268A00E76185 /* UIViewController+AlertViewAndActionSheet.h */,
@@ -1632,6 +1641,7 @@
 				290A97F51F4ABC02006BF882 /* man@2x.png in Resources */,
 				290A97E61F4AB24A006BF882 /* stepPk_win_colour8@2x.png in Resources */,
 				29530FD41F60F1BB00D24E05 /* photo_sample_01.png in Resources */,
+				29629EEA1F78E49D002CFCBD /* back_icon@3x.png in Resources */,
 				2917D2091EE007C300E76185 /* MBHUD_Info@2x.png in Resources */,
 				293D46521ECDBB63007C64A9 /* icon_tabbar_nearby.png in Resources */,
 				290A97E21F4AB24A006BF882 /* stepPk_win_colour4@2x.png in Resources */,
@@ -1664,6 +1674,7 @@
 				296F9A341F04F39000909CDB /* 5.jpg in Resources */,
 				296F9A361F04F39000909CDB /* 7.jpg in Resources */,
 				296F9A2F1F04F39000909CDB /* 12.jpg in Resources */,
+				29629EF21F78E67E002CFCBD /* JSToOC.html in Resources */,
 				293D46471ECDBB63007C64A9 /* icon_tabbar_merchant_normal@2x.png in Resources */,
 				290A97DF1F4AB24A006BF882 /* stepPk_win_colour1@2x.png in Resources */,
 				293D46501ECDBB63007C64A9 /* icon_tabbar_misc_selected.png in Resources */,
@@ -1689,6 +1700,7 @@
 				293D464F1ECDBB63007C64A9 /* icon_tabbar_misc@2x.png in Resources */,
 				293D464B1ECDBB63007C64A9 /* icon_tabbar_mine@2x.png in Resources */,
 				2996102B1ED84B5100BCED2A /* UMSocialSDKResources.bundle in Resources */,
+				29629EE91F78E49B002CFCBD /* back_icon@2x.png in Resources */,
 				29530FD71F60F1BB00D24E05 /* photo_sample_04.png in Resources */,
 				296F9A301F04F39000909CDB /* 13.jpg in Resources */,
 				293D46401ECDBB63007C64A9 /* icon_tabbar_discovery.png in Resources */,
@@ -1776,6 +1788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2917D2111EE0268A00E76185 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
+				29629EF01F78E669002CFCBD /* XLWebViewController.m in Sources */,
 				296DEA6F1F5D50D100C6FD00 /* TAAbstractDotView.m in Sources */,
 				290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */,
 				293D45A41ECD6422007C64A9 /* main.m in Sources */,
@@ -1803,6 +1816,7 @@
 				290A97DD1F4AB24A006BF882 /* TagsViewController.m in Sources */,
 				294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */,
 				296DEA711F5D50D100C6FD00 /* TADotView.m in Sources */,
+				29629EF11F78E669002CFCBD /* XLJSHandler.m in Sources */,
 				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
 				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
 				29CF33331F14B62A00DB7507 /* LoginLogic.m in Sources */,
@@ -1832,7 +1846,6 @@
 				29AD6C4D1ED3D51200B0879C /* OpenUDID.m in Sources */,
 				290A97FE1F4ABC12006BF882 /* MineHeaderView.m in Sources */,
 				296DEA721F5D50D100C6FD00 /* TAPageControl.m in Sources */,
-				29ADE8231F57BCE400F58F49 /* JSWebViewController.m in Sources */,
 				29530FA61F60F0E800D24E05 /* DraggingCardViewController.m in Sources */,
 				293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */,
 				29AD6C711ED41ED200B0879C /* UserInfo.m in Sources */,
@@ -1845,7 +1858,6 @@
 				293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */,
 				29530FB01F60F10700D24E05 /* YSLDraggableCardContainer.m in Sources */,
 				29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */,
-				298A76771F5421CF00F639B7 /* UINavigationBar+Awesome.m in Sources */,
 				2917D2171EE02F9C00E76185 /* ShareManager.m in Sources */,
 				29AD6C5C1ED3E28800B0879C /* PPNetworkHelper.m in Sources */,
 				29530FAF1F60F10700D24E05 /* YSLCardView.m in Sources */,

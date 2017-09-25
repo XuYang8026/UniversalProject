@@ -105,7 +105,7 @@
     self.TabBar.itemTitleFont          = SYSTEMFONT(10.0f);
     self.TabBar.itemImageRatio         = self.itemImageRatio == 0 ? 0.7 : self.itemImageRatio;
     self.TabBar.itemTitleColor         = KBlackColor;
-    self.TabBar.selectedItemTitleColor = CNavBgColor2;
+    self.TabBar.selectedItemTitleColor = CNavBgColor;
     
     self.TabBar.tabBarItemCount = viewControllers.count;
     

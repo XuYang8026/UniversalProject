@@ -18,9 +18,9 @@
 
 #pragma mark -  颜色区
 //主题色 导航栏颜色
-#define CNavBgColor2  [UIColor colorWithHexString:@"00AE68"]
-#define CNavBgColor  [UIColor colorWithHexString:@"ffffff"]
-#define CNavBgFontColor  [UIColor colorWithHexString:@"000000"]
+#define CNavBgColor  [UIColor colorWithHexString:@"00AE68"]
+//#define CNavBgColor  [UIColor colorWithHexString:@"ffffff"]
+#define CNavBgFontColor  [UIColor colorWithHexString:@"ffffff"]
 
 //默认页面背景色
 #define CViewBgColor [UIColor colorWithHexString:@"f2f2f2"]

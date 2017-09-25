@@ -31,6 +31,8 @@
     [navBar setTintColor:CNavBgFontColor];
     [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName :CNavBgFontColor, NSFontAttributeName : [UIFont systemFontOfSize:18]}];
     
+    [navBar setBackgroundImage:[UIImage imageWithColor:CNavBgColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [navBar setShadowImage:[UIImage new]];//去掉阴影线
 }
 
 - (void)viewDidLoad {

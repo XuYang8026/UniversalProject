@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "RootWebViewController.h"
 #import "EmitterViewController.h"
+#import "LoginViewController.h"
 
 @interface HomeViewController ()
 
@@ -23,8 +24,8 @@
 //    self.isShowLiftBack = NO;
 
     [self addNavigationItemWithTitles
-     :@[@"pre登录",@"push登录"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000,@1001]];
-//    [self addNavigationItemWithTitles:@[@"pre网页",@"push网页"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1002,@1003]];
+     :@[@"pre登录"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1000]];
+    [self addNavigationItemWithTitles:@[@"pre网页"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1002,@1003]];
     
     [self addrainBtn:1 top:200];
     [self addrainBtn:2 top:300];
@@ -35,15 +36,8 @@
 -(void)naviBtnClick:(UIButton *)btn{
     switch (btn.tag) {
         case 1000:{
-//            [[ShareManager sharedShareManager] showShareView];
-                        [self goLogin];
-//            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[HomeViewController new]];
-//            [self presentViewController:loginNavi animated:YES completion:nil];
-        }
-            break;
-        case 1001:
-        {
-            [self goLoginWithPush];
+            RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+            [self presentViewController:loginNavi animated:YES completion:nil];
         }
             break;
         case 1002:
@@ -53,12 +47,6 @@
             
             //    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[LoginViewController new]];
             [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
-        }
-            break;
-        case 1003:{
-            RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:@"http://hao123.com"];
-            [webView addNavigationItemWithTitles:@[@"测试"] isLeft:NO target:self action:@selector(naviBtnClick:) tags:@[@1003]];
-            [self.navigationController pushViewController:webView animated:YES];
         }
             break;
         default:

@@ -13,12 +13,10 @@
 #import "TagsViewController.h"
 #import "IAPManager.h"
 #import "XZPickView.h"
-#import "UINavigationBar+Awesome.h"
-#import "JSWebViewController.h"
 #import "ScrollBannerVC.h"
 
 @interface ToolDemoViewController ()<UITableViewDelegate,UITableViewDataSource,IApRequestResultsDelegate,XZPickViewDelegate,XZPickViewDataSource>
-@property (nonatomic,copy) NSArray * dataArray;
+@property (nonatomic,strong) NSMutableArray * dataArray;
 @property (nonatomic,strong) XZPickView *emitterPickView;
 @property (nonatomic,copy) NSArray * emitterArray;
 @end
@@ -43,24 +41,35 @@
     NSDictionary *JSCore = @{@"titleText":@"11 - JS与Native交互",@"clickSelector":@"JSCallNative"};
     NSDictionary *scrollBanner = @{@"titleText":@"12 - 轮播图",@"clickSelector":@"scrollBanner"};
     
-    self.dataArray = @[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status,NavColor,JSCore,scrollBanner];
+    self.dataArray =@[tags,webView,emitterView,IAPPay,tabarBadge,share,alert,action,status,NavColor,JSCore,scrollBanner].mutableCopy;
     
     [self initUI];
     
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
 }
 
 
 #pragma mark -  初始化页面
 -(void)initUI{
     self.tableView.mj_header.hidden = YES;
-    self.tableView.mj_footer.hidden = YES;
+//    self.tableView.mj_footer.hidden = YES;
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"MineTableViewCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
 
     [self.tableView reloadData];
+}
+
+-(void)footerRereshing{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        for (int i =0; i<10; i++) {
+            NSDictionary *d = @{@"titleText":@"测试滚动",@"clickSelector":@""};
+            [self.dataArray addObject:d];
+        }
+        [self.tableView.mj_footer endRefreshing];
+        [self.tableView reloadData];
+    });
+    
 }
 
 #pragma mark ————— tableview 代理 —————
@@ -221,7 +230,6 @@
     snowBtn.centerX = KScreenWidth/2;
     
     
-    kWeakSelf(self);
     snowBtn.textTapAction = ^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         //        [MBProgressHUD showTopTipMessage:NSStringFormat(@"%@马上开始",str) isWindow:YES];
         
@@ -297,12 +305,12 @@
 #pragma mark -  修改导航栏颜色
 -(void)changeNavBarColor{
     UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    [self.navigationController.navigationBar lt_setBackgroundColor:color];
+//    [self.navigationController.navigationBar lt_setBackgroundColor:color];
 }
 
 #pragma mark -  JSCallNative
 -(void)JSCallNative{
-    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[JSWebViewController alloc] initWithUrl:@"http://192.168.11.11:8080/testWebAPP/JSCallNative.html?__hbt=1504145287954"]];
+    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:@"https://www.baidu.com"]];
     [self presentViewController:loginNavi animated:YES completion:nil];
 }
 
@@ -314,25 +322,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tableView.delegate = self;
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.tableView.delegate = nil;
-    [self.navigationController.navigationBar lt_reset];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > 50) {
-        CGFloat alpha = MIN(1, 1 - ((50 + 64 - offsetY) / 64));
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
-    } else {
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
-    }
 }
 
 -(XZPickView *)emitterPickView{

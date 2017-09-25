@@ -29,7 +29,7 @@
 }
 #pragma mark -  初始化UI
 -(void)initUI{
-    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight-0);
+    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight - kTopHeight - kTabBarHeight);
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:NSStringFromClass([TableViewCell class])];
     self.tableView.delegate = self;

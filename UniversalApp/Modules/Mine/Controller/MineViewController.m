@@ -13,7 +13,7 @@
 #import "SettingViewController.h"
 #import "XYTransitionProtocol.h"
 
-#define KHeaderHeight (260 * Iphone6ScaleWidth)
+#define KHeaderHeight ((260 * Iphone6ScaleWidth) + kStatusBarHeight)
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,headerViewDelegate,XYTransitionProtocol>
 {
@@ -86,7 +86,7 @@
 
 #pragma mark ————— 创建页面 —————
 -(void)createUI{
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.height = KScreenHeight - kTabBarHeight;
     self.tableView.mj_header.hidden = YES;
     self.tableView.mj_footer.hidden = YES;
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"MineTableViewCell"];
@@ -113,10 +113,10 @@
 }
 #pragma mark ————— 创建自定义导航栏 —————
 -(void)createNav{
-    _NavView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 64)];
+    _NavView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kTopHeight)];
     _NavView.backgroundColor = KClearColor;
     
-    UILabel * titlelbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, KScreenWidth/2, 44)];
+    UILabel * titlelbl = [[UILabel alloc] initWithFrame:CGRectMake(0, kStatusBarHeight, KScreenWidth/2, kNavBarHeight )];
     titlelbl.centerX = _NavView.width/2;
     titlelbl.textAlignment = NSTextAlignmentCenter;
     titlelbl.font= SYSTEMFONT(17);
@@ -129,7 +129,7 @@
     btn.titleLabel.font = SYSTEMFONT(16);
     [btn setTitleColor:KWhiteColor forState:UIControlStateNormal];
     [btn sizeToFit];
-    btn.frame = CGRectMake(_NavView.width - btn.width - 15, 20, btn.width, 40);
+    btn.frame = CGRectMake(_NavView.width - btn.width - 15, kStatusBarHeight, btn.width, 40);
     [btn setTitleColor:KWhiteColor forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(changeUser) forControlEvents:UIControlEventTouchUpInside];
     

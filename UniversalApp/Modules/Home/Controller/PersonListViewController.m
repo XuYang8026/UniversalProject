@@ -55,7 +55,7 @@
     layout.delegate = self;
     
 
-    self.collectionView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
+    self.collectionView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight - kTopHeight - kTabBarHeight);
     [self.collectionView setCollectionViewLayout:layout];
     self.collectionView.backgroundColor = CViewBgColor;
     [self.collectionView registerClass:[PersonListCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([PersonListCollectionViewCell class])];
@@ -72,6 +72,7 @@
 
 #pragma mark ————— 上拉刷新 —————
 -(void)footerRereshing{
+    _logic.page+=1;
     [_logic loadData];
 }
 
@@ -152,29 +153,29 @@
 
 #pragma mark -  上下滑动隐藏/显示导航栏
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //scrollView已经有拖拽手势，直接拿到scrollView的拖拽手势
-    UIPanGestureRecognizer *pan = scrollView.panGestureRecognizer;
-    //获取到拖拽的速度 >0 向下拖动 <0 向上拖动
-    CGFloat velocity = [pan velocityInView:scrollView].y;
-    NSLog(@"滑动速度 %.f",velocity);
-    if (velocity <- 50) {
-        //向上拖动，隐藏导航栏
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [UIView animateWithDuration:0.2 animations:^{
-            self.topView.bottom = 0;
-        }];
-    }else if (velocity > 50) {
-        //向下拖动，显示导航栏
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-        [UIView animateWithDuration:0.2 animations:^{
-            self.topView.top = 64+10;
-        }];
-    }else if(velocity == 0){
-        //停止拖拽
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    //scrollView已经有拖拽手势，直接拿到scrollView的拖拽手势
+//    UIPanGestureRecognizer *pan = scrollView.panGestureRecognizer;
+//    //获取到拖拽的速度 >0 向下拖动 <0 向上拖动
+//    CGFloat velocity = [pan velocityInView:scrollView].y;
+//    NSLog(@"滑动速度 %.f",velocity);
+//    if (velocity <- 50) {
+//        //向上拖动，隐藏导航栏
+//        [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        [UIView animateWithDuration:0.2 animations:^{
+//            self.topView.bottom = 0;
+//        }];
+//    }else if (velocity > 50) {
+//        //向下拖动，显示导航栏
+//        [self.navigationController setNavigationBarHidden:NO animated:YES];
+//        [UIView animateWithDuration:0.2 animations:^{
+//            self.topView.top = 64+10;
+//        }];
+//    }else if(velocity == 0){
+//        //停止拖拽
+//    }
+//}
 
 
 - (void)didReceiveMemoryWarning {
