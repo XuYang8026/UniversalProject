@@ -44,7 +44,11 @@
         //导航栏隐藏，view top = 0
         self.view.top = 0;
     }else{
-        self.view.top = kTopHeight;
+        if (self.navigationController) {
+            CGRect frame = self.view.frame;
+            frame.origin.y = kTopHeight;
+            self.view.frame = frame;
+        }
     }
 }
 -(void)viewDidAppear:(BOOL)animated{
