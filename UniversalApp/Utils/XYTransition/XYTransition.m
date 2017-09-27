@@ -79,7 +79,7 @@
     [UIView animateWithDuration:self.animationDuration animations:^{
         //设置缩放变换 x,y分别放大多少倍
         snapShot.transform =  CGAffineTransformMakeScale(_animationScale,_animationScale);
-        [snapShot setOrigin:CGPointMake(0, toViewPoint.y)];
+        [snapShot setOrigin:toViewPoint];
         
         fromView.alpha = 0;
         fromView.transform = snapShot.transform;
@@ -157,13 +157,13 @@
     
     [containerView addSubview:whiteViewContainer];
     [containerView insertSubview:whiteViewContainer belowSubview:toView];
-    
+    kAppDelegate.mainTabBar.tabBar.alpha = 0;
     [UIView animateWithDuration:self.animationDuration animations:^{
         snapShot.transform = CGAffineTransformIdentity; //恢复原来大小
         [snapShot setOrigin:leftUperPoint]; //设置相对位置
         toView.transform = CGAffineTransformIdentity;
         toView.alpha = 1.0;
-        [toView setOrigin:CGPointZero];
+        [toView setFrame:originFrame];
         kAppDelegate.mainTabBar.tabBar.alpha = 1;
     } completion:^(BOOL finished) {
         //        if (finished) {
