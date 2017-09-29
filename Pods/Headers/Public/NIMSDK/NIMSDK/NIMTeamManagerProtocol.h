@@ -1,1 +1,0 @@
-../../../../NIMSDK/NIMSDK/NIMSDK.framework/Headers/NIMTeamManagerProtocol.h

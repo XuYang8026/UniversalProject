@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <NIMSDK/NIMSDK.h>
+//#import <NIMSDK/NIMSDK.h>
 
 typedef void (^loginBlock)(BOOL success, NSString * des);
 

@@ -14,14 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Masonry (1.0.2)
+  - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (3.1.12)
-  - NIMSDK (3.7.0)
+  - MJRefresh (3.1.13)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - YTKNetwork (2.0.3):
+  - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -32,21 +31,19 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh
-  - NIMSDK (~> 3.7.0)
   - SDWebImage (~> 3.8)
   - YTKNetwork
   - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  NIMSDK: 33ecb2d53013618976de5a081b14d8305013680b
+  MJRefresh: 56a28aa628c9895e97a518dabaecf70b18f92f32
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 372746e98a90c054af6668a5ca85052aeab7f495
+PODFILE CHECKSUM: 566c6543bae285ebf85670567800b1b61b73e67a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

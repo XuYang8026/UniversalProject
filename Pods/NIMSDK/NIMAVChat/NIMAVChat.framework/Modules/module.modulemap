@@ -1,6 +1,0 @@
-framework module NIMAVChat {
-  umbrella header "NIMAVChat.h"
-
-  export *
-  module * { export * }
-}
