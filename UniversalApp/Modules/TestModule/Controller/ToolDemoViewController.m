@@ -310,13 +310,20 @@
 
 #pragma mark -  JSCallNative
 -(void)JSCallNative{
-    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:@"https://www.baidu.com"]];
+    NSString * fileUrl = [[NSBundle mainBundle]pathForResource:@"JSToOC" ofType:@"html"];
+    NSURL * file = [NSURL fileURLWithPath:fileUrl];
+    
+    RootWebViewController *webVC = [[RootWebViewController alloc] initWithUrl:file.absoluteString];
+    webVC.isHidenNaviBar = YES;
+    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:webVC];
+    
     [self presentViewController:loginNavi animated:YES completion:nil];
 }
 
 #pragma mark -  scrollBanner
 -(void)scrollBanner{
-    [self.navigationController pushViewController:[ScrollBannerVC new] animated:YES];
+    ScrollBannerVC *b = [ScrollBannerVC new];
+    [self.navigationController pushViewController:b animated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
