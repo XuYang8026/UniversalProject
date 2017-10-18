@@ -35,12 +35,17 @@
                 window.webkit.messageHandlers.issueMoment.postMessage(2);
             }
             
+            //测试Native调用JS
+            function testCallJs(){
+                return '这是来自JS的返回值：成功！';
+            }
+            
             
                 </script>
             
             </head>
     <body>
-        <button onclick="backPage()" style="width: 200px;height: 200px;font-size: 20px;"> 返回按钮 </button>
+        <button onclick="backPage()" style="width: 200px;height: 200px;font-size: 40px;"> 返回 </button>
         <button onclick="showImages()" style="width: 200px;height: 200px;font-size: 20px;"> 播放一组图片 </button>
         <button onclick="showVideo()" style="width: 200px;height: 200px;font-size: 20px;"> 显示视频 </button>
         <button onclick="issuePicture()" style="width: 200px;height: 200px;font-size: 20px;"> 发布动态图片 </button>

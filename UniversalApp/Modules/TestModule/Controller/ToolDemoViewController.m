@@ -14,6 +14,7 @@
 #import "IAPManager.h"
 #import "XZPickView.h"
 #import "ScrollBannerVC.h"
+#import "NativeCallJSVC.h"
 
 @interface ToolDemoViewController ()<UITableViewDelegate,UITableViewDataSource,IApRequestResultsDelegate,XZPickViewDelegate,XZPickViewDataSource>
 @property (nonatomic,strong) NSMutableArray * dataArray;
@@ -313,7 +314,7 @@
     NSString * fileUrl = [[NSBundle mainBundle]pathForResource:@"JSToOC" ofType:@"html"];
     NSURL * file = [NSURL fileURLWithPath:fileUrl];
     
-    RootWebViewController *webVC = [[RootWebViewController alloc] initWithUrl:file.absoluteString];
+    NativeCallJSVC *webVC = [[NativeCallJSVC alloc] initWithUrl:file.absoluteString];
     webVC.isHidenNaviBar = YES;
     RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:webVC];
     

@@ -129,6 +129,7 @@
 		296DEA811F5D536500C6FD00 /* pageControlCurrentDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 296DEA7C1F5D536500C6FD00 /* pageControlCurrentDot@2x.png */; };
 		296DEA821F5D536500C6FD00 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 296DEA7D1F5D536500C6FD00 /* placeholder@2x.png */; };
 		296ED8B41EF3B6A300E33961 /* libPods-UniversalApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */; };
+		296F72C11F9761C800E5EAB1 /* NativeCallJSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F72C01F9761C800E5EAB1 /* NativeCallJSVC.m */; };
 		296F99F11F04F05000909CDB /* WaterFallListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F99F01F04F05000909CDB /* WaterFallListViewController.m */; };
 		296F9A1B1F04F18400909CDB /* WaterFallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9A181F04F18400909CDB /* WaterFallCollectionViewCell.m */; };
 		296F9A2B1F04F39000909CDB /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 296F9A1D1F04F39000909CDB /* 0.jpg */; };
@@ -389,6 +390,8 @@
 		296DEA7C1F5D536500C6FD00 /* pageControlCurrentDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlCurrentDot@2x.png"; sourceTree = "<group>"; };
 		296DEA7D1F5D536500C6FD00 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UniversalApp.a"; path = "../../Library/Developer/Xcode/DerivedData/UniversalApp-ekowodordvfxkkdyohamowsftbba/Build/Products/Debug-iphonesimulator/libPods-UniversalApp.a"; sourceTree = "<group>"; };
+		296F72BF1F9761C800E5EAB1 /* NativeCallJSVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeCallJSVC.h; sourceTree = "<group>"; };
+		296F72C01F9761C800E5EAB1 /* NativeCallJSVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeCallJSVC.m; sourceTree = "<group>"; };
 		296F99EF1F04F05000909CDB /* WaterFallListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFallListViewController.h; sourceTree = "<group>"; };
 		296F99F01F04F05000909CDB /* WaterFallListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallListViewController.m; sourceTree = "<group>"; };
 		296F9A171F04F18400909CDB /* WaterFallCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFallCollectionViewCell.h; sourceTree = "<group>"; };
@@ -550,6 +553,8 @@
 				290A97CC1F4AB24A006BF882 /* TagsViewController.m */,
 				296DEA761F5D530E00C6FD00 /* ScrollBannerVC.h */,
 				296DEA771F5D530E00C6FD00 /* ScrollBannerVC.m */,
+				296F72BF1F9761C800E5EAB1 /* NativeCallJSVC.h */,
+				296F72C01F9761C800E5EAB1 /* NativeCallJSVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1807,6 +1812,7 @@
 				29AD6C5B1ED3E28800B0879C /* PPNetworkCache.m in Sources */,
 				290A97DC1F4AB24A006BF882 /* EmitterViewController.m in Sources */,
 				296F9A1B1F04F18400909CDB /* WaterFallCollectionViewCell.m in Sources */,
+				296F72C11F9761C800E5EAB1 /* NativeCallJSVC.m in Sources */,
 				2914E4901F20A4D1001C01DB /* PersonListCollectionViewCell.m in Sources */,
 				290A97DE1F4AB24A006BF882 /* ToolDemoViewController.m in Sources */,
 				293D465A1ECDC004007C64A9 /* LoginViewController.m in Sources */,
