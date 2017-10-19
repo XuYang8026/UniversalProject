@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290471B81F98D9A80081CCA1 /* UITabBar+CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 290471B51F98D9A30081CCA1 /* UITabBar+CustomBadge.m */; };
+		290471B91F98D9AB0081CCA1 /* XYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 290471B71F98D9A40081CCA1 /* XYTabBar.m */; };
 		290A97DC1F4AB24A006BF882 /* EmitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A97CA1F4AB24A006BF882 /* EmitterViewController.m */; };
 		290A97DD1F4AB24A006BF882 /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A97CC1F4AB24A006BF882 /* TagsViewController.m */; };
 		290A97DE1F4AB24A006BF882 /* ToolDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A97CE1F4AB24A006BF882 /* ToolDemoViewController.m */; };
@@ -68,7 +70,6 @@
 		293D460B1ECDAEC6007C64A9 /* MakeFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D460A1ECDAEC6007C64A9 /* MakeFriendsViewController.m */; };
 		293D460E1ECDAEDC007C64A9 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D460D1ECDAEDC007C64A9 /* MsgViewController.m */; };
 		293D46111ECDAEED007C64A9 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46101ECDAEED007C64A9 /* MineViewController.m */; };
-		293D46181ECDB305007C64A9 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D46171ECDB305007C64A9 /* TabBar.m */; };
 		293D46401ECDBB63007C64A9 /* icon_tabbar_discovery.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D46291ECDBB63007C64A9 /* icon_tabbar_discovery.png */; };
 		293D46411ECDBB63007C64A9 /* icon_tabbar_discovery_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D462A1ECDBB63007C64A9 /* icon_tabbar_discovery_selected.png */; };
 		293D46421ECDBB63007C64A9 /* icon_tabbar_homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D462B1ECDBB63007C64A9 /* icon_tabbar_homepage.png */; };
@@ -96,8 +97,6 @@
 		293ECC2D1EE56D1D008061A1 /* IMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 293ECC2C1EE56D1D008061A1 /* IMManager.m */; };
 		2940C5351F0A3EAB008BC29F /* WaterFallListLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2940C5341F0A3EAB008BC29F /* WaterFallListLogic.m */; };
 		2940C5381F0A3EC5008BC29F /* GetWaterFallListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2940C5371F0A3EC5008BC29F /* GetWaterFallListAPI.m */; };
-		294A68081ED58A3700AC382A /* TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A68071ED58A3700AC382A /* TabBarBadge.m */; };
-		294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A680A1ED58A7300AC382A /* TabBarItem.m */; };
 		294A680D1ED58F0700AC382A /* LCTabBarBadge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */; };
 		29530FA61F60F0E800D24E05 /* DraggingCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29530FA51F60F0E800D24E05 /* DraggingCardViewController.m */; };
 		29530FAE1F60F10700D24E05 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29530FA91F60F10700D24E05 /* CardView.m */; };
@@ -207,6 +206,10 @@
 
 /* Begin PBXFileReference section */
 		14ED69325E9FD4BDB1CA95F8 /* Pods-UniversalApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversalApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-UniversalApp/Pods-UniversalApp.release.xcconfig"; sourceTree = "<group>"; };
+		290471B41F98D9A30081CCA1 /* UITabBar+CustomBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBar+CustomBadge.h"; sourceTree = "<group>"; };
+		290471B51F98D9A30081CCA1 /* UITabBar+CustomBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+CustomBadge.m"; sourceTree = "<group>"; };
+		290471B61F98D9A30081CCA1 /* XYTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYTabBar.h; sourceTree = "<group>"; };
+		290471B71F98D9A40081CCA1 /* XYTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYTabBar.m; sourceTree = "<group>"; };
 		290A97C91F4AB24A006BF882 /* EmitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterViewController.h; sourceTree = "<group>"; };
 		290A97CA1F4AB24A006BF882 /* EmitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterViewController.m; sourceTree = "<group>"; };
 		290A97CB1F4AB24A006BF882 /* TagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
@@ -308,8 +311,6 @@
 		293D460D1ECDAEDC007C64A9 /* MsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgViewController.m; sourceTree = "<group>"; };
 		293D460F1ECDAEED007C64A9 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		293D46101ECDAEED007C64A9 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		293D46161ECDB305007C64A9 /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
-		293D46171ECDB305007C64A9 /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		293D46291ECDBB63007C64A9 /* icon_tabbar_discovery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tabbar_discovery.png; sourceTree = "<group>"; };
 		293D462A1ECDBB63007C64A9 /* icon_tabbar_discovery_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tabbar_discovery_selected.png; sourceTree = "<group>"; };
 		293D462B1ECDBB63007C64A9 /* icon_tabbar_homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tabbar_homepage.png; sourceTree = "<group>"; };
@@ -341,10 +342,6 @@
 		2940C5341F0A3EAB008BC29F /* WaterFallListLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallListLogic.m; sourceTree = "<group>"; };
 		2940C5361F0A3EC5008BC29F /* GetWaterFallListAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetWaterFallListAPI.h; sourceTree = "<group>"; };
 		2940C5371F0A3EC5008BC29F /* GetWaterFallListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetWaterFallListAPI.m; sourceTree = "<group>"; };
-		294A68061ED58A3700AC382A /* TabBarBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarBadge.h; sourceTree = "<group>"; };
-		294A68071ED58A3700AC382A /* TabBarBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarBadge.m; sourceTree = "<group>"; };
-		294A68091ED58A7300AC382A /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
-		294A680A1ED58A7300AC382A /* TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
 		294A680C1ED58F0700AC382A /* LCTabBarBadge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LCTabBarBadge@2x.png"; sourceTree = "<group>"; };
 		29530FA41F60F0E800D24E05 /* DraggingCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggingCardViewController.h; sourceTree = "<group>"; };
 		29530FA51F60F0E800D24E05 /* DraggingCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggingCardViewController.m; sourceTree = "<group>"; };
@@ -948,12 +945,10 @@
 		293D46151ECDB2E6007C64A9 /* TabBarView */ = {
 			isa = PBXGroup;
 			children = (
-				293D46161ECDB305007C64A9 /* TabBar.h */,
-				293D46171ECDB305007C64A9 /* TabBar.m */,
-				294A68091ED58A7300AC382A /* TabBarItem.h */,
-				294A680A1ED58A7300AC382A /* TabBarItem.m */,
-				294A68061ED58A3700AC382A /* TabBarBadge.h */,
-				294A68071ED58A3700AC382A /* TabBarBadge.m */,
+				290471B41F98D9A30081CCA1 /* UITabBar+CustomBadge.h */,
+				290471B51F98D9A30081CCA1 /* UITabBar+CustomBadge.m */,
+				290471B61F98D9A30081CCA1 /* XYTabBar.h */,
+				290471B71F98D9A40081CCA1 /* XYTabBar.m */,
 			);
 			name = TabBarView;
 			sourceTree = "<group>";
@@ -1804,6 +1799,7 @@
 				290DE9231ED19B6B00A45FF6 /* AESCipher.m in Sources */,
 				293D45A41ECD6422007C64A9 /* main.m in Sources */,
 				29AD6C631ED3E4D600B0879C /* AppDelegate.m in Sources */,
+				290471B81F98D9A80081CCA1 /* UITabBar+CustomBadge.m in Sources */,
 				29CF332A1F14B5CC00DB7507 /* MakeFriendsLogic.m in Sources */,
 				2917D1FF1EDFC89A00E76185 /* YYFPSLabel.m in Sources */,
 				29AD6C621ED3E4D600B0879C /* AppDelegate+AppService.m in Sources */,
@@ -1826,13 +1822,12 @@
 				2914E4931F20A4F8001C01DB /* ProfileViewController.m in Sources */,
 				2973A81A1EDEE6BE002751F0 /* GameInfo.m in Sources */,
 				290A97DD1F4AB24A006BF882 /* TagsViewController.m in Sources */,
-				294A680B1ED58A7300AC382A /* TabBarItem.m in Sources */,
 				296DEA711F5D50D100C6FD00 /* TADotView.m in Sources */,
 				29629EF11F78E669002CFCBD /* XLJSHandler.m in Sources */,
 				29AD6C6B1ED41E2100B0879C /* UserManager.m in Sources */,
 				29AD6C671ED41BA100B0879C /* AdPageView.m in Sources */,
 				29CF33331F14B62A00DB7507 /* LoginLogic.m in Sources */,
-				293D46181ECDB305007C64A9 /* TabBar.m in Sources */,
+				290471B91F98D9AB0081CCA1 /* XYTabBar.m in Sources */,
 				296DEA731F5D50D100C6FD00 /* SDCollectionViewCell.m in Sources */,
 				29CF33301F14B60800DB7507 /* MineLogic.m in Sources */,
 				296DEA741F5D50D100C6FD00 /* SDCycleScrollView.m in Sources */,
@@ -1845,7 +1840,6 @@
 				293D45F51ECDA453007C64A9 /* RootViewController.m in Sources */,
 				296F9A3E1F050AA900909CDB /* SecondViewController.m in Sources */,
 				296F9A3B1F0504C900909CDB /* WaterFlowLayout.m in Sources */,
-				294A68081ED58A3700AC382A /* TabBarBadge.m in Sources */,
 				296F9A541F0516A700909CDB /* UICollectionView+IndexPath.m in Sources */,
 				293D46081ECDAEAD007C64A9 /* HomeViewController.m in Sources */,
 				290A981D1F4ABEB9006BF882 /* BaseRequestAPI.m in Sources */,

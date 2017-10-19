@@ -243,7 +243,7 @@
 
 #pragma mark -  tabarBadge
 -(void)tabarBadge{
-    [kAppDelegate.mainTabBar.selectedViewController.tabBarItem setBadgeValue:@"10"];
+    [kAppDelegate.mainTabBar setRedDotWithIndex:3 isShow:YES];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
