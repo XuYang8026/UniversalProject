@@ -62,7 +62,7 @@
 }
 
 -(void)footerRereshing{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (int i =0; i<10; i++) {
             NSDictionary *d = @{@"titleText":@"测试滚动",@"clickSelector":@""};
             [self.dataArray addObject:d];
@@ -92,11 +92,15 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *title = _dataArray[indexPath.row][@"titleText"];
 //    NSString *selector = _dataArray[indexPath.row][@"clickSelector"];
-    NSLog(@"点击了 %@",title);
-    SEL selector = NSSelectorFromString(_dataArray[indexPath.row][@"clickSelector"]);
-    if (selector) {
-        [self performSelector:selector withObject:nil];
+    [MBProgressHUD showTopTipMessage:title isWindow:YES];
+    NSString *selectorStr = _dataArray[indexPath.row][@"clickSelector"];
+    if (selectorStr && selectorStr.length>0) {
+        SEL selector = NSSelectorFromString(_dataArray[indexPath.row][@"clickSelector"]);
+        if (selector) {
+            [self performSelector:selector withObject:nil];
+        }
     }
+    
 }
 
 #pragma mark -  XZPickView 代理
