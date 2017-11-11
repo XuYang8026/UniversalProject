@@ -1,7 +1,3 @@
-## 简介
-`UniversalProject`是基于MVC架构的iOS轻量级框架，封装了基类、基于猿题库YTKNetwork的网络服务、工具库，基于NavigationController的瀑布流/转场动画/粒子动画以及常用功能demo，已适配iOS11 & iPhone X。欢迎交流 & Star🌟 
-
-原文传送门 http://www.jianshu.com/p/d553096914ff
 
 ## 最近更新
 已对iOS11 & iPhone X 适配, 适配参考：[10分钟适配 iOS 11 & iPhone X](http://www.jianshu.com/p/94d3fdc0f20d)
@@ -11,6 +7,11 @@
 建议在此页面直接下载，若网络不佳屡次失败，可尝试通过百度云下载地址下载：[源码下载](https://pan.baidu.com/s/1bp53thH)
 #
 
+## 简介
+`UniversalProject`是基于MVC架构的iOS轻量级框架，封装了各种基类、基于猿题库YTKNetwork的网络服务、工具库，基于NavigationController的瀑布流/转场动画/粒子动画以及常用功能demo，已适配iOS11 & iPhone X。欢迎交流 & Star🌟 
+
+原文传送门 http://www.jianshu.com/p/d553096914ff
+#
 
 ## iOS 从0到1搭建高可用App框架
 
