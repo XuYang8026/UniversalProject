@@ -93,8 +93,10 @@
     if ([viewController isKindOfClass:[RootViewController class]]) {
         RootViewController * vc = (RootViewController *)viewController;
         if (vc.isHidenNaviBar) {
+            vc.view.top = 0;
             [vc.navigationController setNavigationBarHidden:YES animated:animated];
         }else{
+            vc.view.top = kTopHeight;
             [vc.navigationController setNavigationBarHidden:NO animated:animated];
         }
     }

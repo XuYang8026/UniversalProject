@@ -141,7 +141,7 @@ const NSInteger hideTime = 2;
     label.textContainerInset = UIEdgeInsetsMake(padding+padding, padding, 0, padding);
     
     if (isWindow) {
-        label.height = 64;
+        label.height = kTopHeight;
         label.bottom = 0;
         [kAppWindow addSubview:label];
         

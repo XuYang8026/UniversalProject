@@ -138,7 +138,9 @@
 #pragma mark -  标签选择
 -(void)tagsView{
     TagsViewController *tagsView = [TagsViewController new];
-    [self.navigationController pushViewController:tagsView animated:YES];
+    RootNavigationController *Navi =[[RootNavigationController alloc] initWithRootViewController:tagsView];
+    [self presentViewController:Navi animated:YES completion:nil];
+//    [self.navigationController pushViewController:tagsView animated:YES];
 }
 
 #pragma mark -  网页测试

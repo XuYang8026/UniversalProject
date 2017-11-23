@@ -39,7 +39,9 @@
     //开始第一次数据拉取
     [self.collectionView.mj_header beginRefreshing];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
 #pragma mark ————— 初始化页面 —————
 -(void)setupUI{
     //添加导航栏按钮
@@ -149,6 +151,9 @@
 
 -(void)naviBtnClick:(UIButton *)btn{
     DLog(@"点击了筛选按钮");
+    RootViewController *v = [RootViewController new];
+    v.isHidenNaviBar = YES;
+    [self.navigationController pushViewController:v animated:YES];
 }
 
 #pragma mark -  上下滑动隐藏/显示导航栏

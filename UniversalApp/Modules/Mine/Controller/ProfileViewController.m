@@ -42,6 +42,7 @@
 
 #pragma mark -  初始化UI
 -(void)initUI{
+    
     _parentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
     [self.view addSubview:_parentView];
     _parentView.contentSize = CGSizeMake(KScreenWidth, KScreenHeight+100);
@@ -52,6 +53,11 @@
     [_parentView addSubview:_headerImageView];
     [_headerImageView setImage:_headerImage];
     
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(12, kStatusBarHeight+12, 20, 20);
+    [backBtn setImage:IMAGE_NAMED(@"back_icon") forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backBtn];
     
 }
 
