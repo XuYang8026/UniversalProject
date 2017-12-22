@@ -61,8 +61,12 @@
     _webConfiguration = configuration;
     _jsHandler = [[XLJSHandler alloc]initWithViewController:self configuration:configuration];
     
+    CGRect f = self.view.bounds;
+    if (self.navigationController && self.isHidenNaviBar == NO) {
+        f = CGRectMake(0, 0, self.view.bounds.size.width, kScreenHeight - kTopHeight);
+    }
     
-    self.webView = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:configuration];
+    self.webView = [[WKWebView alloc]initWithFrame:f configuration:configuration];
     _webView.navigationDelegate = self;
     _webView.backgroundColor = [UIColor clearColor];
     _webView.allowsBackForwardNavigationGestures =YES;//打开网页间的 滑动返回
