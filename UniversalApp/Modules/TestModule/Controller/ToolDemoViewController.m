@@ -145,7 +145,9 @@
 
 #pragma mark -  网页测试
 -(void)openWebView{
-    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:[[RootWebViewController alloc] initWithUrl:@"http://www.hao123.com"]];
+    RootWebViewController *webView = [[RootWebViewController alloc] initWithUrl:@"http://hao123.com"];
+    webView.isShowCloseBtn = YES;
+    RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:webView];
     [self presentViewController:loginNavi animated:YES completion:nil];
     
     //push

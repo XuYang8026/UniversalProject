@@ -129,6 +129,8 @@
 		296DEA821F5D536500C6FD00 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 296DEA7D1F5D536500C6FD00 /* placeholder@2x.png */; };
 		296ED8B41EF3B6A300E33961 /* libPods-UniversalApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */; };
 		296F72C11F9761C800E5EAB1 /* NativeCallJSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F72C01F9761C800E5EAB1 /* NativeCallJSVC.m */; };
+		296F85081FED04EF005612D1 /* close_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 296F85061FED04EF005612D1 /* close_icon@3x.png */; };
+		296F85091FED04EF005612D1 /* close_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 296F85071FED04EF005612D1 /* close_icon@2x.png */; };
 		296F99F11F04F05000909CDB /* WaterFallListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F99F01F04F05000909CDB /* WaterFallListViewController.m */; };
 		296F9A1B1F04F18400909CDB /* WaterFallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 296F9A181F04F18400909CDB /* WaterFallCollectionViewCell.m */; };
 		296F9A2B1F04F39000909CDB /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 296F9A1D1F04F39000909CDB /* 0.jpg */; };
@@ -389,6 +391,8 @@
 		296ED8B31EF3B6A300E33961 /* libPods-UniversalApp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UniversalApp.a"; path = "../../Library/Developer/Xcode/DerivedData/UniversalApp-ekowodordvfxkkdyohamowsftbba/Build/Products/Debug-iphonesimulator/libPods-UniversalApp.a"; sourceTree = "<group>"; };
 		296F72BF1F9761C800E5EAB1 /* NativeCallJSVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeCallJSVC.h; sourceTree = "<group>"; };
 		296F72C01F9761C800E5EAB1 /* NativeCallJSVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeCallJSVC.m; sourceTree = "<group>"; };
+		296F85061FED04EF005612D1 /* close_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_icon@3x.png"; sourceTree = "<group>"; };
+		296F85071FED04EF005612D1 /* close_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_icon@2x.png"; sourceTree = "<group>"; };
 		296F99EF1F04F05000909CDB /* WaterFallListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFallListViewController.h; sourceTree = "<group>"; };
 		296F99F01F04F05000909CDB /* WaterFallListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallListViewController.m; sourceTree = "<group>"; };
 		296F9A171F04F18400909CDB /* WaterFallCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFallCollectionViewCell.h; sourceTree = "<group>"; };
@@ -724,6 +728,8 @@
 			children = (
 				29629EE81F78E2C7002CFCBD /* back_icon@2x.png */,
 				29629EE71F78E2C7002CFCBD /* back_icon@3x.png */,
+				296F85071FED04EF005612D1 /* close_icon@2x.png */,
+				296F85061FED04EF005612D1 /* close_icon@3x.png */,
 				299610091ED7E81900BCED2A /* DazFire.png */,
 				2996100A1ED7E81900BCED2A /* rain.png */,
 				2996100B1ED7E81900BCED2A /* snow.png */,
@@ -1671,6 +1677,7 @@
 				293D464C1ECDBB63007C64A9 /* icon_tabbar_mine_selected.png in Resources */,
 				296DEA7E1F5D536500C6FD00 /* pageControlDot@2x.png in Resources */,
 				290A97F21F4ABC02006BF882 /* renw@2x.png in Resources */,
+				296F85091FED04EF005612D1 /* close_icon@2x.png in Resources */,
 				296F9A341F04F39000909CDB /* 5.jpg in Resources */,
 				296F9A361F04F39000909CDB /* 7.jpg in Resources */,
 				296F9A2F1F04F39000909CDB /* 12.jpg in Resources */,
@@ -1695,6 +1702,7 @@
 				293D46531ECDBB63007C64A9 /* icon_tabbar_nearby_selected.png in Resources */,
 				296F9A2C1F04F39000909CDB /* 1.jpg in Resources */,
 				293D46561ECDBB63007C64A9 /* icon_tabbar_onsite_selected@2x.png in Resources */,
+				296F85081FED04EF005612D1 /* close_icon@3x.png in Resources */,
 				293D45A21ECD6422007C64A9 /* LaunchScreen.storyboard in Resources */,
 				293D45A31ECD6422007C64A9 /* Info.plist in Resources */,
 				293D464F1ECDBB63007C64A9 /* icon_tabbar_misc@2x.png in Resources */,
