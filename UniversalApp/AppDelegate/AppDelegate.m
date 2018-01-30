@@ -18,6 +18,9 @@
     //初始化window
     [self initWindow];
     
+    //初始化网络请求配置
+    [self NetWorkConfig];
+    
     //UMeng初始化
     [self initUMeng];
     
