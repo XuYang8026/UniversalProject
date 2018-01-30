@@ -10,6 +10,7 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import "LoginViewController.h"
 #import "OpenUDID.h"
+#import <YTKNetwork.h>
 
 @implementation AppDelegate (AppService)
 
@@ -42,6 +43,11 @@
     }
 }
 
+#pragma mark ————— 初始化网络配置 —————
+-(void)NetWorkConfig{
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = URL_main;
+}
 
 #pragma mark ————— 初始化用户系统 —————
 -(void)initUserManager{
