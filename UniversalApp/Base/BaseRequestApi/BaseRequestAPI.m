@@ -66,10 +66,10 @@
 -(YTKRequestMethod)requestMethod{
     return YTKRequestMethodPOST;
 }
-#pragma mark ————— 默认请求体是自身转json —————
--(id)requestArgument{
-    return [self modelToJSONObject];
-}
+//#pragma mark ————— 默认请求体是自身转json —————
+//-(id)requestArgument{
+//    return [self modelToJSONObject];
+//}
 #pragma mark ————— 请求失败过滤器 —————
 -(void)requestFailedFilter{
     //失败处理器
