@@ -54,8 +54,6 @@
 
 //property 属性快速声明 别用宏定义了，使用代码块+快捷键实现吧
 
-///IOS 版本判断
-#define IOSAVAILABLEVERSION(version) ([[UIDevice currentDevice] availableVersion:version] < 0)
 // 当前系统版本
 #define CurrentSystemVersion [[UIDevice currentDevice].systemVersion doubleValue]
 //当前语言
